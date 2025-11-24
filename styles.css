@@ -148,3 +148,13 @@ footer {
         padding-right: 0.3rem;
     }
 }
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #bcdff7;
+    display: block;
+    margin-bottom: 22px;
+    background: #f4f8fb;
+}
