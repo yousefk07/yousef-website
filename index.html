@@ -1,178 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yousef Kamel | Electrical Engineer Portfolio</title>
-    <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yousef Kamel — Software & Electrical Engineering</title>
+  <meta name="description" content="Yousef Kamel — Electrical Engineering student at the University of Waterloo building production software, automation systems and embedded hardware.">
+  <meta property="og:title" content="Yousef Kamel">
+  <meta property="og:description" content="Electrical Engineering @ Waterloo. Building production software, automation and embedded systems.">
+  <meta property="og:url" content="https://yousefkamel.site">
+  <meta name="theme-color" content="#0b0d10">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Yousef Kamel</h1>
-    <p>Electrical Engineering Student | 1A @ University of Waterloo | Waterloo, Ontario</p>
-    <nav>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#experience">Experience</a>
-  <a href="#contact">Contact</a>
-      <a href="YousefKamel.pdf" download>Download Resume</a>
-    </nav>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="top">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand" aria-label="Yousef Kamel, home">
+        <span class="brand-mark">YK</span>
+        <span class="brand-name">Yousef Kamel</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#experience">Experience</a>
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a href="YousefKamelResume.pdf" class="btn btn-sm" target="_blank" rel="noopener">Résumé</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <div class="about-flex">
-        <div>
-          <p>
-            Hi there! I'm Yousef, an aspiring electrical engineer with a passion for merging hardware and software to build real solutions. I'm studying at the University of Waterloo, where I actively participate in hands-on projects, research, and extracurricular engineering teams. My special interests include wireless motion detectors, IoT systems, and renewable energy electronics.
-          </p>
-          <p>
-            I am dedicated to continuous learning and enjoy collaborating with diverse teams to turn ideas into working prototypes. My journey so far has given me practical skills in embedded systems, PCB design, and both backend and frontend software development.
-          </p>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Currently: Software &amp; Automation Developer Co-op at Renellence</p>
+        <h1 class="hero-title">
+          I build software that<br>
+          <span class="accent">runs the business</span>,<br>
+          and hardware that senses the world.
+        </h1>
+        <p class="hero-lede">
+          Electrical Engineering student at the University of Waterloo (4.00 GPA). I ship
+          production platforms, integration pipelines and embedded systems: designed for failure,
+          tested thoroughly and used every day.
+        </p>
+        <div class="hero-cta">
+          <a href="#work" class="btn btn-primary">View my work</a>
+          <a href="YousefKamelResume.pdf" class="btn" target="_blank" rel="noopener">Download résumé</a>
+          <div class="hero-social">
+            <a href="https://github.com/yousefk07" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12.02c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.53 11.53 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/yousefkamel07" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+            </a>
+            <a href="mailto:yousefkkamel@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <dl class="stats">
+          <div class="stat"><dt>GPA</dt><dd>4.00</dd></div>
+          <div class="stat"><dt>Lines in production API</dt><dd>15K+</dd></div>
+          <div class="stat"><dt>External APIs integrated</dt><dd>9</dd></div>
+          <div class="stat"><dt>Test assertions written</dt><dd>1,600+</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker">01 — Experience</p>
+          <h2>Where I've worked</h2>
+        </header>
+
+        <article class="role reveal">
+          <div class="role-meta">
+            <p class="role-dates">Aug 2026 — Dec 2026</p>
+            <p class="role-loc">North York, ON</p>
+            <span class="tag tag-live">Current</span>
+          </div>
+          <div class="role-body">
+            <h3>Software &amp; Automation Developer Co-op</h3>
+            <p class="role-org">Renellence Inc.</p>
+            <ul class="bullets">
+              <li>Built and shipped <strong>Renellence Edge</strong>, a sales operations platform used daily by a five-rep national sales team: pipeline forecasting, KPI scorecards, a postal-code territory map and event ROI across 20+ screens.</li>
+              <li>Architected Edge's serverless Node.js API on Vercel (12 routes, 15K+ lines) with role-based access control and HMAC-signed sessions, replacing N+1 CRM lookups with batched HubSpot v3/v4 calls and a Redis-cached order book.</li>
+              <li>Automated the order-to-cash pipeline end to end in n8n: order intake, human-in-the-loop approvals, e-signature gating, QuickBooks Online invoicing and 3PL shipment tracking synced back to HubSpot.</li>
+              <li>Integrated nine external APIs (HubSpot, Stripe, Shopify, QuickBooks, Meta Marketing, SignatureAPI, Google Sheets, VoIP, Gemini) through signed webhooks and token auth, including two-way contact and call sync.</li>
+              <li>Designed for failure with paginated batch reads, exponential backoff, deduplication and two-phase syncs that never delete before a copy is confirmed, so outages never blank the UI or lose records.</li>
+              <li>Wrote a dependency-free test harness (1,600+ assertions, 46 suites) and a mocked local environment simulating every upstream API, with releases verified through scripted dry runs and backups.</li>
+            </ul>
+            <ul class="chips" aria-label="Technologies">
+              <li>Node.js</li><li>Vercel</li><li>Redis</li><li>n8n</li><li>HubSpot</li><li>Stripe</li><li>QuickBooks</li><li>Webhooks</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role reveal">
+          <div class="role-meta">
+            <p class="role-dates">Jan 2026 — Apr 2026</p>
+            <p class="role-loc">Waterloo, ON</p>
+          </div>
+          <div class="role-body">
+            <h3>Software Developer Intern</h3>
+            <p class="role-org">Normative</p>
+            <ul class="bullets">
+              <li>Built <strong>NIMBUS</strong>, a full-stack profitability modeling tool with a reactive calculation engine for live COGS, margin and profit tracking without unintended re-renders.</li>
+              <li>Automated seniority-to-cost mapping from backend rate card data, eliminating manual rate-mapping errors and keeping cost and billing data consistent.</li>
+              <li>Built 15+ reusable React, TypeScript and MUI components, eliminating recurring UI-state bugs and manual state-sync workarounds.</li>
+              <li>Integrated type-safe tRPC APIs across 10+ endpoints, driving runtime type errors on new API calls to zero.</li>
+              <li>Designed PostgreSQL schemas and optimized queries through Prisma, reducing redundant data by 25% and improving query response times by 30%.</li>
+            </ul>
+            <ul class="chips" aria-label="Technologies">
+              <li>React</li><li>TypeScript</li><li>tRPC</li><li>Prisma</li><li>PostgreSQL</li><li>Material UI</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Selected work -->
+    <section class="section section-alt" id="work">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker">02 — Selected work</p>
+          <h2>Things I've built</h2>
+        </header>
+
+        <article class="feature reveal">
+          <div class="feature-visual feature-visual-edge" aria-hidden="true">
+            <div class="mock">
+              <div class="mock-bar"><span></span><span></span><span></span></div>
+              <div class="mock-body">
+                <div class="mock-kpis">
+                  <div><small>Pipeline</small><b>$1.2M</b></div>
+                  <div><small>Win rate</small><b>34%</b></div>
+                  <div><small>Forecast</small><b>+12%</b></div>
+                </div>
+                <svg class="mock-chart" viewBox="0 0 300 90" preserveAspectRatio="none">
+                  <polyline points="0,72 30,64 60,68 90,50 120,54 150,38 180,42 210,26 240,30 270,16 300,12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+                </svg>
+                <div class="mock-rows"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-body">
+            <p class="feature-label">Renellence · 2026</p>
+            <h3>Renellence Edge</h3>
+            <p>A sales operations platform used every day by a national sales team. It brings CRM, orders, invoicing and field activity into one place, with forecasting, KPI scorecards, a territory map and event ROI.</p>
+            <ul class="metrics">
+              <li><b>20+</b><span>screens</span></li>
+              <li><b>12</b><span>API routes</span></li>
+              <li><b>46</b><span>test suites</span></li>
+            </ul>
+            <ul class="chips"><li>Node.js</li><li>Vercel</li><li>Redis</li><li>HubSpot v3/v4</li><li>RBAC</li></ul>
+          </div>
+        </article>
+
+        <article class="feature feature-flip reveal">
+          <figure class="feature-visual">
+            <img src="Screenshot 2026-04-27 234755.png" alt="NIMBUS editor showing staffing rows and a live project summary with billing, COGS and margin" loading="lazy">
+          </figure>
+          <div class="feature-body">
+            <p class="feature-label">Normative · 2026</p>
+            <h3>NIMBUS</h3>
+            <p>A full-stack profitability modeling tool. Teams model staffing, and billing, COGS, margin and profit update live through a reactive calculation engine. Rates are mapped automatically from backend rate cards.</p>
+            <ul class="metrics">
+              <li><b>30%</b><span>faster queries</span></li>
+              <li><b>25%</b><span>less redundant data</span></li>
+              <li><b>0</b><span>runtime type errors</span></li>
+            </ul>
+            <ul class="chips"><li>React</li><li>TypeScript</li><li>tRPC</li><li>Prisma</li><li>PostgreSQL</li></ul>
+          </div>
+        </article>
+
+        <article class="feature reveal">
+          <figure class="feature-visual">
+            <img src="20251123_181053895_iOS.jpg" alt="Wearable ESP32 motion detection device in a 3D-printed enclosure with battery pack on an elastic strap" loading="lazy">
+          </figure>
+          <div class="feature-body">
+            <p class="feature-label">Project · Sep 2025 — Jan 2026</p>
+            <h3>Patient Motion Detection System</h3>
+            <p>A wearable ESP32 system that classifies patient movement in real time from IMU accelerometer and gyroscope data. It flags fall-risk scenarios and abnormal movement patterns associated with delirium.</p>
+            <ul class="metrics">
+              <li><b>Real-time</b><span>on-device classification</span></li>
+              <li><b>BLE</b><span>alerting</span></li>
+            </ul>
+            <ul class="chips"><li>C++</li><li>ESP32</li><li>Python</li><li>Bluetooth</li><li>Signal processing</li></ul>
+            <a class="link-arrow" href="ESP32BLE.ino.ino" download>Download firmware <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker">03 — Toolkit</p>
+          <h2>Technical skills</h2>
+        </header>
+        <div class="skills reveal">
+          <div class="skill-group">
+            <h3>Languages</h3>
+            <ul class="chips chips-lg"><li>TypeScript</li><li>JavaScript</li><li>Python</li><li>C++</li><li>Java</li><li>Kotlin</li><li>SQL</li><li>Verilog</li><li>HTML/CSS</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Frameworks &amp; Libraries</h3>
+            <ul class="chips chips-lg"><li>React</li><li>Next.js</li><li>Node.js</li><li>tRPC</li><li>Prisma</li><li>Material UI</li><li>Tailwind CSS</li><li>LangChain</li><li>LangGraph</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Infrastructure &amp; Tools</h3>
+            <ul class="chips chips-lg"><li>PostgreSQL</li><li>Redis</li><li>Vercel</li><li>n8n</li><li>REST</li><li>GraphQL</li><li>Webhooks</li><li>Git</li><li>GitHub Actions</li><li>Docker</li></ul>
+          </div>
+        </div>
+
+        <div class="edu reveal">
+          <div class="edu-mark" aria-hidden="true">UW</div>
+          <div>
+            <p class="kicker">Education</p>
+            <h3>University of Waterloo</h3>
+            <p>Bachelor of Applied Science, Electrical Engineering · Expected 2030</p>
+          </div>
+          <div class="edu-gpa"><b>4.00</b><span>GPA</span></div>
         </div>
       </div>
     </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <h3>Technical Skills</h3>
-      <ul>
-        <li>Embedded C, C++, Python, Java, HTML/CSS, JavaScript</li>
-        <li>PCB Design (KiCad, Eagle), Circuit Assembly & Testing</li>
-        <li>Arduino, ESP32, Raspberry Pi, IoT Devices</li>
-        <li>Web/Cloud Integration: REST APIs, Firebase, Node.js</li>
-        <li>Version Control (Git/GitHub), Agile Methodologies</li>
-      </ul>
-      <h3>Professional Skills</h3>
-      <ul>
-        <li>Project Management & Documentation</li>
-        <li>Effective Communication & Team Leadership</li>
-        <li>Analytical Problem-Solving</li>
-        <li>Workshop Facilitation & Public Speaking</li>
-      </ul>
-    </section>
-
-      <section id="projects">
-      <h2>Key Projects</h2>
-      <div class="project-gallery">
-          <div class="project-card">
-          <img src="Screenshot 2026-04-27 234755.png" alt="NIMBUS Dashboard" class="project-image">
-          <h3>NIMBUS — Real-Time Project Profitability Modeling Tool</h3>
-          <p>
-            Built an interactive hypothesis editor to model project profitability, enabling real-time financial insights from dynamic resource inputs in a data-driven application. 
-          </p>
-        </div>
-        <div class="project-card">
-          <img src="20251123_181053895_iOS.jpg" alt="ESP32 Motion Detector Photo" class="project-image">
-          <h3>ESP32 BLE Motion Detector</h3>
-          <p>
-            Designed a wearable system using ESP32, IMU sensors, and Bluetooth Low Energy to monitor patient motion and alert care teams of high fall risk in hospitals.
-          </p>
-          <a href="ESP32BLE.ino.ino" download>Download Project Files</a>
-        </div>
-        <div class="project-card">
-          <img src="Screenshot 2025-11-23 232008.png" alt="Solar Tracker" class="project-image">
-          <h3>Automated Solar Panel Tracker</h3>
-          <p>
-            Built an Arduino-controlled system that uses servo motors and light sensors to maximize solar panel efficiency, increasing sunlight capture by 36%.
-          </p>
-          <a href="solartrackeronepart.ino" download>Download Project Files</a>
-        </div>
-        <div class="project-card">
-          <img src="Screenshot 2025-11-23 231145.png" alt="Flappy Bird" class="project-image">
-          <h3>Flappy Bird Java Clone</h3>
-          <p>
-            Programmed a full Flappy Bird-style game using the Java Swing library with real-time physics and event handling.
-          </p>
-          <a href="CPTGoodCopy.zip" download>Download Flappy Bird Java Project</a>
-        </div>
-        <div class="project-card">
-          <img src="Screenshot 2025-11-23 230044.png" alt="Pizza Store Interface" class="project-image">
-          <h3>Mock Pizza Store Ordering Interface</h3>
-          <p>
-            Developed a multi-option ordering system in Java with a graphical interface for simulated checkout and receipt generation.
-          </p>
-          <a href="CPTButtons.zip" download>Download Mock Pizza Store Project</a>
-        </div>
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <p class="kicker">04 — Contact</p>
+        <h2 class="contact-title">Let's build something.</h2>
+        <p class="contact-lede">I'm open to co-op and internship roles in software, automation and embedded systems. The fastest way to reach me is email.</p>
+        <a class="contact-email" href="mailto:yousefkkamel@gmail.com">yousefkkamel@gmail.com <span aria-hidden="true">↗</span></a>
+        <ul class="contact-links">
+          <li><a href="https://linkedin.com/in/yousefkamel07" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/yousefk07" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="tel:+16478630027">+1 (647) 863-0027</a></li>
+          <li><a href="YousefKamelResume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+        </ul>
       </div>
-    </section>
-
-
-    <section id="experience">
-  <h2>Professional Experience</h2>
-  <div class="experience-timeline">
-    <div class="experience-entry">
-      <h3>Software Developer Intern</h3>
-      <h4>Normative, Canada (Jan 2026 - Apr 2026)</h4>
-      <ul>
-        <li>Contributed to the development of internal and client-facing digital tools as part of cross-functional product, design, and technology teams.</li>
-        <li>Built and maintained modern full-stack web applications using React, Next.js, TypeScript, and Node.js.</li>
-        <li>Implemented type-safe APIs with tRPC, enabling end-to-end type safety between front-end and back-end services.</li>
-        <li>Integrated and maintained third-party APIs for data synchronization and automation workflows.</li>
-        <li>Created responsive and accessible user interfaces using Material UI (MUI).</li>
-        <li>Participated in GitHub workflows, including branching strategies, pull requests, and code reviews./li>
-      </ul>
-    </div>
-    <div class="experience-entry">
-      <h3>Document Digitization Assistant</h3>
-      <h4>London Life, Ontario (Oct 2023 - Feb 2024)</h4>
-      <ul>
-        <li>Digitized, renamed, and catalogued over 2,500 paper records into a centralized digital archive, supporting compliance and rapid retrieval.</li>
-        <li>Pioneered a new naming and indexing system that improved information lookup speed by 30% for all users.</li>
-        <li>Trained two new hires on the entire scanning and digitization workflow, formalizing process documentation for future onboarding.</li>
-        <li>Conducted QA audits on scanned documents to maintain a <1% error rate over 6 months.</li>
-        <li>Resolved technical issues with imaging hardware/software and liaised with IT to optimize archiving procedures.</li>
-      </ul>
-    </div>
-    <div class="experience-entry">
-      <h3>Member, Midnight Sun Solar Car Team</h3>
-      <h4>University of Waterloo (2025 - Present)</h4>
-      <ul>
-        <li>Designed, fabricated, and tested custom PCBs and embedded systems for solar car telemetry, data logging, and power management.</li>
-        <li>Engineered and validated new subsystems for sensor integration, low-voltage cutoff, and solar array data acquisition.</li>
-        <li>Created Python and C tools for automating calibration, sensor diagnostics, and data streaming to race control centers.</li>
-      </ul>
-    </div>
-    <div class="experience-entry">
-      <h3>Software Club Executive</h3>
-      <h4>YCDSB, Markham, Ontario (Oct 2023 - Jun 2025)</h4>
-      <ul>
-        <li>Led and organized weekly workshops teaching Python, JavaScript, and Java to high school students with diverse coding backgrounds.</li>
-        <li>Developed interactive programming challenges and mini-hackathons, resulting in 40% higher club participation.</li>
-        <li>Coordinated guest speaker events with university students and industry professionals to broaden club learning.</li>
-        <li>Managed communications, digital resources, and GitHub organization for collaborative student project work.</li>
-        <li>Mentored students in version control, collaborative coding, and debugging strategies; recorded video tutorials for continuous learning.</li>
-        <li>Represented the club at school tech fairs, boosting outreach and member recruitment through engaging demos.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-    <section id="contact">
-      <h2>Contact & Links</h2>
-      <ul>
-        <li>Email: <a href="mailto:ykamel@uwaterloo.ca">ykamel@uwaterloo.ca</a></li>
-        <li>Phone: 647-863-0027</li>
-        <li>LinkedIn: <a href="https://linkedin.com/in/yousefkamel07" target="_blank">linkedin.com/in/yousefkamel07</a></li>
-        <li>GitHub: <a href="https://github.com/yousefk07" target="_blank">github.com/yousefk07</a></li>
-        <li>Waterloo, Ontario</li>
-      </ul>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Yousef Kamel | Designed by Yousef Kamel</p>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> Yousef Kamel</p>
+      <p>Waterloo, Ontario</p>
+    </div>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const nav = document.querySelector('.nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
+    }
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
