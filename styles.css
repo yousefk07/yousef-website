@@ -280,7 +280,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .case-media { display: grid; grid-template-columns: 1.45fr 1fr; gap: 36px; align-items: center; }
 .demo-video { margin: 0; }
 .demo-video video {
-  display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 10px;
+  display: block; width: 100%; aspect-ratio: 16 / 10; border-radius: 10px;
   border: 1px solid var(--line); background: #FBFAF8; box-shadow: var(--shadow);
 }
 .demo-video figcaption { margin-top: 10px; font-size: 12.5px; color: var(--muted); }
