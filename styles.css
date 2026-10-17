@@ -130,7 +130,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin-top: 28px;
   font-size: clamp(2.4rem, 6vw, 4.5rem);
   font-weight: 600; letter-spacing: -0.035em; line-height: 1.04;
-  max-width: 16ch;
+  max-width: 20ch;
 }
 .accent { color: var(--accent); }
 .hero-lede { margin-top: 24px; max-width: 58ch; font-size: 1.15rem; color: var(--ink-2); }
@@ -217,30 +217,69 @@ ul { margin: 0; padding: 0; list-style: none; }
 .link-arrow span { transition: transform .2s; }
 .link-arrow:hover span { transform: translateX(4px); }
 
-/* Edge illustrated mock */
-.feature-visual-edge {
-  display: grid; place-items: center; padding: 32px;
-  background:
-    radial-gradient(circle at 80% 10%, var(--accent-soft), transparent 60%),
-    var(--surface);
+/* ---------- Renellence case study ---------- */
+.section-lede { margin-top: 16px; max-width: 62ch; color: var(--ink-2); font-size: 1.08rem; }
+.case {
+  padding: 36px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); box-shadow: var(--shadow);
 }
-.mock {
-  width: 100%; border-radius: 12px; overflow: hidden;
-  background: var(--bg); border: 1px solid var(--line); box-shadow: var(--shadow);
+.case + .case, .case + .case-pair, .case-pair + .case { margin-top: 20px; }
+.case h3 { margin-top: 6px; font-size: clamp(1.4rem, 2.6vw, 1.8rem); font-weight: 600; }
+.case > p:not(.feature-label):not(.small) { margin-top: 12px; color: var(--ink-2); }
+.case .tag { margin: 0 0 14px; }
+.case-head { max-width: 70ch; }
+.case-lede { margin-top: 14px; color: var(--ink-2); font-size: 1.05rem; }
+.tag-wip { color: var(--accent); background: var(--accent-soft); }
+.small { margin-top: 18px; font-size: 14px; color: var(--muted); }
+
+.flow {
+  margin: 32px 0 0; padding: 24px;
+  display: grid; grid-template-columns: 1fr 28px 1fr 28px 1fr 28px 1fr; align-items: center;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--bg);
 }
-.mock-bar { display: flex; gap: 6px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
-.mock-bar span { width: 9px; height: 9px; border-radius: 50%; background: var(--line); }
-.mock-body { padding: 20px; }
-.mock-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.mock-kpis div { padding: 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
-.mock-kpis small { display: block; font-size: 11px; color: var(--muted); }
-.mock-kpis b { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.02em; }
-.mock-chart { width: 100%; height: 90px; margin-top: 18px; color: var(--accent); }
-.mock-rows { display: grid; gap: 8px; margin-top: 14px; }
-.mock-rows i { height: 10px; border-radius: 4px; background: var(--bg-alt); }
-.mock-rows i:nth-child(1) { width: 90%; }
-.mock-rows i:nth-child(2) { width: 70%; }
-.mock-rows i:nth-child(3) { width: 80%; }
+.flow-title {
+  margin-bottom: 10px; font-family: var(--mono); font-size: 11.5px;
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted);
+}
+.flow-sources { display: flex; flex-wrap: wrap; gap: 6px; }
+.flow-sources li {
+  padding: 3px 9px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--surface); font-family: var(--mono); font-size: 12px; color: var(--ink-2);
+}
+.flow-node {
+  padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface);
+}
+.flow-node b { display: block; font-size: 14px; font-weight: 600; }
+.flow-node span { display: block; margin-top: 2px; font-size: 12.5px; color: var(--muted); line-height: 1.45; }
+.flow-node-accent { border-color: var(--accent); background: var(--accent-soft); }
+.flow-arrow { position: relative; height: 1.5px; margin: 20px 4px 0; background: var(--muted); }
+.flow-arrow::after {
+  content: ""; position: absolute; right: -1px; top: -4px;
+  border: 4.75px solid transparent; border-left: 6px solid var(--muted); border-right: 0;
+}
+
+.case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 32px; margin-top: 32px; }
+.point h4 { margin: 0; font-size: 15px; font-weight: 600; }
+.point p { margin-top: 6px; font-size: 14.5px; color: var(--ink-2); }
+
+.case-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.case-pair .case { margin-top: 0; }
+.case-pair .bullets { font-size: 15px; }
+
+.steps { margin: 20px 0 0; padding: 0; list-style: none; counter-reset: step; display: grid; gap: 8px; }
+.steps li {
+  counter-increment: step; display: flex; align-items: center; gap: 12px;
+  font-size: 15px; color: var(--ink-2);
+}
+.steps li::before {
+  content: counter(step); display: grid; place-items: center; flex: none;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent); font-family: var(--mono); font-size: 12px;
+}
+
+.practices { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 24px; }
+.practices b { font-size: 15px; font-weight: 600; }
+.practices p { margin-top: 6px; font-size: 14.5px; color: var(--ink-2); }
 
 /* ---------- Skills & Education ---------- */
 .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -303,6 +342,12 @@ ul { margin: 0; padding: 0; list-style: none; }
   .feature { grid-template-columns: 1fr; gap: 32px; }
   .feature-flip .feature-visual { order: 0; }
   .skills { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr; gap: 0; }
+  .flow-arrow { width: 1.5px; height: 24px; margin: 8px 0 8px 20px; }
+  .flow-arrow::after { right: auto; top: auto; left: -4px; bottom: -1px; border: 4.75px solid transparent; border-top: 6px solid var(--muted); border-bottom: 0; }
+  .case-grid { grid-template-columns: 1fr 1fr; }
+  .case-pair { grid-template-columns: 1fr; }
+  .practices { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 720px) {
   .wrap { padding: 0 16px; }
@@ -315,7 +360,9 @@ ul { margin: 0; padding: 0; list-style: none; }
   .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
   .section { padding: 80px 0; }
   .section-head { margin-bottom: 36px; }
-  .feature-visual-edge { padding: 18px; }
+  .case { padding: 24px 20px; }
+  .flow { padding: 18px; }
+  .case-grid, .practices { grid-template-columns: 1fr; gap: 20px; }
   .edu { grid-template-columns: auto 1fr; }
   .edu-gpa { grid-column: 1 / -1; text-align: left; display: flex; align-items: baseline; gap: 8px; }
   .footer-inner { flex-direction: column; gap: 4px; }

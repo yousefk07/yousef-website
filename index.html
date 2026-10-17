@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yousef Kamel — Software & Electrical Engineering</title>
-  <meta name="description" content="Yousef Kamel — Electrical Engineering student at the University of Waterloo building production software, automation systems and embedded hardware.">
+  <meta name="description" content="Yousef Kamel, Electrical Engineering student at the University of Waterloo, working on software and automation at Renellence.">
   <meta property="og:title" content="Yousef Kamel">
-  <meta property="og:description" content="Electrical Engineering @ Waterloo. Building production software, automation and embedded systems.">
+  <meta property="og:description" content="Electrical Engineering student at the University of Waterloo, working on software and automation at Renellence.">
   <meta property="og:url" content="https://yousefkamel.site">
   <meta name="theme-color" content="#0b0d10">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -24,8 +24,9 @@
         <span class="brand-name">Yousef Kamel</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
+        <a href="#renellence">Renellence</a>
         <a href="#experience">Experience</a>
-        <a href="#work">Work</a>
+        <a href="#work">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
         <a href="YousefKamelResume.pdf" class="btn btn-sm" target="_blank" rel="noopener">Résumé</a>
@@ -37,20 +38,19 @@
     <!-- Hero -->
     <section class="hero">
       <div class="wrap">
-        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Currently: Software &amp; Automation Developer Co-op at Renellence</p>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Currently working on Renellence's in-house CRM</p>
         <h1 class="hero-title">
-          I build software that<br>
-          <span class="accent">runs the business</span>,<br>
-          and hardware that senses the world.
+          Hi, I'm Yousef.<br>
+          I build software for <span class="accent">real teams</span>.
         </h1>
         <p class="hero-lede">
-          Electrical Engineering student at the University of Waterloo (4.00 GPA). I ship
-          production platforms, integration pipelines and embedded systems: designed for failure,
-          tested thoroughly and used every day.
+          I'm an Electrical Engineering student at the University of Waterloo. This term I'm a co-op
+          at Renellence, working on the company's sales platform, its order automation and a new
+          in-house CRM.
         </p>
         <div class="hero-cta">
-          <a href="#work" class="btn btn-primary">View my work</a>
-          <a href="YousefKamelResume.pdf" class="btn" target="_blank" rel="noopener">Download résumé</a>
+          <a href="#renellence" class="btn btn-primary">See my work</a>
+          <a href="YousefKamelResume.pdf" class="btn" target="_blank" rel="noopener">Résumé</a>
           <div class="hero-social">
             <a href="https://github.com/yousefk07" target="_blank" rel="noopener" aria-label="GitHub">
               <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12.02c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.53 11.53 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
@@ -63,22 +63,159 @@
             </a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <dl class="stats">
-          <div class="stat"><dt>GPA</dt><dd>4.00</dd></div>
-          <div class="stat"><dt>Lines in production API</dt><dd>15K+</dd></div>
-          <div class="stat"><dt>External APIs integrated</dt><dd>9</dd></div>
-          <div class="stat"><dt>Test assertions written</dt><dd>1,600+</dd></div>
-        </dl>
+    <!-- Renellence -->
+    <section class="section" id="renellence">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker">01 — Renellence</p>
+          <h2>What I've been working on</h2>
+          <p class="section-lede">
+            I joined Renellence as a Software &amp; Automation Developer Co-op in August 2026. Most of my
+            work is on the tools the sales team uses, from the first lead to a paid invoice.
+          </p>
+        </header>
+
+        <!-- CRM -->
+        <article class="case reveal">
+          <div class="case-head">
+            <span class="tag tag-wip">In progress</span>
+            <p class="feature-label">Renellence CRM</p>
+            <h3>An in-house CRM to replace HubSpot</h3>
+            <p class="case-lede">
+              Renellence is moving from HubSpot to its own CRM, and I'm building it on a Postgres database.
+              Leads, calls, emails, orders and payments come in through one intake pipeline, and the
+              sales platform works directly with the company's own records.
+            </p>
+          </div>
+
+          <figure class="flow" aria-label="Data flow: external sources feed an intake layer, which becomes CRM records that the sales platform uses">
+            <div class="flow-col">
+              <p class="flow-title">Sources</p>
+              <ul class="flow-sources">
+                <li>Stripe</li><li>Shopify</li><li>Meta leads</li><li>Gmail</li><li>VoIP calls</li><li>n8n</li>
+              </ul>
+            </div>
+            <div class="flow-arrow" aria-hidden="true"></div>
+            <div class="flow-col">
+              <p class="flow-title">Intake</p>
+              <div class="flow-node">
+                <b>Supabase Edge Functions</b>
+                <span>Webhooks and scheduled pulls</span>
+              </div>
+            </div>
+            <div class="flow-arrow" aria-hidden="true"></div>
+            <div class="flow-col">
+              <p class="flow-title">CRM</p>
+              <div class="flow-node flow-node-accent">
+                <b>Postgres records</b>
+                <span>Contacts, clinics, deals, orders, tasks, activity</span>
+              </div>
+            </div>
+            <div class="flow-arrow" aria-hidden="true"></div>
+            <div class="flow-col">
+              <p class="flow-title">App</p>
+              <div class="flow-node">
+                <b>Renellence Edge</b>
+                <span>Used by reps and managers</span>
+              </div>
+            </div>
+          </figure>
+
+          <div class="case-grid">
+            <div class="point">
+              <h4>Data model</h4>
+              <p>A Postgres schema for contacts, clinics, deals, owners, files and change history. HubSpot records are imported with their history.</p>
+            </div>
+            <div class="point">
+              <h4>Intake pipeline</h4>
+              <p>TypeScript functions on Supabase turn payments, orders, ad leads, emails and calls into CRM records through webhooks and scheduled pulls.</p>
+            </div>
+            <div class="point">
+              <h4>Shared write rules</h4>
+              <p>Create, update and link logic lives in database functions, so the app and the intake pipeline write records the same way.</p>
+            </div>
+            <div class="point">
+              <h4>Rep-facing screens</h4>
+              <p>Contact and clinic views, deal boards, tasks, filterable saved lists with CSV export, and Gmail connected through Google sign-in.</p>
+            </div>
+            <div class="point">
+              <h4>Careful migration</h4>
+              <p>It's being built and tested in a separate sandbox alongside the live system, so the switch shouldn't disrupt the sales team.</p>
+            </div>
+            <div class="point">
+              <h4>Testing</h4>
+              <p>Each intake source has its own tests, and the API is tested against an in-memory Postgres database.</p>
+            </div>
+          </div>
+          <ul class="chips"><li>PostgreSQL</li><li>Supabase</li><li>TypeScript</li><li>Deno</li><li>Node.js</li><li>Vercel</li></ul>
+        </article>
+
+        <!-- Edge + automation -->
+        <div class="case-pair">
+          <article class="case reveal">
+            <span class="tag tag-live">In use</span>
+            <p class="feature-label">Renellence Edge</p>
+            <h3>Sales platform</h3>
+            <p>A web app the five-person sales team uses day to day, with pipeline forecasting, KPI scorecards, a territory map, event ROI and daily activity boards across 20+ screens.</p>
+            <ul class="bullets">
+              <li>Serverless Node.js API on Vercel (12 routes, 15K+ lines) with role-based access.</li>
+              <li>Batched CRM requests and a Redis cache to keep pages fast.</li>
+              <li>Two-way contact and call sync with the phone system.</li>
+            </ul>
+          </article>
+
+          <article class="case reveal">
+            <span class="tag tag-live">In use</span>
+            <p class="feature-label">Order-to-cash</p>
+            <h3>Order automation</h3>
+            <p>An n8n workflow that takes an order from intake through to delivery without manual re-entry.</p>
+            <ol class="steps">
+              <li>Order intake</li>
+              <li>Approval by a person</li>
+              <li>E-signature</li>
+              <li>QuickBooks invoice</li>
+              <li>3PL shipment tracking</li>
+              <li>Synced back to the CRM</li>
+            </ol>
+            <p class="small">Connects nine services, including HubSpot, Stripe, Shopify, QuickBooks and Meta.</p>
+          </article>
+        </div>
+
+        <!-- Reliability -->
+        <article class="case reveal">
+          <p class="feature-label">Approach</p>
+          <h3>Things I try to get right</h3>
+          <div class="practices">
+            <div>
+              <b>Not losing data</b>
+              <p>Syncs don't delete anything until a copy is confirmed, and records are deduplicated.</p>
+            </div>
+            <div>
+              <b>Handling outages</b>
+              <p>Retries with backoff and cached fallbacks, so the app still works when a service is down.</p>
+            </div>
+            <div>
+              <b>Testing</b>
+              <p>About 1,600 assertions across 46 suites, with a local setup that mocks the outside services.</p>
+            </div>
+            <div>
+              <b>Careful releases</b>
+              <p>A dry run and a backup before each release, then a check that everything still runs.</p>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
     <!-- Experience -->
-    <section class="section" id="experience">
+    <section class="section section-alt" id="experience">
       <div class="wrap">
         <header class="section-head">
-          <p class="kicker">01 — Experience</p>
-          <h2>Where I've worked</h2>
+          <p class="kicker">02 — Experience</p>
+          <h2>Experience</h2>
         </header>
 
         <article class="role reveal">
@@ -91,16 +228,12 @@
             <h3>Software &amp; Automation Developer Co-op</h3>
             <p class="role-org">Renellence Inc.</p>
             <ul class="bullets">
-              <li>Built and shipped <strong>Renellence Edge</strong>, a sales operations platform used daily by a five-rep national sales team: pipeline forecasting, KPI scorecards, a postal-code territory map and event ROI across 20+ screens.</li>
-              <li>Architected Edge's serverless Node.js API on Vercel (12 routes, 15K+ lines) with role-based access control and HMAC-signed sessions, replacing N+1 CRM lookups with batched HubSpot v3/v4 calls and a Redis-cached order book.</li>
-              <li>Automated the order-to-cash pipeline end to end in n8n: order intake, human-in-the-loop approvals, e-signature gating, QuickBooks Online invoicing and 3PL shipment tracking synced back to HubSpot.</li>
-              <li>Integrated nine external APIs (HubSpot, Stripe, Shopify, QuickBooks, Meta Marketing, SignatureAPI, Google Sheets, VoIP, Gemini) through signed webhooks and token auth, including two-way contact and call sync.</li>
-              <li>Designed for failure with paginated batch reads, exponential backoff, deduplication and two-phase syncs that never delete before a copy is confirmed, so outages never blank the UI or lose records.</li>
-              <li>Wrote a dependency-free test harness (1,600+ assertions, 46 suites) and a mocked local environment simulating every upstream API, with releases verified through scripted dry runs and backups.</li>
+              <li>Building an in-house CRM on Postgres and Supabase to replace HubSpot.</li>
+              <li>Built <strong>Renellence Edge</strong>, the sales platform the team uses daily.</li>
+              <li>Automated the order-to-cash process in n8n and connected nine external services.</li>
+              <li>Wrote the test suite and release scripts.</li>
             </ul>
-            <ul class="chips" aria-label="Technologies">
-              <li>Node.js</li><li>Vercel</li><li>Redis</li><li>n8n</li><li>HubSpot</li><li>Stripe</li><li>QuickBooks</li><li>Webhooks</li>
-            </ul>
+            <a class="link-arrow" href="#renellence">More detail above <span aria-hidden="true">↑</span></a>
           </div>
         </article>
 
@@ -113,11 +246,11 @@
             <h3>Software Developer Intern</h3>
             <p class="role-org">Normative</p>
             <ul class="bullets">
-              <li>Built <strong>NIMBUS</strong>, a full-stack profitability modeling tool with a reactive calculation engine for live COGS, margin and profit tracking without unintended re-renders.</li>
-              <li>Automated seniority-to-cost mapping from backend rate card data, eliminating manual rate-mapping errors and keeping cost and billing data consistent.</li>
-              <li>Built 15+ reusable React, TypeScript and MUI components, eliminating recurring UI-state bugs and manual state-sync workarounds.</li>
-              <li>Integrated type-safe tRPC APIs across 10+ endpoints, driving runtime type errors on new API calls to zero.</li>
-              <li>Designed PostgreSQL schemas and optimized queries through Prisma, reducing redundant data by 25% and improving query response times by 30%.</li>
+              <li>Built <strong>NIMBUS</strong>, a full-stack profitability modeling tool with live COGS, margin and profit calculations.</li>
+              <li>Automated seniority-to-cost mapping from backend rate card data to remove manual mapping errors.</li>
+              <li>Built 15+ reusable React, TypeScript and MUI components.</li>
+              <li>Integrated type-safe tRPC APIs across 10+ endpoints.</li>
+              <li>Designed PostgreSQL schemas with Prisma, reducing redundant data by 25% and improving query times by 30%.</li>
             </ul>
             <ul class="chips" aria-label="Technologies">
               <li>React</li><li>TypeScript</li><li>tRPC</li><li>Prisma</li><li>PostgreSQL</li><li>Material UI</li>
@@ -127,73 +260,34 @@
       </div>
     </section>
 
-    <!-- Selected work -->
-    <section class="section section-alt" id="work">
+    <!-- Other work -->
+    <section class="section" id="work">
       <div class="wrap">
         <header class="section-head">
-          <p class="kicker">02 — Selected work</p>
-          <h2>Things I've built</h2>
+          <p class="kicker">03 — Projects</p>
+          <h2>Other projects</h2>
         </header>
 
         <article class="feature reveal">
-          <div class="feature-visual feature-visual-edge" aria-hidden="true">
-            <div class="mock">
-              <div class="mock-bar"><span></span><span></span><span></span></div>
-              <div class="mock-body">
-                <div class="mock-kpis">
-                  <div><small>Pipeline</small><b>$1.2M</b></div>
-                  <div><small>Win rate</small><b>34%</b></div>
-                  <div><small>Forecast</small><b>+12%</b></div>
-                </div>
-                <svg class="mock-chart" viewBox="0 0 300 90" preserveAspectRatio="none">
-                  <polyline points="0,72 30,64 60,68 90,50 120,54 150,38 180,42 210,26 240,30 270,16 300,12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
-                </svg>
-                <div class="mock-rows"><i></i><i></i><i></i></div>
-              </div>
-            </div>
-          </div>
-          <div class="feature-body">
-            <p class="feature-label">Renellence · 2026</p>
-            <h3>Renellence Edge</h3>
-            <p>A sales operations platform used every day by a national sales team. It brings CRM, orders, invoicing and field activity into one place, with forecasting, KPI scorecards, a territory map and event ROI.</p>
-            <ul class="metrics">
-              <li><b>20+</b><span>screens</span></li>
-              <li><b>12</b><span>API routes</span></li>
-              <li><b>46</b><span>test suites</span></li>
-            </ul>
-            <ul class="chips"><li>Node.js</li><li>Vercel</li><li>Redis</li><li>HubSpot v3/v4</li><li>RBAC</li></ul>
-          </div>
-        </article>
-
-        <article class="feature feature-flip reveal">
           <figure class="feature-visual">
             <img src="Screenshot 2026-04-27 234755.png" alt="NIMBUS editor showing staffing rows and a live project summary with billing, COGS and margin" loading="lazy">
           </figure>
           <div class="feature-body">
             <p class="feature-label">Normative · 2026</p>
             <h3>NIMBUS</h3>
-            <p>A full-stack profitability modeling tool. Teams model staffing, and billing, COGS, margin and profit update live through a reactive calculation engine. Rates are mapped automatically from backend rate cards.</p>
-            <ul class="metrics">
-              <li><b>30%</b><span>faster queries</span></li>
-              <li><b>25%</b><span>less redundant data</span></li>
-              <li><b>0</b><span>runtime type errors</span></li>
-            </ul>
+            <p>A profitability modeling tool. You enter a project's staffing, and billing, costs, margin and profit update as you type. Rates come from backend rate cards.</p>
             <ul class="chips"><li>React</li><li>TypeScript</li><li>tRPC</li><li>Prisma</li><li>PostgreSQL</li></ul>
           </div>
         </article>
 
-        <article class="feature reveal">
+        <article class="feature feature-flip reveal">
           <figure class="feature-visual">
             <img src="20251123_181053895_iOS.jpg" alt="Wearable ESP32 motion detection device in a 3D-printed enclosure with battery pack on an elastic strap" loading="lazy">
           </figure>
           <div class="feature-body">
             <p class="feature-label">Project · Sep 2025 — Jan 2026</p>
             <h3>Patient Motion Detection System</h3>
-            <p>A wearable ESP32 system that classifies patient movement in real time from IMU accelerometer and gyroscope data. It flags fall-risk scenarios and abnormal movement patterns associated with delirium.</p>
-            <ul class="metrics">
-              <li><b>Real-time</b><span>on-device classification</span></li>
-              <li><b>BLE</b><span>alerting</span></li>
-            </ul>
+            <p>A wearable ESP32 device that classifies patient movement from accelerometer and gyroscope data, to help flag fall risk and movement patterns associated with delirium.</p>
             <ul class="chips"><li>C++</li><li>ESP32</li><li>Python</li><li>Bluetooth</li><li>Signal processing</li></ul>
             <a class="link-arrow" href="ESP32BLE.ino.ino" download>Download firmware <span aria-hidden="true">→</span></a>
           </div>
@@ -202,24 +296,24 @@
     </section>
 
     <!-- Skills -->
-    <section class="section" id="skills">
+    <section class="section section-alt" id="skills">
       <div class="wrap">
         <header class="section-head">
-          <p class="kicker">03 — Toolkit</p>
+          <p class="kicker">04 — Skills</p>
           <h2>Technical skills</h2>
         </header>
         <div class="skills reveal">
           <div class="skill-group">
             <h3>Languages</h3>
-            <ul class="chips chips-lg"><li>TypeScript</li><li>JavaScript</li><li>Python</li><li>C++</li><li>Java</li><li>Kotlin</li><li>SQL</li><li>Verilog</li><li>HTML/CSS</li></ul>
+            <ul class="chips chips-lg"><li>TypeScript</li><li>JavaScript</li><li>SQL</li><li>Python</li><li>C++</li><li>Java</li><li>Kotlin</li><li>Verilog</li><li>HTML/CSS</li></ul>
           </div>
           <div class="skill-group">
             <h3>Frameworks &amp; Libraries</h3>
-            <ul class="chips chips-lg"><li>React</li><li>Next.js</li><li>Node.js</li><li>tRPC</li><li>Prisma</li><li>Material UI</li><li>Tailwind CSS</li><li>LangChain</li><li>LangGraph</li></ul>
+            <ul class="chips chips-lg"><li>Node.js</li><li>React</li><li>Next.js</li><li>tRPC</li><li>Prisma</li><li>Material UI</li><li>Tailwind CSS</li><li>LangChain</li><li>LangGraph</li></ul>
           </div>
           <div class="skill-group">
             <h3>Infrastructure &amp; Tools</h3>
-            <ul class="chips chips-lg"><li>PostgreSQL</li><li>Redis</li><li>Vercel</li><li>n8n</li><li>REST</li><li>GraphQL</li><li>Webhooks</li><li>Git</li><li>GitHub Actions</li><li>Docker</li></ul>
+            <ul class="chips chips-lg"><li>PostgreSQL</li><li>Supabase</li><li>Redis</li><li>Vercel</li><li>n8n</li><li>REST</li><li>GraphQL</li><li>Webhooks</li><li>Git</li><li>GitHub Actions</li><li>Docker</li></ul>
           </div>
         </div>
 
@@ -238,9 +332,9 @@
     <!-- Contact -->
     <section class="section contact" id="contact">
       <div class="wrap">
-        <p class="kicker">04 — Contact</p>
-        <h2 class="contact-title">Let's build something.</h2>
-        <p class="contact-lede">I'm open to co-op and internship roles in software, automation and embedded systems. The fastest way to reach me is email.</p>
+        <p class="kicker">05 — Contact</p>
+        <h2 class="contact-title">Get in touch</h2>
+        <p class="contact-lede">I'm looking for co-op and internship roles in software, automation and embedded systems. Email is the best way to reach me.</p>
         <a class="contact-email" href="mailto:yousefkkamel@gmail.com">yousefkkamel@gmail.com <span aria-hidden="true">↗</span></a>
         <ul class="contact-links">
           <li><a href="https://linkedin.com/in/yousefkamel07" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -272,7 +366,7 @@
         entries.forEach((e) => {
           if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0.08 });
       document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     } else {
       document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
