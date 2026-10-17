@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -153,9 +153,14 @@
           <ul class="chips"><li>PostgreSQL</li><li>Supabase</li><li>TypeScript</li><li>Deno</li><li>Node.js</li><li>Vercel</li></ul>
         </article>
 
-        <!-- Edge + automation -->
-        <div class="case-pair">
-          <article class="case reveal">
+        <!-- Edge -->
+        <article class="case case-media reveal">
+          <figure class="demo-video">
+            <video src="edge-demo.mp4" poster="edge-demo-poster.jpg" autoplay muted loop playsinline preload="metadata"
+                   aria-label="Animated walkthrough of Renellence Edge with fictional demo data: overview, day board, deal pipeline and team scorecard"></video>
+            <figcaption>Walkthrough with made-up demo data. No real clients or reps.</figcaption>
+          </figure>
+          <div>
             <span class="tag tag-live">In use</span>
             <p class="feature-label">Renellence Edge</p>
             <h3>Sales platform</h3>
@@ -165,8 +170,11 @@
               <li>Batched CRM requests and a Redis cache to keep pages fast.</li>
               <li>Two-way contact and call sync with the phone system.</li>
             </ul>
-          </article>
+          </div>
+        </article>
 
+        <!-- Automation + approach -->
+        <div class="case-pair">
           <article class="case reveal">
             <span class="tag tag-live">In use</span>
             <p class="feature-label">Order-to-cash</p>
@@ -182,10 +190,8 @@
             </ol>
             <p class="small">Connects nine services, including HubSpot, Stripe, Shopify, QuickBooks and Meta.</p>
           </article>
-        </div>
 
-        <!-- Reliability -->
-        <article class="case reveal">
+          <article class="case reveal">
           <p class="feature-label">Approach</p>
           <h3>Things I try to get right</h3>
           <div class="practices">
@@ -207,6 +213,7 @@
             </div>
           </div>
         </article>
+        </div>
       </div>
     </section>
 

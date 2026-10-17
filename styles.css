@@ -277,7 +277,15 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: var(--accent-soft); color: var(--accent); font-family: var(--mono); font-size: 12px;
 }
 
-.practices { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 24px; }
+.case-media { display: grid; grid-template-columns: 1.45fr 1fr; gap: 36px; align-items: center; }
+.demo-video { margin: 0; }
+.demo-video video {
+  display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 10px;
+  border: 1px solid var(--line); background: #FBFAF8; box-shadow: var(--shadow);
+}
+.demo-video figcaption { margin-top: 10px; font-size: 12.5px; color: var(--muted); }
+
+.practices { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 28px; margin-top: 24px; }
 .practices b { font-size: 15px; font-weight: 600; }
 .practices p { margin-top: 6px; font-size: 14.5px; color: var(--ink-2); }
 
@@ -347,7 +355,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .flow-arrow::after { right: auto; top: auto; left: -4px; bottom: -1px; border: 4.75px solid transparent; border-top: 6px solid var(--muted); border-bottom: 0; }
   .case-grid { grid-template-columns: 1fr 1fr; }
   .case-pair { grid-template-columns: 1fr; }
-  .practices { grid-template-columns: 1fr 1fr; }
+  .case-media { grid-template-columns: 1fr; gap: 24px; }
 }
 @media (max-width: 720px) {
   .wrap { padding: 0 16px; }
