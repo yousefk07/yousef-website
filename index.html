@@ -277,20 +277,21 @@
 
         <article class="feature reveal">
           <figure class="feature-visual">
-            <img src="yai-demo.png" alt="yAI chat interface with a sidebar of saved chats and an answer showing a rendered formula, a numbered list and a table" loading="lazy">
+            <img src="yai-demo.png?v=2" alt="yAI chat interface with a sidebar of saved chats and an answer showing a rendered formula, a numbered list and a table" loading="lazy">
           </figure>
           <div class="feature-body">
             <p class="feature-label">Personal project · Oct 2026</p>
             <h3>yAI</h3>
-            <p>A chat app for AI models that run on my own laptop instead of the cloud. The website is on Vercel; each question travels through a Cloudflare tunnel to a token-protected bridge on my PC, which runs it in LM Studio and streams the answer back word by word.</p>
-            <p>It has accounts with saved chat history, image and PDF uploads, math rendering, a live loading bar when models switch, and an admin dashboard. I benchmarked six models on my 6 GB GPU for speed and accuracy; the fastest stream answers at up to 200 tokens per second.</p>
-            <ul class="chips"><li>JavaScript</li><li>Node.js</li><li>Vercel</li><li>Cloudflare Tunnel</li><li>LM Studio</li><li>Server-Sent Events</li></ul>
+            <p>A ChatGPT-style app that runs AI models on my own hardware. Its strongest model, <strong>Qwen 3.8 27B</strong>, runs on a 48 GB cloud GPU that only exists while someone is using it.</p>
+            <p>The site is on Vercel. Everyday models run on my laptop's 6 GB GPU: each question travels through a Cloudflare tunnel to a token-protected bridge in front of LM Studio. Qwen 3.8 27B runs on RunPod's serverless GPUs with vLLM. It shuts down to zero when idle, so a conversation costs about five cents, and the site switches to it automatically when my PC is off.</p>
+            <p>Qwen 3.8 27B streams at about 34 tokens per second and gets right the reasoning and fact questions the small models miss; the local models reach up to 200 tokens per second. I benchmarked eight models for speed and accuracy. It also has accounts with saved chat history, image and PDF uploads, math rendering and an admin dashboard.</p>
+            <ul class="chips"><li>JavaScript</li><li>Node.js</li><li>Vercel</li><li>RunPod</li><li>vLLM</li><li>Cloudflare Tunnel</li><li>LM Studio</li><li>Server-Sent Events</li></ul>
             <div class="feature-actions">
               <a class="btn btn-sm btn-primary" href="https://yousef-llmai.vercel.app" target="_blank" rel="noopener">Open yAI <span aria-hidden="true">→</span></a>
               <a class="btn btn-sm" href="https://github.com/yousefk07/yAI" target="_blank" rel="noopener">View code</a>
               <a class="btn btn-sm" href="mailto:yousefkkamel@gmail.com?subject=yAI%20access%20code%20request&amp;body=Hi%20Yousef%2C%0A%0AI%27d%20like%20an%20access%20code%20to%20try%20yAI.%0A%0AName%3A%20">Request access code</a>
             </div>
-            <p class="feature-note">yAI runs on my own PC, so it's invite-only and online when my computer is.</p>
+            <p class="feature-note">yAI is invite-only. The first reply after a quiet stretch can take a minute or two while the cloud GPU wakes up.</p>
           </div>
         </article>
 
