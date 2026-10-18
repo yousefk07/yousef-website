@@ -284,8 +284,9 @@
             <h3>yAI</h3>
             <p>A ChatGPT-style app that runs AI models on my own hardware. Its strongest model, <strong>Qwen 3.8 27B</strong>, runs on a 48 GB cloud GPU that only exists while someone is using it.</p>
             <p>The site is on Vercel. Everyday models run on my laptop's 6 GB GPU: each question travels through a Cloudflare tunnel to a token-protected bridge in front of LM Studio. Qwen 3.8 27B runs on RunPod's serverless GPUs with vLLM. It shuts down to zero when idle, so a conversation costs about five cents, and the site switches to it automatically when my PC is off.</p>
-            <p>Qwen 3.8 27B streams at about 34 tokens per second and gets right the reasoning and fact questions the small models miss; the local models reach up to 200 tokens per second. I benchmarked eight models for speed and accuracy. It also has accounts with saved chat history, image and PDF uploads, math rendering and an admin dashboard.</p>
-            <ul class="chips"><li>JavaScript</li><li>Node.js</li><li>Vercel</li><li>RunPod</li><li>vLLM</li><li>Cloudflare Tunnel</li><li>LM Studio</li><li>Server-Sent Events</li></ul>
+            <p>Qwen 3.8 27B streams at about 34 tokens per second and gets right the reasoning and fact questions the small models miss; the local models reach up to 200 tokens per second. I benchmarked eight models for speed and accuracy.</p>
+            <p>It also creates images with <strong>FLUX.1 [schnell]</strong> on a second serverless GPU: about four seconds and a fraction of a cent per picture, behind a safety filter and daily limits. Accounts, saved chats and images are stored in Upstash Redis, so everything works even when my PC is off.</p>
+            <ul class="chips"><li>JavaScript</li><li>Node.js</li><li>Vercel</li><li>RunPod</li><li>vLLM</li><li>FLUX.1</li><li>Upstash Redis</li><li>Cloudflare Tunnel</li><li>LM Studio</li></ul>
             <div class="feature-actions">
               <a class="btn btn-sm btn-primary" href="https://yousef-llmai.vercel.app" target="_blank" rel="noopener">Open yAI <span aria-hidden="true">→</span></a>
               <a class="btn btn-sm" href="https://github.com/yousefk07/yAI" target="_blank" rel="noopener">View code</a>
