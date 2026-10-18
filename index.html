@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -283,9 +283,13 @@
             <p class="feature-label">Personal project · Oct 2026</p>
             <h3>yAI</h3>
             <p>A chat app for AI models that run on my own laptop instead of the cloud. The website is on Vercel; each question travels through a Cloudflare tunnel to a token-protected bridge on my PC, which runs it in LM Studio and streams the answer back word by word.</p>
-            <p>It has accounts with saved chat history, image and PDF uploads, math rendering, a live loading bar when models switch, and an admin dashboard. I benchmarked six models on my 6 GB GPU for speed and accuracy and kept the ones that held up.</p>
+            <p>It has accounts with saved chat history, image and PDF uploads, math rendering, a live loading bar when models switch, and an admin dashboard. I benchmarked six models on my 6 GB GPU for speed and accuracy; the fastest stream answers at up to 200 tokens per second.</p>
             <ul class="chips"><li>JavaScript</li><li>Node.js</li><li>Vercel</li><li>Cloudflare Tunnel</li><li>LM Studio</li><li>Server-Sent Events</li></ul>
-            <a class="link-arrow" href="https://yousef-llmai.vercel.app" target="_blank" rel="noopener">Open yAI <span aria-hidden="true">→</span></a>
+            <div class="feature-actions">
+              <a class="btn btn-sm btn-primary" href="https://yousef-llmai.vercel.app" target="_blank" rel="noopener">Open yAI <span aria-hidden="true">→</span></a>
+              <a class="btn btn-sm" href="mailto:ykamel@uwaterloo.ca?subject=yAI%20access%20code%20request&amp;body=Hi%20Yousef%2C%0A%0AI%27d%20like%20an%20access%20code%20to%20try%20yAI.%0A%0AName%3A%20">Request access code</a>
+            </div>
+            <p class="feature-note">yAI runs on my own PC, so it's invite-only and online when my computer is.</p>
           </div>
         </article>
 

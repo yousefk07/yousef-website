@@ -375,3 +375,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .edu-gpa { grid-column: 1 / -1; text-align: left; display: flex; align-items: baseline; gap: 8px; }
   .footer-inner { flex-direction: column; gap: 4px; }
 }
+
+/* Buttons under a project card (e.g. yAI: open + request access) */
+.feature-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.feature-note { margin-top: 12px; font-size: 14px; color: var(--muted); }
