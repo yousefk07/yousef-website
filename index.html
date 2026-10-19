@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -276,9 +276,17 @@
         </header>
 
         <article class="feature reveal">
-          <figure class="feature-visual">
-            <img src="yai-demo.png?v=2" alt="yAI chat interface with a sidebar of saved chats and an answer showing a rendered formula, a numbered list and a table" loading="lazy">
-          </figure>
+          <div class="feature-visuals">
+            <figure class="feature-visual">
+              <img src="yai-demo.png?v=2" alt="yAI chat interface with a sidebar of saved chats and an answer showing a rendered formula, a numbered list and a table" loading="lazy">
+            </figure>
+            <figure class="feature-shot">
+              <div class="feature-visual feature-visual-terminal">
+                <img src="yai-code-demo.png?v=1" alt="yAI Code in PowerShell: it reads math.js, finds that add subtracts instead of adding, shows a red and green diff that fixes it and adds a multiply function, asks before saving, then summarises the change" loading="lazy">
+              </div>
+              <figcaption>yAI Code in PowerShell: it finds a bug, shows the fix as a diff, and asks before saving.</figcaption>
+            </figure>
+          </div>
           <div class="feature-body">
             <p class="feature-label">Personal project · Oct 2026</p>
             <h3>yAI</h3>
