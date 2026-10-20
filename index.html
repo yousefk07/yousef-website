@@ -282,6 +282,11 @@
                      aria-label="A 30-second animated tour: the yAI web app answers a question and makes an image, then yAI Code fixes a bug in PowerShell with a diff, an approval prompt and passing tests"></video>
               <figcaption>A 30-second tour of yAI and yAI Code, with recreated screens and made-up examples.</figcaption>
             </figure>
+            <figure class="feature-video">
+              <video src="yai-code-showcase.mp4?v=1" poster="yai-code-showcase-poster.jpg?v=1" autoplay muted loop playsinline preload="metadata"
+                     aria-label="A 28-second animated look at yAI Code: it waits for the cloud GPU while showing RunPod's real status, writes an LRU cache with a diff and an approval prompt, runs 7 passing tests, switches between ask, auto-edit and plan modes, then shows the benchmark: 44 of 44 tests passed across six tasks"></video>
+              <figcaption>yAI Code on Qwen3 Coder 30B and its benchmark, with recreated screens. The GPU wake-up is sped up.</figcaption>
+            </figure>
             <div class="feature-thumbs">
               <a class="thumb" href="yai-demo.png?v=2" target="_blank" rel="noopener">
                 <span class="thumb-img"><img src="yai-demo.png?v=2" alt="yAI chat interface with a sidebar of saved chats and an answer showing a rendered formula, a numbered list and a table" loading="lazy"></span>
@@ -302,6 +307,8 @@
             <p>It also makes images and videos on serverless ComfyUI GPUs. <strong>Qwen-Image 2.1</strong> creates pictures from a description or edits a photo you upload, and <strong>MiniMax H3</strong> turns a prompt or a photo into a short video with sound. Everything goes through a safety filter and daily limits. Accounts, saved chats, images and videos are stored in Upstash Redis, so everything works even when my PC is off.</p>
             <p><strong>yAI Code</strong> brings the same models to the terminal: a coding agent like Claude Code that signs in with your yAI account and works inside your project folder. It reads and searches the files, edits them in place, and runs shell commands to build, test and lint the code. By default it asks before every file change and command, so nothing happens until you approve it.</p>
             <p>yAI Code also gets a model of its own: <strong>Qwen3 Coder 30B</strong>, a coding model on a 96 GB VRAM cloud GPU. Like the 27B model, it runs on RunPod with vLLM and shuts down to zero when idle. It's a mixture-of-experts model that uses only 3 billion of its 30 billion parameters for each token, so it's quick for its size. The web app lists it too, greyed out, because it only works inside yAI Code.</p>
+            <p>I benchmarked it inside yAI Code on six small Node.js tasks: fixing bugs, writing an LRU cache and an async retry helper from empty stubs, rewriting a CSV parser, and adding features across two files. Every task starts with failing tests, and the score is how many pass afterwards. Qwen3 Coder 30B passed all 44 without touching a test file, and the simpler tasks took about 20 seconds each.</p>
+            <ul class="metrics"><li><b>44/44</b><span>tests passed</span></li><li><b>6/6</b><span>tasks solved</span></li><li><b>0</b><span>test files changed</span></li></ul>
             <p>It has three permission modes: <strong>ask</strong> prompts before any edit or command, <strong>accept-edits</strong> applies file changes automatically but still asks before running commands, and <strong>plan</strong> is read-only, so it explores the codebase and proposes a step-by-step plan without touching anything. You can @-mention specific files to point it at the right place, and each project folder keeps its own saved conversations, so picking up a project later resumes right where you left off.</p>
             <ul class="chips"><li>JavaScript</li><li>Node.js</li><li>CLI agent</li><li>Vercel</li><li>RunPod</li><li>vLLM</li><li>ComfyUI</li><li>Qwen-Image</li><li>MiniMax H3</li><li>Upstash Redis</li><li>Cloudflare Tunnel</li><li>LM Studio</li></ul>
             <div class="feature-actions">
