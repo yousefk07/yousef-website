@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -277,15 +277,21 @@
 
         <article class="feature reveal">
           <div class="feature-visuals">
-            <figure class="feature-visual">
-              <img src="yai-demo.png?v=2" alt="yAI chat interface with a sidebar of saved chats and an answer showing a rendered formula, a numbered list and a table" loading="lazy">
+            <figure class="feature-video">
+              <video src="yai-showcase.mp4?v=1" poster="yai-showcase-poster.jpg?v=1" autoplay muted loop playsinline preload="metadata"
+                     aria-label="A 30-second animated tour: the yAI web app answers a question and makes an image, then yAI Code fixes a bug in PowerShell with a diff, an approval prompt and passing tests"></video>
+              <figcaption>A 30-second tour of yAI and yAI Code, with recreated screens and made-up examples.</figcaption>
             </figure>
-            <figure class="feature-shot">
-              <div class="feature-visual feature-visual-terminal">
-                <img src="yai-code-demo.png?v=2" alt="yAI Code in PowerShell: a welcome box with the workspace and last session, then it reads math.js, shows a red and green diff that fixes add and adds a multiply function, asks Apply edit with [Y] Yes, applies it and summarises the fix" loading="lazy">
-              </div>
-              <figcaption>yAI Code in PowerShell: it reads the file, shows the fix as a diff, and asks before saving.</figcaption>
-            </figure>
+            <div class="feature-thumbs">
+              <a class="thumb" href="yai-demo.png?v=2" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="yai-demo.png?v=2" alt="yAI chat interface with a sidebar of saved chats and an answer showing a rendered formula, a numbered list and a table" loading="lazy"></span>
+                <span class="thumb-label">yAI in the browser</span>
+              </a>
+              <a class="thumb thumb-terminal" href="yai-code-demo.png?v=2" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="yai-code-demo.png?v=2" alt="yAI Code in PowerShell: a welcome box with the workspace and last session, then it reads math.js, shows a red and green diff that fixes add and adds a multiply function, asks Apply edit with [Y] Yes, applies it and summarises the fix" loading="lazy"></span>
+                <span class="thumb-label">yAI Code in PowerShell</span>
+              </a>
+            </div>
           </div>
           <div class="feature-body">
             <p class="feature-label">Personal project · Oct 2026</p>
