@@ -8,36 +8,78 @@
   <meta property="og:title" content="Yousef Kamel">
   <meta property="og:description" content="Electrical Engineering student at the University of Waterloo, working on software and automation at Renellence.">
   <meta property="og:url" content="https://yousefkamel.site">
-  <meta name="theme-color" content="#0b0d10">
+  <meta name="theme-color" content="#0d1117">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="nav" id="top">
-    <div class="wrap nav-inner">
-      <a href="#top" class="brand" aria-label="Yousef Kamel, home">
-        <span class="brand-mark">YK</span>
-        <span class="brand-name">Yousef Kamel</span>
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#renellence">Renellence</a>
-        <a href="#experience">Experience</a>
-        <a href="#work">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-        <a href="YousefKamelResume.pdf?v=3" class="btn btn-sm" target="_blank" rel="noopener">Résumé</a>
-      </nav>
+  <!-- The window: a title bar, the editor's tabs, a file explorer beside the page, and a status bar -->
+  <header class="titlebar" id="top">
+    <div class="titlebar-inner">
+      <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+      <a href="#top" class="brand" aria-label="Yousef Kamel, home"><span class="brand-path">yousef@kamel</span><span class="brand-dim">:~/portfolio</span></a>
+      <div class="titlebar-actions">
+        <a href="https://github.com/yousefk07" target="_blank" rel="noopener" aria-label="GitHub" class="icon-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12.02c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.53 11.53 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/yousefkamel07" target="_blank" rel="noopener" aria-label="LinkedIn" class="icon-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+        </a>
+        <a href="YousefKamelResume.pdf?v=3" class="btn btn-sm" target="_blank" rel="noopener"><span class="tok-fn">open</span>(<span class="tok-str">"résumé.pdf"</span>)</a>
+      </div>
     </div>
+    <nav class="tabs" aria-label="Sections">
+      <a href="#readme" class="tab" data-sec="readme"><span class="ft ft-md">M↓</span>readme.md</a>
+      <a href="#renellence" class="tab" data-sec="renellence"><span class="ft ft-ts">TS</span>renellence.ts</a>
+      <a href="#experience" class="tab" data-sec="experience"><span class="ft ft-json">{}</span>experience.json</a>
+      <a href="#work" class="tab" data-sec="work"><span class="ft ft-dir">▸</span>projects/</a>
+      <a href="#skills" class="tab" data-sec="skills"><span class="ft ft-yml">≡</span>skills.yml</a>
+      <a href="#contact" class="tab" data-sec="contact"><span class="ft ft-sh">$</span>contact.sh</a>
+    </nav>
   </header>
 
-  <main id="main">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="wrap">
+  <div class="workbench">
+    <aside class="explorer" aria-label="File explorer">
+      <p class="explorer-head">Explorer</p>
+      <p class="explorer-root">▾ portfolio</p>
+      <ul class="tree">
+        <li><a href="#readme" data-sec="readme"><span class="ft ft-md">M↓</span>readme.md</a></li>
+        <li><a href="#renellence" data-sec="renellence"><span class="ft ft-ts">TS</span>renellence.ts</a></li>
+        <li class="tree-sub"><a href="#renellence"><span class="ft ft-dir">▸</span>crm/</a></li>
+        <li class="tree-sub"><a href="#renellence"><span class="ft ft-dir">▸</span>edge/</a></li>
+        <li class="tree-sub"><a href="#renellence"><span class="ft ft-dir">▸</span>order-automation/</a></li>
+        <li><a href="#experience" data-sec="experience"><span class="ft ft-json">{}</span>experience.json</a></li>
+        <li><a href="#work" data-sec="work"><span class="ft ft-dir">▾</span>projects/</a></li>
+        <li class="tree-sub"><a href="#yai"><span class="ft ft-dir">▸</span>yai/</a></li>
+        <li class="tree-sub"><a href="#nimbus"><span class="ft ft-dir">▸</span>nimbus/</a></li>
+        <li class="tree-sub"><a href="#motion"><span class="ft ft-dir">▸</span>motion-sensor/</a></li>
+        <li><a href="#skills" data-sec="skills"><span class="ft ft-yml">≡</span>skills.yml</a></li>
+        <li><a href="#contact" data-sec="contact"><span class="ft ft-sh">$</span>contact.sh</a></li>
+        <li><a href="YousefKamelResume.pdf?v=3" target="_blank" rel="noopener"><span class="ft ft-pdf">PDF</span>résumé.pdf</a></li>
+      </ul>
+      <div class="explorer-foot">
+        <p class="explorer-head">Status</p>
+        <p class="status-line"><span class="dot" aria-hidden="true"></span>Open to co-op roles</p>
+      </div>
+    </aside>
+
+    <main id="main" class="editor">
+      <!-- readme.md: a terminal that types itself, then the headline -->
+      <section class="hero" id="readme" data-sec="readme">
+        <div class="term reveal" role="img" aria-label="A terminal: whoami says Yousef Kamel, Electrical Engineering at the University of Waterloo; cat now.md says co-op at Renellence building its in-house CRM, sales platform and order automation; ls projects lists renellence-crm, edge, yai, nimbus and motion-sensor">
+          <div class="term-bar"><span class="lights" aria-hidden="true"><i></i><i></i><i></i></span><span>zsh — yousef@waterloo</span></div>
+          <pre class="term-body" aria-hidden="true"><span class="line"><span class="prompt">~</span> <span class="cmd">whoami</span></span>
+<span class="line out">yousef kamel · electrical engineering @ uwaterloo</span>
+<span class="line"><span class="prompt">~</span> <span class="cmd">cat now.md</span></span>
+<span class="line out">co-op @ renellence: in-house crm, the sales platform, order automation</span>
+<span class="line"><span class="prompt">~</span> <span class="cmd">ls projects/</span></span>
+<span class="line out"><span class="tok-dir">renellence-crm/</span>  <span class="tok-dir">edge/</span>  <span class="tok-dir">yai/</span>  <span class="tok-dir">nimbus/</span>  <span class="tok-dir">motion-sensor/</span></span>
+<span class="line"><span class="prompt">~</span> <span class="cursor"></span></span></pre>
+        </div>
         <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Currently working on Renellence's in-house CRM</p>
         <h1 class="hero-title">
           Hi, I'm Yousef.<br>
@@ -49,28 +91,16 @@
           in-house CRM.
         </p>
         <div class="hero-cta">
-          <a href="#renellence" class="btn btn-primary">See my work</a>
-          <a href="YousefKamelResume.pdf?v=3" class="btn" target="_blank" rel="noopener">Résumé</a>
-          <div class="hero-social">
-            <a href="https://github.com/yousefk07" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12.02c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.53 11.53 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-            </a>
-            <a href="https://linkedin.com/in/yousefkamel07" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
-            </a>
-            <a href="mailto:yousefkkamel@gmail.com" aria-label="Email">
-              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg>
-            </a>
-          </div>
+          <a href="#renellence" class="btn btn-primary"><span class="tok-dim">$</span> ./see-my-work</a>
+          <a href="YousefKamelResume.pdf?v=3" class="btn" target="_blank" rel="noopener">résumé.pdf</a>
+          <a href="mailto:yousefkkamel@gmail.com" class="btn">mail yousef</a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Renellence -->
-    <section class="section" id="renellence">
-      <div class="wrap">
+      <!-- renellence.ts -->
+      <section class="section" id="renellence" data-sec="renellence">
         <header class="section-head">
-          <p class="kicker">01 — Renellence</p>
+          <p class="kicker"><span class="ln">01</span><span class="tok-com">// renellence</span></p>
           <h2>What I've been working on</h2>
           <p class="section-lede">
             I joined Renellence as a Software &amp; Automation Developer Co-op in August 2026. Most of my
@@ -79,9 +109,9 @@
         </header>
 
         <!-- CRM -->
-        <article class="case reveal">
+        <article class="case pane reveal" data-file="crm/README.md">
           <div class="case-head">
-            <span class="tag tag-wip">In progress</span>
+            <span class="tag tag-wip">in progress</span>
             <p class="feature-label">Renellence CRM</p>
             <h3>An in-house CRM to replace HubSpot</h3>
             <p class="case-lede">
@@ -93,14 +123,14 @@
 
           <figure class="flow" aria-label="Data flow: external sources feed an intake layer, which becomes CRM records that the sales platform uses">
             <div class="flow-col">
-              <p class="flow-title">Sources</p>
+              <p class="flow-title">sources</p>
               <ul class="flow-sources">
                 <li>Stripe</li><li>Shopify</li><li>Meta leads</li><li>Gmail</li><li>VoIP calls</li><li>n8n</li>
               </ul>
             </div>
             <div class="flow-arrow" aria-hidden="true"></div>
             <div class="flow-col">
-              <p class="flow-title">Intake</p>
+              <p class="flow-title">intake</p>
               <div class="flow-node">
                 <b>Supabase Edge Functions</b>
                 <span>Webhooks and scheduled pulls</span>
@@ -108,7 +138,7 @@
             </div>
             <div class="flow-arrow" aria-hidden="true"></div>
             <div class="flow-col">
-              <p class="flow-title">CRM</p>
+              <p class="flow-title">crm</p>
               <div class="flow-node flow-node-accent">
                 <b>Postgres records</b>
                 <span>Contacts, clinics, deals, orders, tasks, activity</span>
@@ -116,7 +146,7 @@
             </div>
             <div class="flow-arrow" aria-hidden="true"></div>
             <div class="flow-col">
-              <p class="flow-title">App</p>
+              <p class="flow-title">app</p>
               <div class="flow-node">
                 <b>Renellence Edge</b>
                 <span>Used by reps and managers</span>
@@ -154,14 +184,14 @@
         </article>
 
         <!-- Edge -->
-        <article class="case case-media reveal">
+        <article class="case case-media pane reveal" data-file="edge/app.tsx">
           <figure class="demo-video">
             <video src="edge-demo.mp4?v=2" poster="edge-demo-poster.jpg?v=2" autoplay muted loop playsinline preload="metadata"
                    aria-label="Screen recording of Renellence Edge with fictional demo data: Today, CRM contacts, the deals board, the day board, the client pipeline and the territory map"></video>
             <figcaption>The real Edge interface, running on made-up demo data. No real clients or reps.</figcaption>
           </figure>
           <div>
-            <span class="tag tag-live">In use</span>
+            <span class="tag tag-live">in use</span>
             <p class="feature-label">Renellence Edge</p>
             <h3>Sales platform</h3>
             <p>A web app the five-person sales team uses day to day, with pipeline forecasting, KPI scorecards, a territory map, event ROI and daily activity boards across 20+ screens.</p>
@@ -175,8 +205,8 @@
 
         <!-- Automation + approach -->
         <div class="case-pair">
-          <article class="case reveal">
-            <span class="tag tag-live">In use</span>
+          <article class="case pane reveal" data-file="order-automation/workflow.json">
+            <span class="tag tag-live">in use</span>
             <p class="feature-label">Order-to-cash</p>
             <h3>Order automation</h3>
             <p>An n8n workflow that takes an order from intake through to delivery without manual re-entry.</p>
@@ -191,45 +221,43 @@
             <p class="small">Connects nine services, including HubSpot, Stripe, Shopify, QuickBooks and Meta.</p>
           </article>
 
-          <article class="case reveal">
-          <p class="feature-label">Approach</p>
-          <h3>Things I try to get right</h3>
-          <div class="practices">
-            <div>
-              <b>Not losing data</b>
-              <p>Syncs don't delete anything until a copy is confirmed, and records are deduplicated.</p>
+          <article class="case pane reveal" data-file="CONTRIBUTING.md">
+            <p class="feature-label">Approach</p>
+            <h3>Things I try to get right</h3>
+            <div class="practices">
+              <div>
+                <b>Not losing data</b>
+                <p>Syncs don't delete anything until a copy is confirmed, and records are deduplicated.</p>
+              </div>
+              <div>
+                <b>Handling outages</b>
+                <p>Retries with backoff and cached fallbacks, so the app still works when a service is down.</p>
+              </div>
+              <div>
+                <b>Testing</b>
+                <p>About 1,600 assertions across 46 suites, with a local setup that mocks the outside services.</p>
+              </div>
+              <div>
+                <b>Careful releases</b>
+                <p>A dry run and a backup before each release, then a check that everything still runs.</p>
+              </div>
             </div>
-            <div>
-              <b>Handling outages</b>
-              <p>Retries with backoff and cached fallbacks, so the app still works when a service is down.</p>
-            </div>
-            <div>
-              <b>Testing</b>
-              <p>About 1,600 assertions across 46 suites, with a local setup that mocks the outside services.</p>
-            </div>
-            <div>
-              <b>Careful releases</b>
-              <p>A dry run and a backup before each release, then a check that everything still runs.</p>
-            </div>
-          </div>
-        </article>
+          </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Experience -->
-    <section class="section section-alt" id="experience">
-      <div class="wrap">
+      <!-- experience.json -->
+      <section class="section" id="experience" data-sec="experience">
         <header class="section-head">
-          <p class="kicker">02 — Experience</p>
+          <p class="kicker"><span class="ln">02</span><span class="tok-com">// experience</span></p>
           <h2>Experience</h2>
         </header>
 
-        <article class="role reveal">
+        <article class="role pane reveal" data-file="experience.json · renellence">
           <div class="role-meta">
             <p class="role-dates">Aug 2026 — Dec 2026</p>
             <p class="role-loc">North York, ON</p>
-            <span class="tag tag-live">Current</span>
+            <span class="tag tag-live">current</span>
           </div>
           <div class="role-body">
             <h3>Software &amp; Automation Developer Co-op</h3>
@@ -240,11 +268,11 @@
               <li>Automated the order-to-cash process in n8n and connected nine external services.</li>
               <li>Wrote the test suite and release scripts.</li>
             </ul>
-            <a class="link-arrow" href="#renellence">More detail above <span aria-hidden="true">↑</span></a>
+            <a class="link-arrow" href="#renellence">more detail above <span aria-hidden="true">↑</span></a>
           </div>
         </article>
 
-        <article class="role reveal">
+        <article class="role pane reveal" data-file="experience.json · normative">
           <div class="role-meta">
             <p class="role-dates">Jan 2026 — Apr 2026</p>
             <p class="role-loc">Waterloo, ON</p>
@@ -264,18 +292,16 @@
             </ul>
           </div>
         </article>
-      </div>
-    </section>
+      </section>
 
-    <!-- Other work -->
-    <section class="section" id="work">
-      <div class="wrap">
+      <!-- projects/ -->
+      <section class="section" id="work" data-sec="work">
         <header class="section-head">
-          <p class="kicker">03 — Projects</p>
+          <p class="kicker"><span class="ln">03</span><span class="tok-com">// projects</span></p>
           <h2>Other projects</h2>
         </header>
 
-        <article class="feature reveal">
+        <article class="feature pane reveal" id="yai" data-file="yai/README.md">
           <div class="feature-visuals">
             <figure class="feature-video">
               <video src="yai-showcase.mp4?v=3" poster="yai-showcase-poster.jpg?v=3" autoplay muted loop playsinline preload="metadata"
@@ -311,36 +337,43 @@
           <div class="feature-body">
             <p class="feature-label">Personal project · Oct 2026</p>
             <h3>yAI</h3>
-            <p>A ChatGPT-style app and coding agent built on models I wire together myself: three hosted frontier models that answer instantly, a coding model on a cloud GPU that only exists while someone is using it, and two small models on my laptop's GPU.</p>
-            <p>The site is on Vercel. The default, <strong>yAI Ultra Flash</strong> (DeepSeek V4.1 Flash), is fast and costs a fraction of a cent per reply. <strong>yAI Ultra</strong> (DeepSeek V4 Pro) handles the hardest questions, and <strong>yAI Q3.8 Max</strong> (Qwen3.8 Max, 2.4 trillion parameters) is a strong all-rounder. Both DeepSeek models run on DeepSeek's own API, where the repeated start of a prompt is cached and billed at a thirtieth to a fiftieth of the normal price, and everything is half price outside DeepSeek's peak hours. Modal sits behind them: it answers anything with an image (Flash on Modal, and Kimi K3 for yAI Ultra) and takes over if DeepSeek is unavailable, and Qwen3.8 Max runs there too. None of them has a GPU to wake. Every reply's cost, at the price of whichever host answered, is added to a daily allowance per person in Upstash, so the bill can't run away, and admins can raise or lower each person's allowance.</p>
-            <p>Two small models, <strong>yAI Q3.5</strong> and <strong>yAI P4</strong>, run on my laptop's 6 GB GPU at up to 200 tokens per second: each question travels through a Cloudflare tunnel to a token-protected bridge in front of LM Studio, and they appear in the model menu whenever my PC is on.</p>
+            <p>A ChatGPT-style app and coding agent built on models I wire together myself: four hosted models that answer right away, a coding model on a cloud GPU that only exists while someone is using it, and a small model on my laptop's GPU.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Models</h4>
+            <p>The site is on Vercel. The default, <strong>yAI Lite</strong> (GLM-4.7-Flash on Z.ai), is fast and free, with DeepSeek V4.1 Flash behind it if Z.ai is busy. <strong>yAI Ultra Flash</strong> (DeepSeek V4.1 Flash) costs a fraction of a cent per reply, and <strong>yAI Ultra</strong> (DeepSeek V4 Pro) handles the hardest questions. Both run on DeepSeek's own API, where the repeated start of a prompt is cached and billed at a thirtieth to a fiftieth of the normal price, and everything is half price outside DeepSeek's peak hours; Kimi K3 on Modal takes over for yAI Ultra if DeepSeek is unavailable. <strong>yAI Q3.8 Max</strong> (Qwen3.8 Max, 2.4 trillion parameters) is a strong all-rounder on Modal. Anything with an image goes to free vision models instead: Gemini 3.5 Flash-Lite first, then Qwen 3.8 27B on Groq, then Gemini 3.8 Flash, each one handing over the moment its free quota runs out. Every reply's cost, at the price of whichever host answered, is added to a daily allowance per person in Upstash, so the bill can't run away, and admins can raise or lower each person's allowance.</p>
+            <p>A small model, <strong>yAI Q3.5</strong>, runs on my laptop's 6 GB GPU at up to 200 tokens per second: each question travels through a Cloudflare tunnel to a token-protected bridge in front of LM Studio, and it appears in the model menu whenever my PC is on.</p>
             <p>It also makes images and videos on RunPod's serverless ComfyUI GPUs. <strong>Qwen-Image 2.1</strong> creates pictures from a description or edits a photo you upload, and <strong>MiniMax H3</strong> turns a prompt into a short video with sound. Everything goes through a safety filter and daily limits. Accounts, saved chats, images and videos are stored in Upstash Redis, so everything works even when my PC is off.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> The web app</h4>
             <p>The site has its own design with matching light and dark modes: warm neutrals, Geist type and one purple accent, and a sidebar that folds into a rail. On a phone it becomes an app that opens on the logo, with Chats, Projects and You tabs, bottom sheets for the model and the tools, and swipe-back navigation. A <strong>Search</strong> button looks the question up on the web, reads the top pages, and answers with numbered citations that link to each source. <strong>Projects</strong> keep files, PDFs and instructions together, so every chat started in one already has them. HTML, SVG and JavaScript in an answer open in a <strong>live preview</strong> that runs in a sandboxed frame. When a picture explains it better, answers include <strong>diagrams</strong> (flows, sequences, timelines) and <strong>charts</strong> drawn from the numbers, each with a table view and a download button. A <strong>usage page</strong> shows each person their messages, images, videos, searches and spend on the hosted models against the daily limits.</p>
-            <p>Since then it has grown into a full assistant. <strong>Deep research</strong> plans several searches, reads up to about fifteen sources over two rounds and has yAI Ultra write a cited report. <strong>Data analysis</strong> loads a CSV, Excel or JSON file into Python (Pyodide) right in the browser, so the file never leaves the device; the model writes pandas code, it runs there, and the charts appear under the answer. <strong>Memory</strong> keeps lasting facts you mention and lets you edit them. <strong>Voice mode</strong> takes dictation, reads any answer aloud, and holds a hands-free conversation. The <strong>canvas</strong> opens long writing and code in an editor beside the chat, with versions, "select a part and ask yAI to change it", and live HTML, JavaScript and Python runs. <strong>Ctrl K</strong> searches every saved chat and jumps to the exact message.</p>
+            <p><strong>Deep research</strong> plans several searches, reads up to about fifteen sources over two rounds and has yAI Ultra write a cited report. <strong>Data analysis</strong> loads a CSV, Excel or JSON file into Python (Pyodide) right in the browser, so the file never leaves the device; the model writes pandas code, it runs there, and the charts appear under the answer. <strong>Memory</strong> keeps lasting facts you mention and lets you edit them. <strong>Voice mode</strong> takes dictation, reads any answer aloud, and holds a hands-free conversation. The <strong>canvas</strong> opens long writing and code in an editor beside the chat, with versions, "select a part and ask yAI to change it", and live HTML, JavaScript and Python runs. <strong>Ctrl K</strong> searches every saved chat and jumps to the exact message.</p>
             <p>Answers can also call <strong>connected services</strong> for live, exact data: the weather, maps and directions, stock and crypto prices, sports scores, Wolfram Alpha, arXiv and Semantic Scholar papers, YouTube transcripts, your GitHub repositories and issues, UWaterloo LEARN due dates and course info, and webhooks to Discord, Slack or n8n. Live results show as cards, and <strong>watchers</strong> send a notification when a price drops or a page changes.</p>
             <p>For school there's a <strong>study mode</strong> that tutors with hints and questions instead of answers, and a Study page that turns notes, a PDF or a chat into flashcards with spaced repetition and practice quizzes, with short answers graded by the model. A <strong>calendar and email</strong> tool reads a connected Google account and suggests Gmail drafts and calendar events as cards that are only saved when you press the button. Made images get an Edit button, one-tap edit ideas and a before/after slider, and the whole site installs as an <strong>app</strong> on a phone or laptop. <strong>Scheduled tasks</strong> run a prompt on their own every day, on weekdays, weekly or once (a morning news briefing, say), save the answer as a chat and send a notification to the phone.</p>
             <p>Around it I built the parts a real service needs: an OpenAI-compatible <strong>public API</strong> with personal keys, counted against each person's limits; an admin <strong>People</strong> page with everyone's usage, per-person limits, account pausing and automatic flags for unusual use (bursts of requests, the same message over and over); and a <strong>What's new</strong> page where every release is numbered by its build.</p>
-            <p><strong>yAI Code</strong> brings the same models to the terminal: a coding agent like Claude Code that signs in with your yAI account and works inside your project folder. It reads and searches the files, edits them in place, and runs shell commands to build, test and lint the code. By default it asks before every file change and command, so nothing happens until you approve it.</p>
-            <p>yAI Code also gets a model of its own: <strong>yAI 3 Coder</strong> (Qwen3 Coder 30B), a coding model with a 64K-token context and the one model still on a dedicated GPU. It runs on a 48 GB L40S on Modal with vLLM, keeps its weights on a Modal volume so a cold start loads them instead of downloading them again, and shuts down to zero when idle. It's a mixture-of-experts model that uses only 3 billion of its 30 billion parameters for each token, so it's quick for its size. The web app lists it too, greyed out, because it only works inside yAI Code, which otherwise starts on yAI Ultra Flash.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> yAI Code</h4>
+            <p><strong>yAI Code</strong> brings the same models to the terminal: a coding agent like Claude Code that signs in with your yAI account and works inside your project folder. It reads and searches the files, edits them in place, and runs shell commands to build, test and lint the code. By default it asks before every file change and command, so nothing happens until you approve it. On DeepSeek it calls its tools natively, and it never reads the same lines of a file twice when they're still in front of it.</p>
+            <p>It also gets a model of its own: <strong>yAI 3 Coder</strong> (Qwen3 Coder 30B), a coding model with a 64K-token context and the one model still on a dedicated GPU. It runs on a 48 GB L40S on Modal with vLLM, keeps its weights on a Modal volume so a cold start loads them instead of downloading them again, and shuts down to zero when idle. It's a mixture-of-experts model that uses only 3 billion of its 30 billion parameters for each token, so it's quick for its size.</p>
             <p>I benchmarked it inside yAI Code on six small Node.js tasks: fixing bugs, writing an LRU cache and an async retry helper from empty stubs, rewriting a CSV parser, and adding features across two files. Every task starts with failing tests, and the score is how many pass afterwards. yAI 3 Coder passed all 44 without touching a test file, and the simpler tasks took about 20 seconds each.</p>
             <ul class="metrics"><li><b>44/44</b><span>tests passed</span></li><li><b>6/6</b><span>tasks solved</span></li><li><b>0</b><span>test files changed</span></li></ul>
-            <p>It has three permission modes: <strong>ask</strong> prompts before any edit or command, <strong>auto-edit</strong> applies file changes automatically but still asks before running commands, and <strong>plan</strong> is read-only, so it explores the codebase and proposes a step-by-step plan without touching anything. You can @-mention specific files to point it at the right place, and each project folder keeps its own saved conversations, so picking up a project later resumes right where you left off. The first run in a folder asks whether to trust it.</p>
-            <p>It also handles the rest of the coding loop. <strong>/fix</strong> runs the tests and keeps fixing the code until they pass, and <strong>/fix watch</strong> reruns them on every save. <strong>/review</strong> has a second model review the uncommitted changes, and <strong>/commit</strong> writes the message and commits. It can see, too: <strong>/look</strong> screenshots the page on desktop and phone for a design review by the vision model, an @-mentioned mockup image becomes something the coder can build from, and <strong>/showcase</strong> records a demo video of the page.</p>
-            <p>In <strong>/duo</strong> mode two models work together: yAI Q3.8 Max plans each request and reviews the change, and the coding model writes it. <strong>/tutor</strong> gives hints and explanations instead of finished solutions, <strong>/share</strong> publishes a session at an unlisted link, <strong>/undo</strong> reverts its last edit, and there are six looks to pick from, from yAI Dark and yAI Light to Midnight, Classic Blue, Paper and Amber.</p>
-            <p>It was redesigned as a full-window app so you always know what it's doing, what it needs and what you can press: a header on top, the conversation in the middle with the plan in a panel beside it, and the input box and keys at the bottom. It opens with what it found in the project and four numbered starters (fix something, add a feature, explain the project, review my changes). A status pill says Ready, Working, Finished or Needs attention, and a bar under the input lists the keys that work right now, the model and how much of its memory is used. Typing / suggests commands with what each one does. While it works, the plan it wrote ticks off each step in that panel. Approvals say what a command does and how risky it is, and take a single key. A finished task ends with a summary of tests, files and cost, and keys to review, commit or undo it all; a failure is explained in plain words first, with a key to fix it.</p>
-            <p>It can search the web and read pages, including your own dev server, when it needs documentation or anything recent. Dev servers and watchers run as <strong>background tasks</strong> it checks on while it works. It connects to <strong>MCP servers</strong>, using the same config format as Claude Code, and their tools sit next to its own. <strong>/bench</strong> runs the six-task benchmark on any model, giving each task a fresh session and five minutes. <strong>/team</strong> has a lead model split a bigger task into parts that touch different files, writes a contract of every shared name, and lets you pick who joins: an <strong>architect</strong> who plans how the pieces fit, up to eight <strong>builders</strong> working at the same time, a <strong>merger</strong> and a <strong>designer</strong>, yAI's own browser checks (it opens the page, measures performance, runs accessibility rules, checks phone sizes and plays games for 30 seconds), checkers (integration, tester, reviewer, security, docs, API, setup), a <strong>fixer</strong> for whatever they find, and a <strong>spec checker</strong> that goes through the request item by item. A live board shows every agent's step, time and cost, and pressing an agent's number shows its work as it happens. To keep runs cheap, a step it has already taken isn't run again, an agent that goes round in circles is stopped, and old file contents are trimmed; in the video, fourteen agents built a Windows 95 style desktop with six apps from one prompt.</p>
-            <p>Its newest features take it beyond the terminal. A <strong>VS Code extension</strong> runs the same agent in a side panel and opens every proposed edit as a VS Code diff to approve or reject. <strong>yai remote</strong> lets me send a task from my phone to my PC and approve its edits from there while I watch it work. <strong>/clone</strong> rebuilds a page from a screenshot or a live URL, then screenshots its own result, compares it with the original and fixes the differences. Plan mode ends with a plan to approve, <strong>/resume</strong> picks any earlier conversation, screenshots paste straight into the prompt, and it shows what the hosted models have cost this session and today.</p>
-            <ul class="chips"><li>JavaScript</li><li>Node.js</li><li>CLI agent</li><li>Vercel</li><li>Modal</li><li>DeepSeek API</li><li>DeepSeek V4 Pro</li><li>DeepSeek V4.1</li><li>Kimi K3</li><li>Qwen3.8</li><li>RunPod</li><li>vLLM</li><li>ComfyUI</li><li>Qwen-Image</li><li>MiniMax H3</li><li>Upstash Redis</li><li>MCP</li><li>VS Code extension</li><li>Pyodide</li><li>OpenAI-compatible API</li><li>PWA</li><li>Google APIs</li><li>Cloudflare Tunnel</li><li>LM Studio</li></ul>
+            <p>It has three permission modes: <strong>ask</strong> prompts before any edit or command, <strong>auto-edit</strong> applies file changes automatically but still asks before running commands, and <strong>plan</strong> is read-only, so it explores the codebase and proposes a step-by-step plan without touching anything. You can @-mention specific files to point it at the right place, and each project folder keeps its own saved conversations, so picking up a project later resumes right where you left off.</p>
+            <p>It also handles the rest of the coding loop. <strong>/fix</strong> runs the tests and keeps fixing the code until they pass, and <strong>/fix watch</strong> reruns them on every save. <strong>/review</strong> has a second model review the uncommitted changes, and <strong>/commit</strong> writes the message and commits. It can see, too: <strong>/look</strong> screenshots the page on desktop and phone for a design review by a vision model, an @-mentioned mockup image becomes something the coder can build from, and <strong>/showcase</strong> records a demo video of the page. In <strong>/duo</strong> mode two models work together, one planning and reviewing while the other writes the code; <strong>/tutor</strong> gives hints instead of finished solutions, <strong>/share</strong> publishes a session at an unlisted link, and <strong>/undo</strong> reverts its last edit.</p>
+            <p>It runs as a full-window app so you always know what it's doing, what it needs and what you can press: a header on top, the conversation in the middle with the plan in a panel beside it, and the input box and keys at the bottom. A status pill says Ready, Working, Finished or Needs attention, approvals say what a command does and how risky it is and take a single key, and a finished task ends with a summary of tests, files and cost. It searches the web when it needs documentation, runs dev servers as <strong>background tasks</strong>, connects to <strong>MCP servers</strong>, and comes as a <strong>VS Code extension</strong> that opens every proposed edit as a diff. <strong>yai remote</strong> sends a task from my phone to my PC, and <strong>/clone</strong> rebuilds a page from a screenshot or a URL, then compares its result with the original and fixes the differences.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> /team and /crew</h4>
+            <p><strong>/team</strong> runs a whole team of agents. A lead model splits the task, a <strong>researcher</strong> looks up what a great version needs, an <strong>architect</strong> writes a contract of every shared name and a skeleton of every file, and up to eight <strong>builders</strong> work at the same time, each owning a feature. After them come a <strong>merger</strong>, yAI's own browser checks (it opens the page, gets past its menus, measures the frame rate, checks phone sizes and plays games for 30 seconds), a single <strong>QA</strong> agent, a <strong>fixer</strong> working from one merged to-do list, and a <strong>spec checker</strong> that scores the result against the request. A <strong>judge</strong> plays it, and the next round improves on what it saw, with a pause between rounds to try it yourself and say what to change. A <strong>watcher</strong> reads every agent's steps every 20 seconds, keeps their to-do lists accurate and redirects one that's going round in circles. A live board shows each agent's step, time and cost, and every run ends with a report page: a replay of the board, the score, screenshots, and a table of where the time and tokens went.</p>
+            <p><strong>/crew</strong> came out of what /team taught me: on a game, one agent that holds the whole picture beat a team of builders working apart. So in /crew a single <strong>main builder</strong> builds the whole project itself, checking the page as it goes, and commissions <strong>helpers</strong> for the separate jobs (level data, sprites, sounds, tests, research) on yAI Lite or Ultra Flash; they work at the same time and report back to it. The same checks, fixes and rounds run after it. In the video, /team's fourteen agents built a Windows 95 style desktop with six apps from one prompt.</p>
+            <ul class="chips"><li>JavaScript</li><li>Node.js</li><li>CLI agent</li><li>Multi-agent</li><li>Vercel</li><li>Modal</li><li>DeepSeek API</li><li>Z.ai GLM</li><li>Gemini API</li><li>Groq</li><li>Qwen3.8</li><li>Kimi K3</li><li>RunPod</li><li>vLLM</li><li>ComfyUI</li><li>Upstash Redis</li><li>MCP</li><li>VS Code extension</li><li>Headless Chrome</li><li>Pyodide</li><li>OpenAI-compatible API</li><li>PWA</li><li>Cloudflare Tunnel</li><li>LM Studio</li></ul>
             <div class="feature-actions">
-              <a class="btn btn-sm btn-primary" href="https://yousef-llmai.vercel.app" target="_blank" rel="noopener">Open yAI <span aria-hidden="true">→</span></a>
-              <a class="btn btn-sm" href="https://github.com/yousefk07/yAI" target="_blank" rel="noopener">View code</a>
-              <a class="btn btn-sm" href="mailto:yousefkkamel@gmail.com?subject=yAI%20access%20code%20request&amp;body=Hi%20Yousef%2C%0A%0AI%27d%20like%20an%20access%20code%20to%20try%20yAI.%0A%0AName%3A%20">Request access code</a>
+              <a class="btn btn-sm btn-primary" href="https://yousef-llmai.vercel.app" target="_blank" rel="noopener">open yAI <span aria-hidden="true">→</span></a>
+              <a class="btn btn-sm" href="https://github.com/yousefk07/yAI" target="_blank" rel="noopener">view code</a>
+              <a class="btn btn-sm" href="mailto:yousefkkamel@gmail.com?subject=yAI%20access%20code%20request&amp;body=Hi%20Yousef%2C%0A%0AI%27d%20like%20an%20access%20code%20to%20try%20yAI.%0A%0AName%3A%20">request access code</a>
             </div>
             <p class="feature-note">yAI is invite-only. The hosted models answer right away; yAI 3 Coder, images and videos can take a minute or two to start after a quiet stretch while their GPU wakes up.</p>
           </div>
         </article>
 
-        <article class="feature feature-flip reveal">
+        <article class="feature feature-flip pane reveal" id="nimbus" data-file="nimbus/README.md">
           <figure class="feature-visual">
             <img src="Screenshot 2026-04-27 234755.png" alt="NIMBUS editor showing staffing rows and a live project summary with billing, COGS and margin" loading="lazy">
           </figure>
@@ -352,7 +385,7 @@
           </div>
         </article>
 
-        <article class="feature reveal">
+        <article class="feature pane reveal" id="motion" data-file="motion-sensor/firmware.ino">
           <figure class="feature-visual">
             <img src="20251123_181053895_iOS.jpg" alt="Wearable ESP32 motion detection device in a 3D-printed enclosure with battery pack on an elastic strap" loading="lazy">
           </figure>
@@ -361,72 +394,94 @@
             <h3>Patient Motion Detection System</h3>
             <p>A wearable ESP32 device that classifies patient movement from accelerometer and gyroscope data, to help flag fall risk and movement patterns associated with delirium.</p>
             <ul class="chips"><li>C++</li><li>ESP32</li><li>Python</li><li>Bluetooth</li><li>Signal processing</li></ul>
-            <a class="link-arrow" href="ESP32BLE.ino.ino" download>Download firmware <span aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="ESP32BLE.ino.ino" download>download firmware <span aria-hidden="true">→</span></a>
           </div>
         </article>
-      </div>
-    </section>
+      </section>
 
-    <!-- Skills -->
-    <section class="section section-alt" id="skills">
-      <div class="wrap">
+      <!-- skills.yml -->
+      <section class="section" id="skills" data-sec="skills">
         <header class="section-head">
-          <p class="kicker">04 — Skills</p>
+          <p class="kicker"><span class="ln">04</span><span class="tok-com">// skills</span></p>
           <h2>Technical skills</h2>
         </header>
-        <div class="skills reveal">
+        <div class="skills pane reveal" data-file="skills.yml">
           <div class="skill-group">
-            <h3>Languages</h3>
+            <h3><span class="tok-key">languages</span>:</h3>
             <ul class="chips chips-lg"><li>TypeScript</li><li>JavaScript</li><li>SQL</li><li>Python</li><li>C++</li><li>Java</li><li>Kotlin</li><li>Verilog</li><li>HTML/CSS</li></ul>
           </div>
           <div class="skill-group">
-            <h3>Frameworks &amp; Libraries</h3>
+            <h3><span class="tok-key">frameworks</span>:</h3>
             <ul class="chips chips-lg"><li>Node.js</li><li>React</li><li>Next.js</li><li>tRPC</li><li>Prisma</li><li>Material UI</li><li>Tailwind CSS</li><li>LangChain</li><li>LangGraph</li></ul>
           </div>
           <div class="skill-group">
-            <h3>Infrastructure &amp; Tools</h3>
+            <h3><span class="tok-key">infrastructure</span>:</h3>
             <ul class="chips chips-lg"><li>PostgreSQL</li><li>Supabase</li><li>Redis</li><li>Vercel</li><li>n8n</li><li>REST</li><li>GraphQL</li><li>Webhooks</li><li>Git</li><li>GitHub Actions</li><li>Docker</li></ul>
           </div>
         </div>
 
-        <div class="edu reveal">
+        <div class="edu pane reveal" data-file="education.md">
           <div class="edu-mark" aria-hidden="true">UW</div>
           <div>
-            <p class="kicker">Education</p>
+            <p class="kicker"><span class="tok-com">// education</span></p>
             <h3>University of Waterloo</h3>
             <p>Bachelor of Applied Science, Electrical Engineering · Expected 2030</p>
           </div>
           <div class="edu-gpa"><b>4.00</b><span>GPA</span></div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Contact -->
-    <section class="section contact" id="contact">
-      <div class="wrap">
-        <p class="kicker">05 — Contact</p>
+      <!-- contact.sh -->
+      <section class="section contact" id="contact" data-sec="contact">
+        <p class="kicker"><span class="ln">05</span><span class="tok-com">// contact</span></p>
         <h2 class="contact-title">Get in touch</h2>
         <p class="contact-lede">I'm looking for co-op and internship roles in software, automation and embedded systems. Email is the best way to reach me.</p>
-        <a class="contact-email" href="mailto:yousefkkamel@gmail.com">yousefkkamel@gmail.com <span aria-hidden="true">↗</span></a>
+        <a class="contact-email" href="mailto:yousefkkamel@gmail.com"><span class="prompt">$</span> mail yousefkkamel@gmail.com <span aria-hidden="true">↗</span></a>
         <ul class="contact-links">
           <li><a href="https://linkedin.com/in/yousefkamel07" target="_blank" rel="noopener">LinkedIn</a></li>
           <li><a href="https://github.com/yousefk07" target="_blank" rel="noopener">GitHub</a></li>
           <li><a href="tel:+16478630027">+1 (647) 863-0027</a></li>
           <li><a href="YousefKamelResume.pdf?v=3" target="_blank" rel="noopener">Résumé (PDF)</a></li>
         </ul>
-      </div>
-    </section>
-  </main>
+        <p class="footer-note">© <span id="year">2026</span> Yousef Kamel · Waterloo, Ontario</p>
+      </section>
+    </main>
+  </div>
 
-  <footer class="footer">
-    <div class="wrap footer-inner">
-      <p>© <span id="year">2026</span> Yousef Kamel</p>
-      <p>Waterloo, Ontario</p>
-    </div>
+  <footer class="statusbar" aria-label="Status bar">
+    <span class="sb-item sb-branch">⎇ main</span>
+    <span class="sb-item"><span class="dot" aria-hidden="true"></span>open to co-op</span>
+    <span class="sb-item sb-file" id="sb-file">readme.md</span>
+    <span class="sb-spacer"></span>
+    <span class="sb-item sb-hide">Waterloo, ON</span>
+    <span class="sb-item sb-hide">UTF-8</span>
+    <span class="sb-item sb-hide">HTML</span>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // The terminal types itself out once, line by line (shown whole with reduced motion or no script)
+    const term = document.querySelector('.term-body');
+    if (term && !reduced) {
+      const lines = [...term.querySelectorAll('.line')];
+      lines.forEach((l) => l.classList.add('hidden'));
+      let i = 0;
+      const next = () => {
+        if (i >= lines.length) return;
+        const l = lines[i++];
+        l.classList.remove('hidden');
+        const cmd = l.querySelector('.cmd');
+        if (cmd) {
+          const text = cmd.textContent; cmd.textContent = '';
+          let j = 0;
+          const type = () => { cmd.textContent = text.slice(0, ++j); if (j < text.length) setTimeout(type, 38); else setTimeout(next, 260); };
+          setTimeout(type, 200);
+        } else setTimeout(next, 120);
+      };
+      setTimeout(next, 300);
+    }
 
     // Videos open full screen, from the button on each or a click on the video; they start again from the beginning
     // there, with controls, and go back to playing quietly in place afterwards.
@@ -440,7 +495,7 @@
       btn.type = 'button';
       btn.className = 'fs-btn';
       btn.setAttribute('aria-label', 'Watch full screen');
-      btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Full screen</span>';
+      btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>full screen</span>';
       wrap.appendChild(btn);
       const open = () => {
         video.currentTime = 0;
@@ -458,16 +513,33 @@
       document.addEventListener('webkitfullscreenchange', back);
     });
 
-    const nav = document.querySelector('.nav');
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
-    onScroll();
+    // The tab, the explorer row and the status bar follow the section on screen
+    const names = { readme: 'readme.md', renellence: 'renellence.ts', experience: 'experience.json', work: 'projects/', skills: 'skills.yml', contact: 'contact.sh' };
+    const setActive = (id) => {
+      document.querySelectorAll('[data-sec]').forEach((el) => { if (el.tagName === 'A') el.classList.toggle('active', el.dataset.sec === id); });
+      const f = document.getElementById('sb-file'); if (f && names[id]) f.textContent = names[id];
+    };
+    // the section whose top has passed 40% of the window is the one being read (works for tall sections too)
+    const sections = [...document.querySelectorAll('section[data-sec]')];
+    let current = '';
+    const onScroll = () => {
+      const y = window.innerHeight * 0.4;
+      let id = sections[0].dataset.sec;
+      for (const s of sections) if (s.getBoundingClientRect().top <= y) id = s.dataset.sec;
+      if (id !== current) {
+        current = id; setActive(id);
+        const tab = document.querySelector('.tab.active');
+        // only the tab strip scrolls sideways (scrollIntoView moved the whole page)
+        const strip = document.querySelector('.tabs');
+        if (tab && strip && strip.scrollWidth > strip.clientWidth) strip.scrollTo({ left: Math.max(0, tab.offsetLeft - 16), behavior: reduced ? 'auto' : 'smooth' });
+      }
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-        });
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
       }, { threshold: 0.08 });
       document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     } else {
