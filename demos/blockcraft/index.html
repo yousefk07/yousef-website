@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blockcraft</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="gl"></canvas>
+
+<!-- HUD -->
+<div id="hud" class="hidden">
+  <div id="crosshair"></div>
+  <div id="info"></div>
+  <div id="hotbar"></div>
+  <div id="heldname"></div>
+  <div id="toast"></div>
+  <div id="vignette"></div>
+  <div id="water-overlay"></div>
+</div>
+
+<!-- Start screen -->
+<div id="start" class="screen">
+  <div class="panel">
+    <h1>Blockcraft</h1>
+    <p class="sub">a Minecraft replica in your browser</p>
+    <label class="seedrow">World seed <input id="seedInput" type="text" spellcheck="false"></label>
+    <div class="row">
+      <button id="playBtn" class="big">Play</button>
+      <button id="newWorldBtn">New World</button>
+    </div>
+    <p class="hint">Click Play to capture the mouse. Esc pauses.</p>
+  </div>
+</div>
+
+<!-- Pause menu -->
+<div id="pause" class="screen hidden">
+  <div class="panel">
+    <h2>Game Paused</h2>
+    <button id="resumeBtn" class="big">Resume</button>
+    <div class="controls">
+      <div><b>W A S D</b> move</div>
+      <div><b>Space</b> jump / fly up</div>
+      <div><b>Shift</b> sneak / fly down</div>
+      <div><b>Ctrl</b> sprint</div>
+      <div><b>Double Space</b> toggle flight</div>
+      <div><b>Left click</b> break block</div>
+      <div><b>Right click</b> place block</div>
+      <div><b>Middle click</b> pick block</div>
+      <div><b>1-9 / wheel</b> select hotbar</div>
+      <div><b>E</b> block picker</div>
+      <div><b>F</b> toggle flight</div>
+      <div><b>F3</b> debug info</div>
+      <div><b>M</b> mute sound</div>
+      <div><b>Esc</b> pause</div>
+    </div>
+    <div class="row">
+      <button id="saveBtn">Save World</button>
+      <button id="resetBtn">Reset World</button>
+    </div>
+  </div>
+</div>
+
+<!-- Block picker -->
+<div id="picker" class="screen hidden">
+  <div class="panel wide">
+    <h2>Blocks</h2>
+    <div id="pickerGrid"></div>
+    <p class="hint">Click a block to put it in the selected hotbar slot. E or Esc to close.</p>
+  </div>
+</div>
+
+<script src="js/textures.js"></script>
+<script src="js/textures_extra.js"></script>
+<script src="js/blocks.js"></script>
+<script src="js/worldgen.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/world.js"></script>
+<script src="js/mesher.js"></script>
+<script src="js/renderer.js"></script>
+<script src="js/player.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

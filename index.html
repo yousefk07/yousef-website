@@ -55,6 +55,7 @@
         <li><a href="#experience" data-sec="experience"><span class="ft ft-json">{}</span>experience.json</a></li>
         <li><a href="#work" data-sec="work"><span class="ft ft-dir">▾</span>projects/</a></li>
         <li class="tree-sub"><a href="#yai"><span class="ft ft-dir">▸</span>yai/</a></li>
+        <li class="tree-sub"><a href="#blockcraft"><span class="ft ft-dir">▸</span>blockcraft/</a></li>
         <li class="tree-sub"><a href="#nimbus"><span class="ft ft-dir">▸</span>nimbus/</a></li>
         <li class="tree-sub"><a href="#motion"><span class="ft ft-dir">▸</span>motion-sensor/</a></li>
         <li><a href="#skills" data-sec="skills"><span class="ft ft-yml">≡</span>skills.yml</a></li>
@@ -373,6 +374,47 @@
           </div>
         </article>
 
+        <!-- Blockcraft: a game yAI's /crew built from one prompt, playable here -->
+        <article class="pane reveal crew-demo" id="blockcraft" data-file="crew-demos/blockcraft/index.html">
+          <div class="crew-head">
+            <div>
+              <p class="feature-label">yAI /crew · demo</p>
+              <h3>Blockcraft</h3>
+              <p class="crew-prompt"><span class="prompt">$</span> <span class="tok-fn">/crew</span> <span class="tok-str">"make a minecraft replica"</span></p>
+              <p>A Minecraft-style voxel game in plain JavaScript and WebGL2, with no libraries: procedural terrain with water, beaches and trees, block breaking and placing, a hotbar, a day and night cycle, sounds made in code, and a world that saves. yAI's /crew built it from that one prompt.</p>
+            </div>
+            <ul class="metrics crew-stats">
+              <li><b>17m 37s</b><span>prompt to playable</span></li>
+              <li><b>$0.28</b><span>total model cost</span></li>
+              <li><b>3,192</b><span>lines of game code</span></li>
+              <li><b>11</b><span>JavaScript files</span></li>
+              <li><b>5</b><span>agents building</span></li>
+              <li><b>60 fps</b><span>in the browser</span></li>
+            </ul>
+          </div>
+
+          <div class="play-frame" id="play-frame">
+            <button type="button" class="play-start" id="play-start">
+              <span class="play-icon" aria-hidden="true">▶</span>
+              <span><b>Play Blockcraft</b><span class="muted-line">Loads the game here · WASD to move, mouse to look, click to break and place · Esc to free the mouse</span></span>
+            </button>
+          </div>
+          <div class="feature-actions">
+            <a class="btn btn-sm" href="demos/blockcraft/index.html" target="_blank" rel="noopener">open full window <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <h4 class="md-h"><span class="tok-com">##</span> How /crew built it</h4>
+          <ol class="steps crew-steps">
+            <li><span><b>Research.</b> A researcher agent searched the web for what a great Minecraft replica needs and wrote the checklist the run was judged against.</span></li>
+            <li><span><b>One main builder.</b> A single agent on yAI Ultra Flash owned the whole game: the world, the mesher that turns blocks into triangles, the WebGL renderer, the player and the main loop.</span></li>
+            <li><span><b>Helpers on the side.</b> While it built the core, it commissioned four helpers that worked at the same time: block textures drawn in code, sound effects, terrain generation, and the block registry (on the free yAI Lite).</span></li>
+            <li><span><b>Checks.</b> yAI opened the game in a real browser, played it for 30 seconds, measured its frame rate, and a QA agent reviewed it like a player.</span></li>
+            <li><span><b>Fixes.</b> A fixer worked through what QA found, and yAI re-ran the checks after it.</span></li>
+            <li><span><b>A watcher</b> read every agent's steps every 20 seconds and stepped in when one went round in circles.</span></li>
+          </ol>
+          <ul class="chips"><li>yAI /crew</li><li>Multi-agent</li><li>WebGL2</li><li>JavaScript</li><li>Procedural generation</li><li>Web Audio</li><li>DeepSeek V4.1 Flash</li><li>GLM-4.7-Flash</li></ul>
+        </article>
+
         <article class="feature feature-flip pane reveal" id="nimbus" data-file="nimbus/README.md">
           <figure class="feature-visual">
             <img src="Screenshot 2026-04-27 234755.png" alt="NIMBUS editor showing staffing rows and a live project summary with billing, COGS and margin" loading="lazy">
@@ -511,6 +553,17 @@
       video.addEventListener('webkitendfullscreen', back);
       document.addEventListener('fullscreenchange', back);
       document.addEventListener('webkitfullscreenchange', back);
+    });
+
+    // Blockcraft: the game loads in the page only when asked (it takes the mouse and runs WebGL)
+    const playBtn = document.getElementById('play-start');
+    if (playBtn) playBtn.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = 'demos/blockcraft/index.html';
+      f.title = 'Blockcraft, a Minecraft-style game built by yAI /crew';
+      f.allow = 'fullscreen; pointer-lock; autoplay';
+      playBtn.replaceWith(f);
+      f.focus();
     });
 
     // The tab, the explorer row and the status bar follow the section on screen
