@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -49,13 +49,17 @@
       <ul class="tree">
         <li><a href="#readme" data-sec="readme"><span class="ft ft-md">M↓</span>readme.md</a></li>
         <li><a href="#renellence" data-sec="renellence"><span class="ft ft-ts">TS</span>renellence.ts</a></li>
-        <li class="tree-sub"><a href="#renellence"><span class="ft ft-dir">▸</span>crm/</a></li>
-        <li class="tree-sub"><a href="#renellence"><span class="ft ft-dir">▸</span>edge/</a></li>
-        <li class="tree-sub"><a href="#renellence"><span class="ft ft-dir">▸</span>order-automation/</a></li>
+        <li class="tree-sub"><a href="#database"><span class="ft ft-dir">▸</span>database/</a></li>
+        <li class="tree-sub"><a href="#dataflow"><span class="ft ft-dir">▸</span>data-flow/</a></li>
+        <li class="tree-sub"><a href="#apps"><span class="ft ft-dir">▸</span>apps/</a></li>
+        <li class="tree-sub"><a href="#testing"><span class="ft ft-dir">▸</span>test/</a></li>
         <li><a href="#experience" data-sec="experience"><span class="ft ft-json">{}</span>experience.json</a></li>
         <li><a href="#work" data-sec="work"><span class="ft ft-dir">▾</span>projects/</a></li>
         <li class="tree-sub"><a href="#yai"><span class="ft ft-dir">▸</span>yai/</a></li>
-        <li class="tree-sub"><a href="#blockcraft"><span class="ft ft-dir">▸</span>blockcraft/</a></li>
+        <li class="tree-sub tree-sub2"><a href="#blockcraft"><span class="ft ft-dir">▸</span>blockcraft/</a></li>
+        <li class="tree-sub"><a href="#picked"><span class="ft ft-dir">▸</span>picked/</a></li>
+        <li class="tree-sub"><a href="#unitpilot"><span class="ft ft-dir">▸</span>unitpilot/</a></li>
+        <li class="tree-sub"><a href="#deepseek-worker"><span class="ft ft-dir">▸</span>deepseek-worker/</a></li>
         <li class="tree-sub"><a href="#nimbus"><span class="ft ft-dir">▸</span>nimbus/</a></li>
         <li class="tree-sub"><a href="#motion"><span class="ft ft-dir">▸</span>motion-sensor/</a></li>
         <li><a href="#skills" data-sec="skills"><span class="ft ft-yml">≡</span>skills.yml</a></li>
@@ -71,25 +75,25 @@
     <main id="main" class="editor">
       <!-- readme.md: a terminal that types itself, then the headline -->
       <section class="hero" id="readme" data-sec="readme">
-        <div class="term reveal" role="img" aria-label="A terminal: whoami says Yousef Kamel, Electrical Engineering at the University of Waterloo; cat now.md says co-op at Renellence building its in-house CRM, sales platform and order automation; ls projects lists renellence-crm, edge, yai, nimbus and motion-sensor">
+        <div class="term reveal" role="img" aria-label="A terminal: whoami says Yousef Kamel, Electrical Engineering at the University of Waterloo; cat now.md says co-op at Renellence building one database and the Pulse, Edge and Compass apps on it; ls projects lists yai, picked, unitpilot and deepseek-worker">
           <div class="term-bar"><span class="lights" aria-hidden="true"><i></i><i></i><i></i></span><span>zsh — yousef@waterloo</span></div>
           <pre class="term-body" aria-hidden="true"><span class="line"><span class="prompt">~</span> <span class="cmd">whoami</span></span>
 <span class="line out">yousef kamel · electrical engineering @ uwaterloo</span>
 <span class="line"><span class="prompt">~</span> <span class="cmd">cat now.md</span></span>
-<span class="line out">co-op @ renellence: in-house crm, the sales platform, order automation</span>
+<span class="line out">co-op @ renellence: one database, three apps (pulse · edge · compass)</span>
 <span class="line"><span class="prompt">~</span> <span class="cmd">ls projects/</span></span>
-<span class="line out"><span class="tok-dir">renellence-crm/</span>  <span class="tok-dir">edge/</span>  <span class="tok-dir">yai/</span>  <span class="tok-dir">nimbus/</span>  <span class="tok-dir">motion-sensor/</span></span>
+<span class="line out"><span class="tok-dir">yai/</span>  <span class="tok-dir">picked/</span>  <span class="tok-dir">unitpilot/</span>  <span class="tok-dir">deepseek-worker/</span></span>
 <span class="line"><span class="prompt">~</span> <span class="cursor"></span></span></pre>
         </div>
-        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Currently working on Renellence's in-house CRM</p>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Currently rebuilding Renellence's sales systems</p>
         <h1 class="hero-title">
           Hi, I'm Yousef.<br>
           I build software for <span class="accent">real teams</span>.
         </h1>
         <p class="hero-lede">
           I'm an Electrical Engineering student at the University of Waterloo. This term I'm a co-op
-          at Renellence, working on the company's sales platform, its order automation and a new
-          in-house CRM.
+          at Renellence, where I designed the company's relational database and build the three
+          apps the sales team runs on, plus a few AI tools of my own on the side.
         </p>
         <div class="hero-cta">
           <a href="#renellence" class="btn btn-primary"><span class="tok-dim">$</span> ./see-my-work</a>
@@ -104,147 +108,266 @@
           <p class="kicker"><span class="ln">01</span><span class="tok-com">// renellence</span></p>
           <h2>What I've been working on</h2>
           <p class="section-lede">
-            I joined Renellence as a Software &amp; Automation Developer Co-op in August 2026. Most of my
-            work is on the tools the sales team uses, from the first lead to a paid invoice.
+            I joined Renellence as a Software &amp; Automation Developer Co-op in August 2026. I'm rebuilding the
+            company's sales systems around one relational database: three apps on top of it (Pulse for reps'
+            phones, Edge for the desktop, Compass for managers' 1-on-1s), every outside service feeding into it,
+            and HubSpot on its way out.
           </p>
         </header>
 
-        <!-- CRM -->
-        <article class="case pane reveal" data-file="crm/README.md">
+        <!-- The database -->
+        <article class="case pane reveal" id="database" data-file="database/schema.sql">
           <div class="case-head">
-            <span class="tag tag-wip">in progress</span>
-            <p class="feature-label">Renellence CRM</p>
-            <h3>An in-house CRM to replace HubSpot</h3>
+            <span class="tag tag-live">in production</span>
+            <p class="feature-label">Relational database · Supabase Postgres</p>
+            <h3>One database for the whole company</h3>
             <p class="case-lede">
-              Renellence is moving from HubSpot to its own CRM, and I'm building it on a Postgres database.
-              Leads, calls, emails, orders and payments come in through one intake pipeline, and the
-              sales platform works directly with the company's own records.
+              Customers, clinics, orders, payments, calls, emails, signatures, forecasts and 1-on-1s used to be
+              spread across HubSpot, Shopify, spreadsheets and app caches. I designed a single Postgres schema from
+              what the business actually does, cleaned and migrated the real history into it, and moved every app
+              onto it.
+            </p>
+          </div>
+          <ul class="metrics metrics-wide">
+            <li><b>~30</b><span>tables</span></li>
+            <li><b>71</b><span>foreign keys</span></li>
+            <li><b>37</b><span>row-level security policies</span></li>
+            <li><b>45</b><span>triggers</span></li>
+            <li><b>16</b><span>numbered migrations</span></li>
+            <li><b>0</b><span>derived values stored</span></li>
+          </ul>
+          <div class="case-grid">
+            <div class="point">
+              <h4>One table per noun</h4>
+              <p>Variations share a table with a fixed <code>kind</code>: calls, meetings, notes, emails and texts are all <code>interactions</code>. Allowed values are enums in the schema, not editable dropdowns.</p>
+            </div>
+            <div class="point">
+              <h4>Nothing derived is stored</h4>
+              <p>Totals, pipeline stage, "last contacted", "going cold" and ROI are worked out in views and queries, so they can never drift. The one exception is dated history in a snapshots table.</p>
+            </div>
+            <div class="point">
+              <h4>Real foreign keys</h4>
+              <p>No polymorphic <code>entity_type</code> + <code>entity_id</code> links: one nullable foreign key per possible parent, with a check that exactly one is filled.</p>
+            </div>
+            <div class="point">
+              <h4>Access in the database</h4>
+              <p>Row-level security means a rep can only read and write their own customers and everything hanging off them, whichever app or API asks. Tested rep against rep for every real rep.</p>
+            </div>
+            <div class="point">
+              <h4>History that doesn't move</h4>
+              <p>An order keeps the rep credited at the time and the product name and price as sold, so reassigning a customer never rewrites past revenue. An append-only change log records who changed what.</p>
+            </div>
+            <div class="point">
+              <h4>Replayable intake</h4>
+              <p>Every outside copy lands once in an <code>ingest_events</code> table keyed by source and external id, so any feed can be re-run or replayed without making duplicates.</p>
+            </div>
+          </div>
+          <p class="small">The schema is documented in a written SOP (35 target tables, 477 fields, every rename and decision logged) and a live data dictionary site that reads the database's own catalog.</p>
+          <ul class="chips"><li>PostgreSQL</li><li>Supabase</li><li>Row-level security</li><li>SQL migrations</li><li>pg_cron</li><li>Data migration</li></ul>
+        </article>
+
+        <!-- How data moves -->
+        <article class="case pane reveal" id="dataflow" data-file="data-flow/README.md">
+          <div class="case-head">
+            <span class="tag tag-live">in production</span>
+            <p class="feature-label">Integrations · leaving HubSpot</p>
+            <h3>How data moves through the company</h3>
+            <p class="case-lede">
+              Every app reads the one database. Data comes in through a few doors, each written straight into it,
+              and orders, texts, emails and envelopes go back out. HubSpot is read in one place only: a bridge that
+              copies whatever still lands only there, until nothing does.
             </p>
           </div>
 
-          <figure class="flow" aria-label="Data flow: external sources feed an intake layer, which becomes CRM records that the sales platform uses">
+          <figure class="flow" aria-label="Data flow: reps, n8n workflows and outside services come in through the app APIs, webhooks and a 5-minute tick into the Postgres database, which Pulse, Edge, Compass, the admin app and Claude jobs read">
             <div class="flow-col">
               <p class="flow-title">sources</p>
               <ul class="flow-sources">
-                <li>Stripe</li><li>Shopify</li><li>Meta leads</li><li>Gmail</li><li>VoIP calls</li><li>n8n</li>
+                <li>Reps' apps</li><li>n8n</li><li>Stripe</li><li>Meta leads</li><li>Gmail</li><li>VoIP calls/texts</li><li>SignatureAPI</li><li>HubSpot (bridge)</li>
               </ul>
             </div>
             <div class="flow-arrow" aria-hidden="true"></div>
             <div class="flow-col">
-              <p class="flow-title">intake</p>
+              <p class="flow-title">doors</p>
               <div class="flow-node">
-                <b>Supabase Edge Functions</b>
-                <span>Webhooks and scheduled pulls</span>
+                <b>APIs, webhooks, a 5-min tick</b>
+                <span>Signed webhooks, an n8n intake, and pg_cron pulling Meta, Gmail and signatures</span>
               </div>
             </div>
             <div class="flow-arrow" aria-hidden="true"></div>
             <div class="flow-col">
-              <p class="flow-title">crm</p>
+              <p class="flow-title">database</p>
               <div class="flow-node flow-node-accent">
-                <b>Postgres records</b>
-                <span>Contacts, clinics, deals, orders, tasks, activity</span>
+                <b>Supabase Postgres</b>
+                <span>Contacts, clinics, orders, payments, interactions, forecasts, 1-on-1s</span>
               </div>
             </div>
             <div class="flow-arrow" aria-hidden="true"></div>
             <div class="flow-col">
-              <p class="flow-title">app</p>
+              <p class="flow-title">apps</p>
               <div class="flow-node">
-                <b>Renellence Edge</b>
-                <span>Used by reps and managers</span>
+                <b>Pulse · Edge · Compass</b>
+                <span>Plus an admin app and Claude jobs that summarise calls and leads</span>
               </div>
             </div>
           </figure>
 
           <div class="case-grid">
             <div class="point">
-              <h4>Data model</h4>
-              <p>A Postgres schema for contacts, clinics, deals, owners, files and change history. HubSpot records are imported with their history.</p>
+              <h4>Write to both, read from one</h4>
+              <p>All 74 HubSpot write steps in the n8n workflows also send the same data to the database, with retries, so the switch-over never needs a big-bang migration.</p>
             </div>
             <div class="point">
-              <h4>Intake pipeline</h4>
-              <p>TypeScript functions on Supabase turn payments, orders, ad leads, emails and calls into CRM records through webhooks and scheduled pulls.</p>
+              <h4>Orders exactly once</h4>
+              <p>An order is saved the moment a rep taps, then sent to the approval workflow with an idempotency key. A resend never makes a second order, and a lost answer is retried on the next tick.</p>
             </div>
             <div class="point">
-              <h4>Shared write rules</h4>
-              <p>Create, update and link logic lives in database functions, so the app and the intake pipeline write records the same way.</p>
+              <h4>A 5-minute tick</h4>
+              <p>Vercel only allows daily timers, so pg_cron in Postgres calls the app every 5 minutes, split into three jobs: leads and pushes, the HubSpot bridge, and signatures plus Gmail.</p>
             </div>
             <div class="point">
-              <h4>Rep-facing screens</h4>
-              <p>Contact and clinic views, deal boards, tasks, filterable saved lists with CSV export, and Gmail connected through Google sign-in.</p>
+              <h4>Bookmarks, not guesses</h4>
+              <p>Each feed only moves its bookmark after a page is saved, so a failed pull resumes exactly where it stopped. One bad record is skipped and counted instead of blocking every later one.</p>
             </div>
             <div class="point">
-              <h4>Careful migration</h4>
-              <p>It's being built and tested in a separate sandbox alongside the live system, so the switch shouldn't disrupt the sales team.</p>
+              <h4>Freshness alarms</h4>
+              <p>Every 5 minutes the system checks for a quiet feed, failed copies, orders only the bridge caught, or a silent tick, and emails the tech inbox, at most once every 6 hours per alarm.</p>
             </div>
             <div class="point">
-              <h4>Testing</h4>
-              <p>Each intake source has its own tests, and the API is tested against an in-memory Postgres database.</p>
+              <h4>Cutting the last ties</h4>
+              <p>93 HubSpot lookups across 9 workflows were mapped; the read-only ones are moving to a database lookup endpoint, checked against past runs before each switch (23 moved so far).</p>
             </div>
           </div>
-          <ul class="chips"><li>PostgreSQL</li><li>Supabase</li><li>TypeScript</li><li>Deno</li><li>Node.js</li><li>Vercel</li></ul>
+          <ul class="chips"><li>n8n</li><li>Webhooks</li><li>Idempotency</li><li>Stripe</li><li>Meta Graph API</li><li>Gmail API</li><li>Node.js</li><li>Vercel</li></ul>
         </article>
 
-        <!-- Edge -->
-        <article class="case case-media pane reveal" data-file="edge/app.tsx">
-          <figure class="demo-video">
-            <video src="edge-demo.mp4?v=2" poster="edge-demo-poster.jpg?v=2" autoplay muted loop playsinline preload="metadata"
-                   aria-label="Screen recording of Renellence Edge with fictional demo data: Today, CRM contacts, the deals board, the day board, the client pipeline and the territory map"></video>
-            <figcaption>The real Edge interface, running on made-up demo data. No real clients or reps.</figcaption>
-          </figure>
-          <div>
+        <!-- The three apps -->
+        <article class="case pane reveal" id="apps" data-file="apps/pulse-edge-compass.tsx">
+          <div class="case-head">
             <span class="tag tag-live">in use</span>
-            <p class="feature-label">Renellence Edge</p>
-            <h3>Sales platform</h3>
-            <p>A web app the five-person sales team uses day to day, with pipeline forecasting, KPI scorecards, a territory map, event ROI and daily activity boards across 20+ screens.</p>
-            <ul class="bullets">
-              <li>Serverless Node.js API on Vercel (12 routes, 15K+ lines) with role-based access.</li>
-              <li>Batched CRM requests and a Redis cache to keep pages fast.</li>
-              <li>Two-way contact and call sync with the phone system.</li>
-            </ul>
+            <p class="feature-label">Product &amp; UI</p>
+            <h3>Pulse, Edge and Compass</h3>
+            <p class="case-lede">
+              Three apps that feel like one product: one dark design language, the same role avatars, and gold kept
+              for wins only. I built each from a designed mockup and then iterated with the sales team.
+            </p>
           </div>
+          <div class="case-grid">
+            <div class="point">
+              <h4>Pulse</h4>
+              <p>The reps' phone app, built screen by screen from a 29-screen dark mockup. Today shows one panel: the day's goal ring, streak, the next five people to reach and the month so far. Logging a visit or placing an order takes a few taps, with Undo.</p>
+            </div>
+            <div class="point">
+              <h4>Edge</h4>
+              <p>The desktop sales platform for reps and managers: a forecast-first home, customers, orders, events and expenses, and a KPI scorecard whose pace skips weekends and holidays. Same dark theme, with a light switch.</p>
+            </div>
+            <div class="point">
+              <h4>Compass</h4>
+              <p>Managers' weekly and monthly 1-on-1s: wins first, then numbers, visits, a roleplay, calls, and one typed focus that shows up on the rep's Edge home and phone.</p>
+            </div>
+            <div class="point">
+              <h4>Nell, the mascot</h4>
+              <p>A blue owl with four moments (Nudge, Payday, Jackpot, Cheer), keyed from green-screen clips into video that sits on each screen's own colour.</p>
+            </div>
+            <div class="point">
+              <h4>Animated avatars</h4>
+              <p>Vector role avatars (doctor, nurse, manager and more) with separate body, head, eyes and mouth layers so they can blink and react.</p>
+            </div>
+            <div class="point">
+              <h4>Built for phones</h4>
+              <p>Installable as an app with push notifications for new leads, the morning summary and wins. Every screen is tested at 390 px wide.</p>
+            </div>
+          </div>
+          <ul class="chips"><li>JavaScript</li><li>React</li><li>Vite</li><li>PWA</li><li>Web Push</li><li>CSS animation</li><li>SVG</li></ul>
         </article>
 
-        <!-- Automation + approach -->
+        <!-- Psychology + tests -->
         <div class="case-pair">
-          <article class="case pane reveal" data-file="order-automation/workflow.json">
-            <span class="tag tag-live">in use</span>
-            <p class="feature-label">Order-to-cash</p>
-            <h3>Order automation</h3>
-            <p>An n8n workflow that takes an order from intake through to delivery without manual re-entry.</p>
-            <ol class="steps">
-              <li>Order intake</li>
-              <li>Approval by a person</li>
-              <li>E-signature</li>
-              <li>QuickBooks invoice</li>
-              <li>3PL shipment tracking</li>
-              <li>Synced back to the CRM</li>
-            </ol>
-            <p class="small">Connects nine services, including HubSpot, Stripe, Shopify, QuickBooks and Meta.</p>
-          </article>
-
-          <article class="case pane reveal" data-file="CONTRIBUTING.md">
-            <p class="feature-label">Approach</p>
-            <h3>Things I try to get right</h3>
+          <article class="case pane reveal" id="psychology" data-file="apps/motivation.md">
+            <p class="feature-label">Behavioural design</p>
+            <h3>The psychology in the UI</h3>
+            <p>Pulse and Edge are meant to make reps want to open them. Each motivator is a known principle, used carefully:</p>
             <div class="practices">
               <div>
-                <b>Not losing data</b>
-                <p>Syncs don't delete anything until a copy is confirmed, and records are deduplicated.</p>
+                <b>Goal gradient</b>
+                <p>A daily ring of five calls or visits, where an order counts as two, so the ring speeds up as a win gets closer.</p>
               </div>
               <div>
-                <b>Handling outages</b>
-                <p>Retries with backoff and cached fallbacks, so the app still works when a service is down.</p>
+                <b>Loss aversion, forgiven</b>
+                <p>A weekday streak and a 3 pm nudge to keep it, but weekends, holidays and time off never break it.</p>
               </div>
               <div>
-                <b>Testing</b>
-                <p>About 1,600 assertions across 46 suites, with a local setup that mocks the outside services.</p>
+                <b>Positive framing</b>
+                <p>Each rep's 50 clinics show as dots: Spoiled, Almost there, Going cold, Open spot. Going cold reads as "win them back", never as blame.</p>
+              </div>
+              <div>
+                <b>Less choice, more action</b>
+                <p>Today lists five people, in priority order, rather than the whole book.</p>
+              </div>
+              <div>
+                <b>Variable rewards</b>
+                <p>Nell's Jackpot is a surprise, at most once a day, and Payday shows the commission already on its way.</p>
+              </div>
+              <div>
+                <b>Isolation effect</b>
+                <p>Gold appears only on real wins, so it always stands out. No points or XP, and logging alone is never rewarded.</p>
+              </div>
+              <div>
+                <b>Recognition first</b>
+                <p>Compass opens every 1-on-1 on the rep's wins before any numbers. Leaderboards show the top three and your own row, not the bottom.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="case pane reveal" id="testing" data-file="test/README.md">
+            <p class="feature-label">Testing</p>
+            <h3>How it's tested</h3>
+            <ul class="metrics">
+              <li><b>240</b><span>test files</span></li>
+              <li><b>4,500+</b><span>assertions</span></li>
+              <li><b>90%</b><span>line-coverage gate</span></li>
+            </ul>
+            <div class="practices">
+              <div>
+                <b>Production is never a test bed</b>
+                <p>Tests run on a separate copy of the database; a network guard refuses every outside service, and connectors answer from stubs.</p>
+              </div>
+              <div>
+                <b>Access tests</b>
+                <p>Every real rep's login is tried against every other rep's book, read and write. Nothing crosses.</p>
+              </div>
+              <div>
+                <b>Real-data test runs</b>
+                <p>Whole apps driven at phone size over Chrome DevTools: scripted flows, random-tap runs on every screen, a 300-person book (Today loads in 1.5 s), Toronto midnight and the November clock change.</p>
+              </div>
+              <div>
+                <b>Findings, ranked and fixed</b>
+                <p>Each run ends in a report by severity: a missing idempotency key on order retries, one bad lead that blocked every later one, a custom price that could silently become free.</p>
               </div>
               <div>
                 <b>Careful releases</b>
-                <p>A dry run and a backup before each release, then a check that everything still runs.</p>
+                <p>A dry run and a backup before each change to a live workflow, and end-to-end checks on production that roll themselves back.</p>
               </div>
             </div>
           </article>
         </div>
+
+        <!-- Order automation -->
+        <article class="case pane reveal" data-file="order-automation/workflow.json">
+          <span class="tag tag-live">in use</span>
+          <p class="feature-label">Order-to-cash</p>
+          <h3>Order automation</h3>
+          <p>n8n workflows that take an order from the rep's tap to delivery without anyone re-typing it.</p>
+          <ol class="steps steps-row">
+            <li>Order placed in Pulse or Edge</li>
+            <li>Approval by a person</li>
+            <li>E-signature when needed</li>
+            <li>Stripe charge or pay link</li>
+            <li>QuickBooks invoice</li>
+            <li>Shipping tracked to delivery</li>
+          </ol>
+          <p class="small">Connects Stripe, QuickBooks, SignatureAPI, Gmail, the phone system, Meta, Google Sheets and HubSpot, with customer texts and emails at each step.</p>
+        </article>
       </section>
 
       <!-- experience.json -->
@@ -264,10 +387,10 @@
             <h3>Software &amp; Automation Developer Co-op</h3>
             <p class="role-org">Renellence Inc.</p>
             <ul class="bullets">
-              <li>Building an in-house CRM on Postgres and Supabase to replace HubSpot.</li>
-              <li>Built <strong>Renellence Edge</strong>, the sales platform the team uses daily.</li>
-              <li>Automated the order-to-cash process in n8n and connected nine external services.</li>
-              <li>Wrote the test suite and release scripts.</li>
+              <li>Designed the company's relational database in Supabase Postgres (~30 tables, row-level security, 16 migrations) and migrated the real HubSpot and Shopify history into it.</li>
+              <li>Built three apps on it: <strong>Pulse</strong> (reps' phone app), <strong>Edge</strong> (desktop sales platform) and <strong>Compass</strong> (managers' 1-on-1s), using behavioural design to drive daily use.</li>
+              <li>Wired n8n, Stripe, Meta, Gmail, the phone system and e-signatures into the database with idempotent, replayable intake, while moving off HubSpot.</li>
+              <li>Wrote 240 test files (4,500+ assertions) with a 90% coverage gate, access tests and real-data test runs.</li>
             </ul>
             <a class="link-arrow" href="#renellence">more detail above <span aria-hidden="true">↑</span></a>
           </div>
@@ -372,48 +495,134 @@
             </div>
             <p class="feature-note">yAI is invite-only. The hosted models answer right away; yAI 3 Coder, images and videos can take a minute or two to start after a quiet stretch while their GPU wakes up.</p>
           </div>
-        </article>
 
-        <!-- Blockcraft: a game yAI's /crew built from one prompt, playable here -->
-        <article class="pane reveal crew-demo" id="blockcraft" data-file="crew-demos/blockcraft/index.html">
-          <div class="crew-head">
-            <div>
-              <p class="feature-label">yAI /crew · demo</p>
-              <h3>Blockcraft</h3>
-              <p class="crew-prompt"><span class="prompt">$</span> <span class="tok-fn">/crew</span> <span class="tok-str">"make a minecraft replica"</span></p>
-              <p>A Minecraft-style voxel game in plain JavaScript and WebGL2, with no libraries: procedural terrain with water, beaches and trees, block breaking and placing, a hotbar, a day and night cycle, sounds made in code, and a world that saves. yAI's /crew built it from that one prompt.</p>
+          <!-- Blockcraft: a game yAI's /crew built from one prompt, playable here -->
+          <div class="feature-sub crew-demo" id="blockcraft">
+            <div class="crew-head">
+              <div>
+                <p class="feature-label">yAI /crew · demo</p>
+                <h3>Blockcraft</h3>
+                <p class="crew-prompt"><span class="prompt">$</span> <span class="tok-fn">/crew</span> <span class="tok-str">"make a minecraft replica"</span></p>
+                <p>A Minecraft-style voxel game in plain JavaScript and WebGL2, with no libraries: procedural terrain with water, beaches and trees, block breaking and placing, a hotbar, a day and night cycle, sounds made in code, and a world that saves. yAI's /crew built it from that one prompt.</p>
+              </div>
+              <ul class="metrics crew-stats">
+                <li><b>17m 37s</b><span>prompt to playable</span></li>
+                <li><b>$0.28</b><span>total model cost</span></li>
+                <li><b>3,192</b><span>lines of game code</span></li>
+                <li><b>11</b><span>JavaScript files</span></li>
+                <li><b>5</b><span>agents building</span></li>
+                <li><b>60 fps</b><span>in the browser</span></li>
+              </ul>
             </div>
-            <ul class="metrics crew-stats">
-              <li><b>17m 37s</b><span>prompt to playable</span></li>
-              <li><b>$0.28</b><span>total model cost</span></li>
-              <li><b>3,192</b><span>lines of game code</span></li>
-              <li><b>11</b><span>JavaScript files</span></li>
-              <li><b>5</b><span>agents building</span></li>
-              <li><b>60 fps</b><span>in the browser</span></li>
-            </ul>
-          </div>
 
-          <div class="play-frame" id="play-frame">
-            <button type="button" class="play-start" id="play-start">
-              <span class="play-icon" aria-hidden="true">▶</span>
-              <span><b>Play Blockcraft</b><span class="muted-line">Loads the game here · WASD to move, mouse to look, click to break and place · Esc to free the mouse</span></span>
-            </button>
-          </div>
-          <div class="feature-actions">
-            <a class="btn btn-sm" href="demos/blockcraft/index.html" target="_blank" rel="noopener">open full window <span aria-hidden="true">↗</span></a>
-          </div>
+            <div class="play-frame" id="play-frame">
+              <button type="button" class="play-start" id="play-start">
+                <span class="play-icon" aria-hidden="true">▶</span>
+                <span><b>Play Blockcraft</b><span class="muted-line">Loads the game here · WASD to move, mouse to look, click to break and place · Esc to free the mouse</span></span>
+              </button>
+            </div>
+            <div class="feature-actions">
+              <a class="btn btn-sm" href="demos/blockcraft/index.html" target="_blank" rel="noopener">open full window <span aria-hidden="true">↗</span></a>
+            </div>
 
-          <h4 class="md-h"><span class="tok-com">##</span> How /crew built it</h4>
-          <ol class="steps crew-steps">
-            <li><span><b>Research.</b> A researcher agent searched the web for what a great Minecraft replica needs and wrote the checklist the run was judged against.</span></li>
-            <li><span><b>One main builder.</b> A single agent on yAI Ultra Flash owned the whole game: the world, the mesher that turns blocks into triangles, the WebGL renderer, the player and the main loop.</span></li>
-            <li><span><b>Helpers on the side.</b> While it built the core, it commissioned four helpers that worked at the same time: block textures drawn in code, sound effects, terrain generation, and the block registry (on the free yAI Lite).</span></li>
-            <li><span><b>Checks.</b> yAI opened the game in a real browser, played it for 30 seconds, measured its frame rate, and a QA agent reviewed it like a player.</span></li>
-            <li><span><b>Fixes.</b> A fixer worked through what QA found, and yAI re-ran the checks after it.</span></li>
-            <li><span><b>A watcher</b> read every agent's steps every 20 seconds and stepped in when one went round in circles.</span></li>
-          </ol>
-          <ul class="chips"><li>yAI /crew</li><li>Multi-agent</li><li>WebGL2</li><li>JavaScript</li><li>Procedural generation</li><li>Web Audio</li><li>DeepSeek V4.1 Flash</li><li>GLM-4.7-Flash</li></ul>
+            <h4 class="md-h"><span class="tok-com">##</span> How /crew built it</h4>
+            <ol class="steps crew-steps">
+              <li><span><b>Research.</b> A researcher agent searched the web for what a great Minecraft replica needs and wrote the checklist the run was judged against.</span></li>
+              <li><span><b>One main builder.</b> A single agent on yAI Ultra Flash owned the whole game: the world, the mesher that turns blocks into triangles, the WebGL renderer, the player and the main loop.</span></li>
+              <li><span><b>Helpers on the side.</b> While it built the core, it commissioned four helpers that worked at the same time: block textures drawn in code, sound effects, terrain generation, and the block registry (on the free yAI Lite).</span></li>
+              <li><span><b>Checks.</b> yAI opened the game in a real browser, played it for 30 seconds, measured its frame rate, and a QA agent reviewed it like a player.</span></li>
+              <li><span><b>Fixes.</b> A fixer worked through what QA found, and yAI re-ran the checks after it.</span></li>
+              <li><span><b>A watcher</b> read every agent's steps every 20 seconds and stepped in when one went round in circles.</span></li>
+            </ol>
+            <ul class="chips"><li>yAI /crew</li><li>Multi-agent</li><li>WebGL2</li><li>JavaScript</li><li>Procedural generation</li><li>Web Audio</li><li>DeepSeek V4.1 Flash</li><li>GLM-4.7-Flash</li></ul>
+          </div>
         </article>
+
+        <article class="feature feature-flip pane reveal" id="picked" data-file="picked/README.md">
+          <div class="feature-visuals">
+            <figure class="feature-visual">
+              <a href="picked-results.png?v=1" target="_blank" rel="noopener"><img src="picked-results.png?v=1" alt="Picked's results for a fictional dental clinic: how often ChatGPT and Gemini picked it, the competitors they recommended instead, three reasons and three fixes" loading="lazy"></a>
+            </figure>
+            <div class="feature-thumbs">
+              <a class="thumb" href="picked-dashboard.png?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="picked-dashboard.png?v=1" alt="Picked's dashboard with a fictional business's score over time" loading="lazy"></span>
+                <span class="thumb-label">dashboard</span>
+              </a>
+              <a class="thumb" href="picked-home.png?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="picked-home.png?v=1" alt="Picked's start page, where a business owner types their business name" loading="lazy"></span>
+                <span class="thumb-label">start a scan</span>
+              </a>
+            </div>
+          </div>
+          <div class="feature-body">
+            <p class="feature-label">Personal project · Oct 2026</p>
+            <h3>Picked</h3>
+            <p>More people now ask ChatGPT or Gemini "who's the best dentist near me" instead of searching. Picked shows a local business whether the AI assistants recommend it, why or why not, and what to fix.</p>
+            <h4 class="md-h"><span class="tok-com">##</span> How a scan works</h4>
+            <ol class="steps crew-steps">
+              <li><span><b>Look it up.</b> Google Places finds the business (or Claude with web search when there's no Places key): address, hours, reviews, website.</span></li>
+              <li><span><b>Ask like a customer.</b> Claude Haiku writes ten questions a local customer would really ask.</span></li>
+              <li><span><b>Ask every engine.</b> Each question goes to ChatGPT and Gemini with live web search, the way customers see them.</span></li>
+              <li><span><b>Read the answers.</b> Haiku marks whether each answer picked the business and who it picked instead; code double-checks every match.</span></li>
+              <li><span><b>Score in code.</b> The score, the competitors and their review counts are tallied by code, not by a model.</span></li>
+              <li><span><b>Explain.</b> Claude Sonnet writes the summary, three reasons and three fixes from those facts only.</span></li>
+            </ol>
+            <p>Progress streams to the browser line by line as each answer comes in. A Fixes page turns the advice into a checklist, and reports, email review requests and Stripe checkout are wired in.</p>
+            <ul class="chips"><li>Next.js</li><li>TypeScript</li><li>Claude API</li><li>OpenAI Responses API</li><li>Gemini grounding</li><li>Google Places</li><li>Streaming NDJSON</li><li>Stripe</li><li>Resend</li></ul>
+            <div class="feature-actions">
+              <a class="btn btn-sm btn-primary" href="https://picked-psi.vercel.app" target="_blank" rel="noopener">open Picked <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature pane reveal" id="unitpilot" data-file="unitpilot/README.md">
+          <div class="feature-visuals">
+            <figure class="feature-visual">
+              <a href="unitpilot-run.png?v=1" target="_blank" rel="noopener"><img src="unitpilot-run.png?v=1" alt="UnitPilot showing a finished run on a fictional repository: tests written, coverage before and after, and possible bugs found" loading="lazy"></a>
+            </figure>
+            <div class="feature-thumbs">
+              <a class="thumb" href="unitpilot-home.png?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="unitpilot-home.png?v=1" alt="UnitPilot's start screen: pick a repository and a testing preset, with the price estimate" loading="lazy"></span>
+                <span class="thumb-label">pick a repo and a preset</span>
+              </a>
+            </div>
+          </div>
+          <div class="feature-body">
+            <p class="feature-label">Personal project · Oct 2026</p>
+            <h3>UnitPilot</h3>
+            <p>Connect a GitHub repository and get back a pull request full of real unit tests, with a report: coverage before and after, and the bugs the tests turned up.</p>
+            <h4 class="md-h"><span class="tok-com">##</span> How it works</h4>
+            <p>You sign in with email and password, connect GitHub, pick a repository and a testing preset (full, bug hunt, critical paths, safety net, security or quick). The server starts a <strong>Vercel Sandbox</strong>, an isolated microVM, clones the repo there and runs <strong>Claude Code headless</strong> with a prompt that writes tests, runs them and keeps going until they pass. When it finishes, the tests are committed to a new branch and a pull request opens with the agent's report as its description.</p>
+            <p>Before every run it shows a price estimate, so nobody is surprised by the bill. People can bring their own Anthropic key (kept only in an encrypted cookie), and a run keeps going and shows its live output even if the page is reloaded.</p>
+            <ul class="chips"><li>Next.js</li><li>TypeScript</li><li>Claude Code</li><li>Vercel Sandbox</li><li>GitHub OAuth</li><li>GitHub API</li><li>Supabase Auth</li></ul>
+            <div class="feature-actions">
+              <a class="btn btn-sm btn-primary" href="https://unitpilot.vercel.app" target="_blank" rel="noopener">open UnitPilot <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature feature-flip pane reveal" id="deepseek-worker" data-file="deepseek-worker/README.md">
+          <div class="feature-visuals">
+            <figure class="feature-visual">
+              <a href="deepseek-worker-app.png?v=1" target="_blank" rel="noopener"><img src="deepseek-worker-app.png?v=1" alt="The DeepSeek Worker desktop app: every delegated run, tokens, spend and the estimated savings against Claude" loading="lazy"></a>
+            </figure>
+          </div>
+          <div class="feature-body">
+            <p class="feature-label">Personal tool · Oct 2026</p>
+            <h3>DeepSeek Worker</h3>
+            <p>A local MCP server that lets Claude Code hand coding work to DeepSeek. Claude plans the change and checks the result; DeepSeek reads and edits the files and sends back only a summary and the list of changed files, so the expensive model spends far fewer tokens.</p>
+            <h4 class="md-h"><span class="tok-com">##</span> What Claude gets</h4>
+            <ul class="bullets">
+              <li><strong>deepseek_task</strong>: DeepSeek works through a brief with file tools (read, list, search, write, edit, and commands only when allowed), confined to the project folder.</li>
+              <li><strong>deepseek_ask</strong>: a one-shot question with files attached, no file access.</li>
+              <li><strong>deepseek_usage</strong>: calls, tokens and spend from a local usage log.</li>
+            </ul>
+            <p>Safety comes first: every path must stay inside the project, and <code>.git</code>, <code>.env</code> files, keys and credentials can never be read or written, so they're never sent out. A Claude Code skill, <code>/deepseek-delegate</code>, holds the plan-then-delegate routine.</p>
+            <p>It comes with a small Windows <strong>desktop app</strong> written in C# and compiled with the compiler built into Windows: enter the key and prices, test the connection, see the balance, every run, the spend and the estimated savings, and estimate a run before starting it.</p>
+            <ul class="chips"><li>Node.js</li><li>MCP</li><li>DeepSeek API</li><li>Claude Code</li><li>Tool calling</li><li>C#</li><li>WinForms</li></ul>
+          </div>
+        </article>
+
 
         <article class="feature feature-flip pane reveal" id="nimbus" data-file="nimbus/README.md">
           <figure class="feature-visual">

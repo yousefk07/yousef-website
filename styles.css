@@ -149,6 +149,7 @@ strong { color: var(--ink); font-weight: 600; }
   color: var(--ink-2); border-left: 2px solid transparent;
 }
 .tree .tree-sub a { padding-left: 44px; color: var(--muted); }
+.tree .tree-sub2 a { padding-left: 60px; }
 .tree a:hover { background: var(--line); color: var(--ink); }
 .tree a.active { background: var(--accent-soft); color: var(--ink); border-left-color: var(--accent); }
 .explorer-foot { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line); }
@@ -341,6 +342,16 @@ video { width: 100%; display: block; border-radius: 7px; border: 1px solid var(-
 .crew-steps li { align-items: flex-start; font-family: var(--sans); font-size: 14px; line-height: 1.55; }
 .crew-steps li b { font-family: var(--mono); font-size: 13px; color: var(--ink); }
 @media (max-width: 900px) { .crew-head { grid-template-columns: minmax(0, 1fr); } }
+/* Blockcraft sits inside the yAI pane, across both columns */
+.feature-sub { grid-column: 1 / -1; border-top: 1px dashed var(--line-2); padding-top: 26px; margin-top: 6px; }
+
+/* ---------- Renellence additions ---------- */
+.metrics-wide { grid-template-columns: repeat(6, minmax(0, 1fr)); margin: 0 0 20px; }
+.case code, .feature-body code { font-family: var(--mono); font-size: 0.88em; color: var(--orange); }
+.steps-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.feature-visual a { display: block; }
+@media (max-width: 1080px) { .metrics-wide { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .steps-row { grid-template-columns: minmax(0, 1fr); } .metrics-wide { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* ---------- Skills + education ---------- */
 .skills { display: grid; gap: 18px; }
