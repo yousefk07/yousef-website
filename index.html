@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="stylesheet" href="styles.css?v=14">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -55,6 +55,7 @@
         <li class="tree-sub"><a href="#testing"><span class="ft ft-dir">▸</span>test/</a></li>
         <li><a href="#experience" data-sec="experience"><span class="ft ft-json">{}</span>experience.json</a></li>
         <li><a href="#work" data-sec="work"><span class="ft ft-dir">▾</span>projects/</a></li>
+        <li class="tree-sub"><a href="#nightshift"><span class="ft ft-dir">▸</span>nightshift/</a></li>
         <li class="tree-sub"><a href="#yai"><span class="ft ft-dir">▸</span>yai/</a></li>
         <li class="tree-sub tree-sub2"><a href="#blockcraft"><span class="ft ft-dir">▸</span>blockcraft/</a></li>
         <li class="tree-sub"><a href="#picked"><span class="ft ft-dir">▸</span>picked/</a></li>
@@ -75,14 +76,14 @@
     <main id="main" class="editor">
       <!-- readme.md: a terminal that types itself, then the headline -->
       <section class="hero" id="readme" data-sec="readme">
-        <div class="term reveal" role="img" aria-label="A terminal: whoami says Yousef Kamel, Electrical Engineering at the University of Waterloo; cat now.md says co-op at Renellence building one database and the Pulse, Edge and Compass apps on it; ls projects lists yai, picked, unitpilot and deepseek-worker">
+        <div class="term reveal" role="img" aria-label="A terminal: whoami says Yousef Kamel, Electrical Engineering at the University of Waterloo; cat now.md says co-op at Renellence building one database and the Pulse, Edge and Compass apps on it; ls projects lists nightshift, yai, picked, unitpilot and deepseek-worker">
           <div class="term-bar"><span class="lights" aria-hidden="true"><i></i><i></i><i></i></span><span>zsh — yousef@waterloo</span></div>
           <pre class="term-body" aria-hidden="true"><span class="line"><span class="prompt">~</span> <span class="cmd">whoami</span></span>
 <span class="line out">yousef kamel · electrical engineering @ uwaterloo</span>
 <span class="line"><span class="prompt">~</span> <span class="cmd">cat now.md</span></span>
 <span class="line out">co-op @ renellence: one database, three apps (pulse · edge · compass)</span>
 <span class="line"><span class="prompt">~</span> <span class="cmd">ls projects/</span></span>
-<span class="line out"><span class="tok-dir">yai/</span>  <span class="tok-dir">picked/</span>  <span class="tok-dir">unitpilot/</span>  <span class="tok-dir">deepseek-worker/</span></span>
+<span class="line out"><span class="tok-dir">nightshift/</span>  <span class="tok-dir">yai/</span>  <span class="tok-dir">picked/</span>  <span class="tok-dir">unitpilot/</span>  <span class="tok-dir">deepseek-worker/</span></span>
 <span class="line"><span class="prompt">~</span> <span class="cursor"></span></span></pre>
         </div>
         <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Currently rebuilding Renellence's sales systems</p>
@@ -424,6 +425,109 @@
           <p class="kicker"><span class="ln">03</span><span class="tok-com">// projects</span></p>
           <h2>Other projects</h2>
         </header>
+
+        <article class="pane reveal" id="nightshift" data-file="nightshift/README.md">
+          <div class="feature">
+          <div class="feature-visuals">
+            <figure class="feature-visual">
+              <a href="nightshift-office.webp?v=1" target="_blank" rel="noopener"><img src="nightshift-office.webp?v=1" alt="Nightshift's office for a made-up dental practice: seven pixel-art bots at their desks, Mirela the front desk and Rosa from billing holding up signs saying they have drafts waiting, Theo and Molly working, the others idle with z's drifting up, and the owner's desk in the middle with 3 cards on it" loading="lazy"></a>
+              <figcaption>The office, for a made-up dental practice: each bot's desk shows what it's doing, and the signs mean a draft is waiting for you.</figcaption>
+            </figure>
+            <div class="feature-thumbs">
+              <a class="thumb" href="nightshift-desk.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="nightshift-desk.webp?v=1" alt="Your desk open beside the office: the morning brief from Juno and three cards waiting for approval, two emails from Mirela and an $85 credit note from Rosa" loading="lazy"></span>
+                <span class="thumb-label">your desk: the brief + 3 cards</span>
+              </a>
+              <a class="thumb" href="nightshift-room.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="nightshift-room.webp?v=1" alt="The bot room: Mirela hands a double-charge question to Rosa, Rosa checks QuickBooks and drafts a credit note, the owner asks Theo about clear-aligner prices, and a sidebar lists everyone in the room and a hold on reminders" loading="lazy"></span>
+                <span class="thumb-label">the bot room: hand-offs</span>
+              </a>
+              <a class="thumb" href="nightshift-chat.png?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="nightshift-chat.png?v=1" alt="A chat with Mirela, the front desk: she answers that one patient's message is urgent and shows the draft reply inline with Approve and send, Edit and Discard" loading="lazy"></span>
+                <span class="thumb-label">chat with a bot, drafts inline</span>
+              </a>
+              <a class="thumb" href="nightshift-connections.png?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="nightshift-connections.png?v=1" alt="The Connections page: Google email and calendar and QuickBooks connected, a CRM card that says which bots need it, and Shopify ready to connect, each with brand tiles" loading="lazy"></span>
+                <span class="thumb-label">connections</span>
+              </a>
+            </div>
+            <div class="feature-thumbs feature-thumbs-3">
+              <a class="thumb thumb-tall" href="nightshift-phone-office.png?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="nightshift-phone-office.png?v=1" alt="Nightshift on a phone: the office as a list of the seven bots with what each is doing, and Your desk with 3 waiting" loading="lazy"></span>
+                <span class="thumb-label">phone: the office</span>
+              </a>
+              <a class="thumb thumb-tall" href="nightshift-phone-approvals.png?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="nightshift-phone-approvals.png?v=1" alt="Approvals on a phone: Good afternoon, Jordan, three things waiting, the morning brief, and three cards with Approve and Review buttons" loading="lazy"></span>
+                <span class="thumb-label">phone: approvals</span>
+              </a>
+              <a class="thumb thumb-tall" href="nightshift-celebrate.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="nightshift-celebrate.webp?v=1" alt="The celebration after buying a plan: the whole team of pixel bots hopping with their names under them, pixel confetti falling, and You're on Studio!" loading="lazy"></span>
+                <span class="thumb-label">after buying a plan</span>
+              </a>
+            </div>
+          </div>
+          <div class="feature-body">
+            <p class="feature-label">Personal project · Oct 2026 · live</p>
+            <h3>Nightshift</h3>
+            <p>A night shift of AI bots for small businesses. While the owner is off, the bots read the inbox, flag what matters, draft replies, chase invoices, follow up on leads and do research, then leave a morning brief on the owner's desk. Nothing that sends an email or moves money happens until the owner approves it. It's a web app and a command-line tool, running on DeepSeek, Supabase and Vercel, with live Stripe billing at <strong>nightshiftai.ca</strong>.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> The office</h4>
+            <p>The main screen is a pixel-art office. Every bot has a desk and a status you can read at a glance: typing while it works, a sign saying "2 drafts for you" when something is waiting, z's drifting up while it's idle until its next shift, a wobbling "I'm stuck." when a connection it needs is missing. The office lays itself out in balanced rows and scales to fit any window, so it never scrolls. Click a bot to see its last runs and what it's waiting on; click <strong>your desk</strong> for the morning brief and the numbered queue of cards.</p>
+            <p>The <strong>bot room</strong> is where the team works in the open: one bot hands a job to another ("@Rosa, Anika says she was charged twice"), @mentioning a bot gives it a job, and holds show who the team won't contact and why. Each bot also has its own <strong>chat</strong>, where its drafts appear inline with Approve and send, Edit, Ask for changes and Discard. On a phone it all becomes a list, an approvals screen and a tab bar.</p>
+            <p>The bots are cute on purpose. They hop with a little heart when you approve their work, the team waves when your desk is clear, the room's first day has three heads bobbing, and buying a plan ends with the whole team hopping under pixel confetti. Every animation is under a second, never blocks anything and turns off with the system's reduce-motion setting.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Made for each kind of business</h4>
+            <p>There are <strong>424 bots</strong> to hire, most of them specialists for one of <strong>101 kinds of business</strong>: recall and chair-filling for dentists, no-heat dispatch for HVAC, deposit chasing for caterers, intake for immigration lawyers. Each industry also gets its own <strong>cast</strong> for the five core jobs (inbox, research, billing, follow-ups, the brief), with their own names, job titles and words. A dental practice's inbox bot is "Mirela · Front desk", who answers patients, books appointments and treats tooth pain as urgent; an HVAC company's is "Dex · Dispatch", who treats no heat or a gas smell as urgent. The bots hand work to each other by those names, the brief has the industry's own sections ("Today's chairs", "Today's service calls"), the chat suggestions use its words, and the app's copy follows. Change the industry and the team takes the new names, except any the owner renamed.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Nothing goes out without your OK</h4>
+            <p>Every tool has a risk class. <strong>Quiet</strong> tools (reading, flagging, labelling, drafting) just run. <strong>Message</strong> tools (sending an email) turn into a card the owner approves, unless they've told that bot it may send on its own. <strong>Money</strong> tools (invoices, credit notes) always wait, whatever the setting. Approving starts an 8-second undo, then the card goes out.</p>
+            <ul class="bullets">
+              <li>Every approval step is a <strong>guarded move</strong>: it only happens if the card is still where it was, so undo can't race the send and nothing goes out twice.</li>
+              <li>Money is <strong>checked</strong> three times (when the bot drafts it, when the owner edits the card, before it runs). A credit note can't exceed its invoice, and approving money needs the authenticator step on every path, including "Approve all" and the CLI.</li>
+              <li>Before anything outward, a guard checks the <strong>do-not-contact</strong> list, any holds (a client disputing a bill pauses their reminders) and a weekly cap on follow-ups. It also refuses recipients that could smuggle in a hidden Bcc.</li>
+            </ul>
+
+            <h4 class="md-h"><span class="tok-com">##</span> How the bots work</h4>
+            <p>Every bot runs on <strong>DeepSeek</strong> with native tool calling: Flash for the everyday work and Pro for the big write-ups. Each one gets a system prompt built from its job, the business, the owner's settings, a shared team memory and who its teammates are, plus only the tools for what's connected (35 in all). A <strong>tick</strong> runs every 5 minutes from Supabase's pg_cron. It sends cards whose undo has passed, runs queued hand-offs, retries failed runs and starts every bot whose shift is due. It's built to survive a bad run or a slow model, and it clears anything a crashed tick left behind. Each workspace has a daily spending cap on model and search costs, and Dawn's brief arrives at the owner's chosen time by email, push and in the app.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Connections</h4>
+            <p>Gmail and Google Calendar, Outlook and Microsoft 365, QuickBooks, Xero, FreshBooks and Stripe for the books, Shopify for orders, HubSpot, Google Sheets or a CSV for leads. The OAuth apps are all set up and verified. Tokens and keys are encrypted with AES-GCM before they're stored, and refreshes are safe when two happen at once, even with providers that hand out a new refresh token every time.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> The business around it</h4>
+            <p>Billing is live on <strong>Stripe</strong>: Solo, Studio and Team, monthly or yearly, with extra seats. Switching plans is prorated, cancelling happens at the end of the period, and the owner can take a cancellation back, all from inside the app. A purchase shows up even if a webhook is late, because the billing page reads the subscription straight from Stripe. Nightshift's own email goes through <strong>Resend</strong> from nightshiftai.ca: sign-in codes, the morning brief and alerts to me about payments, failed payments, plan changes and new sign-ups, all in the same design. An <strong>admin view</strong> shows every workspace, user, failed run, spend and revenue, read-only and behind the authenticator step.</p>
+            <p>The <strong>CLI</strong> signs in with a device code (the approval page shows which device and network is asking), then lists the queue, approves cards by number, follows the bot room live and gives bots jobs from the terminal.</p>
+            <p>It's covered by <strong>479 tests</strong>. Two agent audits went through the backend and the UI, and their findings were fixed with tests to match. The screenshots here come from a showcase mode built for them: on the local dev server, the real screens fill with a made-up practice generated by the app's own server code.</p>
+            <ul class="metrics"><li><b>424</b><span>bots to hire</span></li><li><b>101</b><span>industry casts</span></li><li><b>35</b><span>tools</span></li><li><b>479</b><span>tests passing</span></li><li><b>56</b><span>API routes</span></li><li><b>8 s</b><span>undo on every send</span></li></ul>
+            <ul class="chips"><li>Next.js 16</li><li>React 19</li><li>TypeScript</li><li>Supabase</li><li>Postgres + RLS</li><li>pg_cron</li><li>DeepSeek API</li><li>Tool calling</li><li>Stripe Billing</li><li>Resend</li><li>Web Push</li><li>OAuth 2.0</li><li>Gmail API</li><li>Microsoft Graph</li><li>QuickBooks</li><li>Xero</li><li>FreshBooks</li><li>Shopify</li><li>HubSpot</li><li>Server-sent events</li><li>Vitest</li><li>Vercel</li><li>CLI</li></ul>
+            <div class="feature-actions">
+              <a class="btn btn-sm btn-primary" href="https://www.nightshiftai.ca" target="_blank" rel="noopener">open Nightshift <span aria-hidden="true">→</span></a>
+              <a class="btn btn-sm" href="https://github.com/yousefk07/nightshift" target="_blank" rel="noopener">view code</a>
+            </div>
+            <p class="feature-note">The practice, the patients and the people in these screenshots are made up.</p>
+          </div>
+          </div>
+
+          <!-- Nightshift's emails: the same look in every inbox -->
+          <div class="feature-sub" id="nightshift-emails">
+            <p class="feature-label">Nightshift · email</p>
+            <h3>Every email, in the same look</h3>
+            <p>Each email has a dark nightshift bar and a white card. The bot logo is drawn with table cells, not an image, so it still shows when a mail app blocks pictures. The morning brief leads with its headline and turns the bot's notes into labelled sections and real lists. Sign-in emails carry a code that works in any browser. Business alerts lay out the details in a small table.</p>
+            <div class="feature-thumbs feature-thumbs-3">
+              <a class="thumb thumb-tall thumb-email" href="nightshift-email-brief.png?v=2" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="nightshift-email-brief.png?v=2" alt="The morning brief email from Juno, the morning huddle bot: Three things need you before 9 as the headline, then Needs you, Today's chairs, What the team did and Good to know as sections with bullet lists, and a Review 3 approvals button" loading="lazy"></span>
+                <span class="thumb-label">the morning brief</span>
+              </a>
+              <a class="thumb thumb-tall thumb-email" href="nightshift-email-signin.png?v=2" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="nightshift-email-signin.png?v=2" alt="The sign-in email: Sign in to Nightshift, an 8-digit code in large type and a Sign in button" loading="lazy"></span>
+                <span class="thumb-label">sign-in code</span>
+              </a>
+              <a class="thumb thumb-tall thumb-email" href="nightshift-email-alert.png?v=2" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="nightshift-email-alert.png?v=2" alt="A payment alert: Payment received, $39.00 from Kiln and Co., with a table of the workspace, billing email, invoice and amount" loading="lazy"></span>
+                <span class="thumb-label">payment alert</span>
+              </a>
+            </div>
+          </div>
+        </article>
 
         <article class="pane reveal" id="yai" data-file="yai/README.md">
           <div class="feature">
