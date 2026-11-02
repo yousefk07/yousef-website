@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kant Critiques Test</title>
+  <meta name="description" content="A hard ten-question test on Kant's three Critiques: pure reason, practical reason and judgment.">
+  <meta name="theme-color" content="#0d1117">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* The same editor palette as the main site */
+    :root {
+      --bg: #0d1117; --panel: #11161d; --pane: #0f141b; --bar: #0a0e13;
+      --line: #1f2731; --line-2: #2a3440;
+      --ink: #e6edf3; --ink-2: #b4bfcb; --muted: #7d8a97; --faint: #56616d;
+      --accent: #7aa2f7; --accent-soft: rgba(122, 162, 247, 0.12);
+      --green: #9ece6a; --green-soft: rgba(158, 206, 106, 0.12);
+      --red: #f7768e; --red-soft: rgba(247, 118, 142, 0.12);
+      --orange: #e0af68; --purple: #bb9af7; --cyan: #7dcfff;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color-scheme: dark;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fbfbfa; --panel: #f3f4f2; --pane: #ffffff; --bar: #eceeeb;
+        --line: #e1e3df; --line-2: #d2d5d0;
+        --ink: #11161d; --ink-2: #3b4450; --muted: #66717d; --faint: #96a0aa;
+        --accent: #2f5bd8; --accent-soft: rgba(47, 91, 216, 0.09);
+        --green: #3f7d1c; --green-soft: rgba(63, 125, 28, 0.1);
+        --red: #c2284a; --red-soft: rgba(194, 40, 74, 0.08);
+        --orange: #a45c00; --purple: #7a42c8; --cyan: #0a6e9c;
+        color-scheme: light;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: var(--sans); font-size: 15.5px; line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: var(--accent); color: var(--bg); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+    .titlebar { position: sticky; top: 0; z-index: 10; background: var(--bar); border-bottom: 1px solid var(--line); }
+    .titlebar-inner { height: 44px; display: flex; align-items: center; gap: 14px; padding: 0 16px; }
+    .lights { display: inline-flex; gap: 7px; flex: none; }
+    .lights i { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; }
+    .lights i:nth-child(2) { background: #febc2e; }
+    .lights i:nth-child(3) { background: #28c840; }
+    .brand { font-family: var(--mono); font-size: 13px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .brand-path { color: var(--green); font-weight: 600; }
+    .brand-dim { color: var(--accent); }
+    .progress { margin-left: auto; font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+    main { max-width: 760px; margin: 0 auto; padding: 40px 16px 80px; }
+    .eyebrow { font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
+    .eyebrow .c { color: var(--purple); }
+    h1 { margin: 10px 0 12px; font-size: clamp(28px, 6vw, 40px); line-height: 1.15; letter-spacing: -0.02em; }
+    .lede { color: var(--ink-2); margin: 0 0 32px; }
+
+    .q { background: var(--pane); border: 1px solid var(--line); border-radius: 10px; margin: 0 0 18px; overflow: hidden; }
+    .q-head { display: flex; gap: 10px; align-items: center; padding: 10px 16px; background: var(--panel); border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 12px; color: var(--muted); }
+    .q-head .num { color: var(--accent); font-weight: 600; }
+    .q-head .src { color: var(--cyan); }
+    .q-body { padding: 18px 16px 16px; }
+    .q-text { margin: 0 0 14px; font-weight: 500; }
+    .opts { display: grid; gap: 8px; margin: 0; padding: 0; border: 0; }
+    .opt { display: flex; gap: 12px; align-items: flex-start; padding: 11px 13px; border: 1px solid var(--line-2); border-radius: 8px; cursor: pointer; color: var(--ink-2); transition: border-color .15s, background .15s; }
+    .opt:hover { border-color: var(--accent); }
+    .opt input { margin: 4px 0 0; accent-color: var(--accent); flex: none; }
+    .opt .k { font-family: var(--mono); font-size: 12.5px; color: var(--faint); flex: none; padding-top: 1px; }
+    .opt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); }
+    .graded .opt { cursor: default; }
+    .graded .opt:hover { border-color: var(--line-2); }
+    .opt.right { border-color: var(--green); background: var(--green-soft); color: var(--ink); }
+    .opt.wrong { border-color: var(--red); background: var(--red-soft); color: var(--ink); }
+    .why { display: none; margin-top: 14px; padding: 12px 14px; border-left: 2px solid var(--accent); background: var(--accent-soft); border-radius: 0 6px 6px 0; font-size: 14.5px; color: var(--ink-2); }
+    .graded .why { display: block; }
+    .why b { color: var(--ink); }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 26px; }
+    button { font: 600 14px var(--mono); padding: 11px 18px; border-radius: 8px; cursor: pointer; border: 1px solid var(--line-2); background: var(--panel); color: var(--ink); }
+    button.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    .hint { font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
+
+    .result { display: none; margin: 0 0 28px; padding: 18px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+    .result.show { display: block; }
+    .score { font-family: var(--mono); font-size: 30px; font-weight: 700; color: var(--accent); }
+    .verdict { color: var(--ink-2); margin-top: 4px; }
+
+    footer { margin-top: 40px; font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header class="titlebar">
+    <div class="titlebar-inner">
+      <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+      <a href="/" class="brand" aria-label="Yousef Kamel, home"><span class="brand-path">yousef@kamel</span><span class="brand-dim">:~/kanttest</span></a>
+      <span class="progress" id="progress">0 / 10 answered</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="eyebrow"><span class="c">// </span>critique.test.md</p>
+    <h1>The Three Critiques: a hard test</h1>
+    <p class="lede">Ten questions on the <em>Critique of Pure Reason</em>, the <em>Critique of Practical Reason</em> and the <em>Critique of Judgment</em>. Every wrong answer is a real position, often someone else's or Kant's own on a nearby point. Answer all ten, then submit to see your score and why each answer is right.</p>
+
+    <div class="result" id="result" aria-live="polite">
+      <div class="score" id="score"></div>
+      <div class="verdict" id="verdict"></div>
+    </div>
+
+    <form id="quiz"></form>
+
+    <div class="actions">
+      <button class="primary" id="submit" disabled>Submit answers</button>
+      <button id="reset" type="button">Start over</button>
+      <span class="hint" id="hint">Answer all 10 to submit.</span>
+    </div>
+
+    <footer><a href="/">← back to yousefkamel.site</a></footer>
+  </main>
+
+  <script>
+    // `a` is the index of the correct option.
+    const QUESTIONS = [
+      {
+        src: "CPR · Transcendental Aesthetic",
+        q: "In the Metaphysical Exposition of space, which argument is meant to show that space is an intuition and not a discursive concept?",
+        o: [
+          "We can never represent that there is no space, though we can think of space as empty of objects.",
+          "Geometry determines the properties of space synthetically and yet a priori.",
+          "We can represent only one space; \"many spaces\" are parts of that one space, not instances falling under a general concept.",
+          "The representation of space must already be presupposed for me to refer sensations to something outside me."
+        ],
+        a: 2,
+        why: "A concept holds its instances <b>under</b> it; space holds its parts <b>in</b> it, and the parts come only by limiting the one space. That is the argument that space is an intuition. Option A shows that space is <b>a priori</b>, which is a different argument. Option D is the first argument, also about a priority. Option B belongs to the <b>Transcendental</b> Exposition, not the Metaphysical one."
+      },
+      {
+        src: "CPR · B-Deduction §16",
+        q: "Kant says the analytic unity of apperception (the identical \"I think\" in all my representations) is possible only under the presupposition of what?",
+        o: [
+          "A synthetic unity of apperception: that the manifold has been combined in one consciousness.",
+          "The empirical unity of consciousness given in inner sense.",
+          "The Paralogisms' proof that the soul is a simple substance.",
+          "The categories already being applied to appearances given in space."
+        ],
+        a: 0,
+        why: "§16: \"the analytical unity of apperception is possible only under the presupposition of some synthetic unity.\" I can be aware of an identical I across my representations only because I have combined them, so synthesis comes first. Empirical apperception (B) is contingent and comes after. The Paralogisms (C) argue against any such proof. Applying the categories to appearances in space (D) is the second step of the B-Deduction, §26."
+      },
+      {
+        src: "CPR · Schematism",
+        q: "What is the schema of the category of necessity?",
+        o: [
+          "The permanence of the real in time.",
+          "The existence of an object at a determinate time.",
+          "The agreement of a synthesis of representations with the conditions of time in general.",
+          "The existence of an object at all times."
+        ],
+        a: 3,
+        why: "The three schemata of modality are: possibility, agreement with the conditions of time in general (C); actuality, existence at a determinate time (B); and necessity, <b>existence of an object at all times</b>. The permanence of the real in time (A) is the schema of <b>substance</b>."
+      },
+      {
+        src: "CPR · Refutation of Idealism (B274–279)",
+        q: "Which statement best gives the strategy of the Refutation of Idealism added in the second edition?",
+        o: [
+          "Outer objects are known immediately because space is a form of sensibility, so problematic idealism rests on a confusion about words.",
+          "My existence as determined in time requires something permanent in perception; that permanent cannot be a representation in me, so it must be a thing outside me.",
+          "The existence of outer things follows by causal inference from my sensations, since sensations need a cause.",
+          "God's veracity guarantees that our clear and distinct perceptions of extended things are not deceptive."
+        ],
+        a: 1,
+        why: "Kant turns the problematic idealist's (Descartes') own premise against them. Empirically determined consciousness of my existence in time is possible only by reference to something persistent, and every representation in inner sense changes. So inner experience depends on outer experience. Option C is exactly the inference from effects to causes that Kant says is unreliable, which is why he gives an <b>immediate</b> proof. Option D is Descartes' answer."
+      },
+      {
+        src: "CPR · Antinomy of Pure Reason",
+        q: "How does Kant resolve the third antinomy (freedom against natural causality), and how does that differ from his resolution of the first two?",
+        o: [
+          "Thesis and antithesis are both false, because both assume the world is a thing in itself, given as a whole.",
+          "The thesis is true and the antithesis false, because a first cause is needed to finish the regress.",
+          "Thesis and antithesis can both be true: the antithesis holds of appearances, the thesis can hold of things in themselves. In the first two, mathematical, antinomies both sides are false.",
+          "Both sides are undecidable, so reason has to suspend judgment as the Pyrrhonists do."
+        ],
+        a: 2,
+        why: "The mathematical antinomies (1 and 2) are contraries that share a false assumption, so both sides fail (A applies to them, not to the third). In the dynamical antinomies (3 and 4) the unconditioned condition can lie outside the series of appearances, so <b>both sides may be true</b>, in different senses. This leaves room for freedom without proving it is real."
+      },
+      {
+        src: "CPR · Ideal of Pure Reason",
+        q: "According to Kant, how do the three speculative proofs of God's existence depend on each other?",
+        o: [
+          "The ontological proof needs the cosmological proof to supply an existing object; the cosmological proof needs the physico-theological proof's evidence of design.",
+          "Each is independent, and they fail for three unrelated reasons.",
+          "The physico-theological proof succeeds as far as it goes, and only the ontological proof is shown to be invalid.",
+          "The physico-theological proof falls back on the cosmological proof, which in turn secretly relies on the ontological proof."
+        ],
+        a: 3,
+        why: "Design can at most show an architect, not a creator. To reach a necessary, all-sufficient being the physico-theological proof switches to the cosmological argument. That argument then has to identify the necessary being with the <i>ens realissimum</i>, which is the ontological move. So everything depends on the ontological proof, which fails because \"being is obviously not a real predicate.\" Option A gives the dependency in reverse."
+      },
+      {
+        src: "CPrR · Preface",
+        q: "In the Preface to the Critique of Practical Reason, how does Kant relate freedom and the moral law?",
+        o: [
+          "Freedom is the ratio essendi (ground of being) of the moral law; the moral law is the ratio cognoscendi (ground of knowing) of freedom.",
+          "The moral law is the ratio essendi of freedom; freedom is the ratio cognoscendi of the moral law.",
+          "Freedom is proved theoretically in the first Critique, and the moral law is derived from it.",
+          "Both are postulates on a par with God and immortality, and neither grounds the other."
+        ],
+        a: 0,
+        why: "Without freedom there would be no moral law, so freedom is its <b>ground of being</b>. Without consciousness of the moral law, given as a \"fact of reason\", we would never be justified in assuming freedom, so the law is our <b>ground of knowing</b> freedom. Option B reverses it. Option C contradicts the first Critique, which only shows freedom is not contradictory. Option D is wrong because freedom is the one idea whose reality is revealed through the moral law. God and immortality are postulated only to make the highest good possible."
+      },
+      {
+        src: "CPrR · Dialectic",
+        q: "On what specific ground does Kant postulate the immortality of the soul?",
+        o: [
+          "The soul is a simple substance and so cannot perish by decomposition.",
+          "Happiness has to be distributed in exact proportion to virtue, and that needs a moral author of nature.",
+          "Holiness, the complete conformity of the will to the moral law, is commanded but can be reached only in an endless progress, which assumes the person goes on existing.",
+          "Without an afterlife no one would be motivated to obey the moral law."
+        ],
+        a: 2,
+        why: "The highest good requires holiness, and no rational being in the sensible world can achieve holiness at any moment. So it can be found only in a progress <i>in infinitum</i>, which presupposes the endless existence of the same person. Option B is the ground for postulating <b>God</b>. Option A is Mendelssohn's argument, which the Paralogisms refute. Option D would make morality heteronomous."
+      },
+      {
+        src: "CJ · Analytic of the Sublime",
+        q: "In the mathematically sublime, what exactly does the imagination fail to do?",
+        o: [
+          "Apprehend the parts of a very large object one after another.",
+          "Comprehend the apprehended parts in one intuition, as reason demands of a whole, while apprehension can go on without end.",
+          "Resist the object's might, which produces fear in a spectator who is in fact safe.",
+          "Bring the object under a determinate concept of the understanding."
+        ],
+        a: 1,
+        why: "Apprehension (A) can go on forever. What reaches a maximum is <b>comprehension</b> (<i>comprehensio aesthetica</i>), holding it all together in one intuition. Reason demands totality and the imagination cannot provide it. That failure reveals a supersensible power in us that surpasses every standard of sense. Option C describes the <b>dynamically</b> sublime. Option D is irrelevant, since aesthetic judgments are not determined by concepts at all."
+      },
+      {
+        src: "CJ · Dialectic of Aesthetic Judgment",
+        q: "How does Kant resolve the antinomy of taste (thesis: judgments of taste are not based on concepts; antithesis: they are based on concepts)?",
+        o: [
+          "The antithesis is false: taste is only private agreeableness, and the demand for agreement is an illusion.",
+          "The thesis is false: beauty is the confused perception of perfection, as the Wolffians held.",
+          "Both are false, since the judgment rests on the feeling of respect for the moral law.",
+          "Both are true when \"concept\" is taken in different senses: the judgment rests on no determinate concept, but on an indeterminate concept, the supersensible substrate of nature and of the subject."
+        ],
+        a: 3,
+        why: "This mirrors the dynamical antinomies. Taste cannot be <b>proved</b> from a determinate concept (thesis). Yet it claims universal validity, which needs <i>some</i> concept (antithesis). The solution is the indeterminate, indeed indeterminable, concept of the supersensible, which grounds the subjective purposiveness of nature for our judgment. Option B is the rationalist account Kant rejects in the Third Moment. Option A collapses the beautiful into the agreeable."
+      }
+    ];
+
+    const LETTERS = "ABCD";
+    const form = document.getElementById("quiz");
+    const submit = document.getElementById("submit");
+    const hint = document.getElementById("hint");
+    const progress = document.getElementById("progress");
+    const result = document.getElementById("result");
+
+    function render() {
+      form.innerHTML = QUESTIONS.map((item, i) => `
+        <section class="q" id="q${i}">
+          <div class="q-head"><span class="num">Q${String(i + 1).padStart(2, "0")}</span><span class="src">${item.src}</span></div>
+          <div class="q-body">
+            <p class="q-text">${item.q}</p>
+            <fieldset class="opts">
+              <legend class="sr" hidden>Question ${i + 1}</legend>
+              ${item.o.map((text, j) => `
+                <label class="opt" data-j="${j}">
+                  <input type="radio" name="q${i}" value="${j}">
+                  <span class="k">${LETTERS[j]}</span>
+                  <span>${text}</span>
+                </label>`).join("")}
+            </fieldset>
+            <div class="why">${item.why}</div>
+          </div>
+        </section>`).join("");
+    }
+
+    function answered() {
+      return QUESTIONS.filter((_, i) => form.querySelector(`input[name=q${i}]:checked`)).length;
+    }
+
+    function update() {
+      const n = answered();
+      progress.textContent = `${n} / ${QUESTIONS.length} answered`;
+      submit.disabled = n < QUESTIONS.length;
+      hint.textContent = n < QUESTIONS.length ? `Answer all ${QUESTIONS.length} to submit.` : "Ready.";
+    }
+
+    function grade() {
+      let score = 0;
+      QUESTIONS.forEach((item, i) => {
+        const section = document.getElementById(`q${i}`);
+        const picked = Number(form.querySelector(`input[name=q${i}]:checked`).value);
+        if (picked === item.a) score++;
+        section.classList.add("graded");
+        section.querySelectorAll(".opt").forEach(label => {
+          const j = Number(label.dataset.j);
+          if (j === item.a) label.classList.add("right");
+          else if (j === picked) label.classList.add("wrong");
+        });
+        section.querySelectorAll("input").forEach(input => input.disabled = true);
+      });
+      const verdicts = [
+        [10, "Perfect. You may have the Akademie edition at home."],
+        [8, "Excellent. You've read Kant closely, not just the commentaries."],
+        [6, "Solid. The architecture is clear to you; the details still slip."],
+        [4, "A fair start. The Dialectics are worth another read."],
+        [0, "Kant is hard. Read the explanations below and try again."]
+      ];
+      document.getElementById("score").textContent = `${score} / ${QUESTIONS.length}`;
+      document.getElementById("verdict").textContent = verdicts.find(([min]) => score >= min)[1];
+      result.classList.add("show");
+      submit.disabled = true;
+      hint.textContent = "Graded. Explanations are under each question.";
+      progress.textContent = `score ${score} / ${QUESTIONS.length}`;
+      result.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    form.addEventListener("change", update);
+    submit.addEventListener("click", e => { e.preventDefault(); grade(); });
+    document.getElementById("reset").addEventListener("click", () => {
+      result.classList.remove("show");
+      render();
+      update();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    render();
+    update();
+  </script>
+</body>
+</html>
