@@ -369,6 +369,57 @@
           </ol>
           <p class="small">Connects Stripe, QuickBooks, SignatureAPI, Gmail, the phone system, Meta, Google Sheets and HubSpot, with customer texts and emails at each step.</p>
         </article>
+
+        <!-- Renellence Shield -->
+        <article class="case pane reveal" id="shield" data-file="shield/agent.ps1">
+          <div class="case-head">
+            <span class="tag tag-live">in production</span>
+            <p class="feature-label">Security · endpoint detection &amp; response</p>
+            <h3>Renellence Shield</h3>
+            <p class="case-lede">
+              After an infostealer hit the company in October 2026, I built Renellence's own security system: an
+              agent on every company laptop that watches for the ways credentials get stolen, a cloud side that
+              watches the company's accounts, and a signed admin console with a red button that locks everything
+              down at once.
+            </p>
+          </div>
+          <ul class="metrics metrics-wide">
+            <li><b>~8 s</b><span>from theft attempt to isolated laptop</span></li>
+            <li><b>40+</b><span>safeguards</span></li>
+            <li><b>1</b><span>button to lock the company down</span></li>
+            <li><b>2</b><span>admins, each with a key + TOTP</span></li>
+            <li><b>118</b><span>automated tests</span></li>
+            <li><b>0</b><span>unsigned commands accepted</span></li>
+          </ul>
+          <div class="case-grid">
+            <div class="point">
+              <h4>Tripwires, not guesses</h4>
+              <p>Traps nobody innocent touches: saved browser passwords and cookies, developer secrets, planted bait and ransomware canaries. Windows' own audit log reports every touch to a resident watcher as it happens.</p>
+            </div>
+            <div class="point">
+              <h4>Contain in seconds</h4>
+              <p>When a program trips one, Shield kills it, cuts the laptop off the internet (keeping only its own line to the console) and pages both admins on Telegram and email. An admin releases it from the console.</p>
+            </div>
+            <div class="point">
+              <h4>Downloads checked on arrival</h4>
+              <p>Every program, script, archive, disk image and Office file that lands is inspected within seconds: signatures, side-loading, macros, hidden loaders. Dangerous ones are held, with a branded on-screen notice.</p>
+            </div>
+            <div class="point">
+              <h4>Attack patterns, live</h4>
+              <p>Every program start is read with its command line: credential dumping, abused built-in tools, ClickFix paste attacks, documents or browsers launching shells, persistence in coding tools.</p>
+            </div>
+            <div class="point">
+              <h4>The red button</h4>
+              <p>One admin and a fresh code isolate every laptop, sign everyone out of Google, revoke app tokens and pause every automation except Shield's own, all easily reversible.</p>
+            </div>
+            <div class="point">
+              <h4>Trust nothing unsigned</h4>
+              <p>Laptops check in with per-device HMAC and replay-proof timestamps; admin commands and agent updates are ECDSA-signed and verified before anything runs, so even the server can't push a fake one.</p>
+            </div>
+          </div>
+          <p class="small">Also watches the cloud every few hours: DNS changes, breached accounts, mailbox forwarding rules, new app grants, payment-account changes, new QuickBooks vendors and AI spend. A Windows desktop console (Electron, auto-updating) shows laptops, alerts, integrations and every safeguard.</p>
+          <ul class="chips"><li>PowerShell</li><li>Windows security auditing</li><li>Electron</li><li>Supabase Postgres</li><li>n8n</li><li>ECDSA / HMAC</li><li>TOTP</li><li>Pester</li></ul>
+        </article>
       </section>
 
       <!-- experience.json -->
