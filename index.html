@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=14">
+  <link rel="stylesheet" href="styles.css?v=15">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -52,6 +52,8 @@
         <li class="tree-sub"><a href="#database"><span class="ft ft-dir">▸</span>database/</a></li>
         <li class="tree-sub"><a href="#dataflow"><span class="ft ft-dir">▸</span>data-flow/</a></li>
         <li class="tree-sub"><a href="#apps"><span class="ft ft-dir">▸</span>apps/</a></li>
+        <li class="tree-sub tree-sub2"><a href="#pulse"><span class="ft ft-dir">▸</span>pulse/</a></li>
+        <li class="tree-sub tree-sub2"><a href="#edge"><span class="ft ft-dir">▸</span>edge/</a></li>
         <li class="tree-sub"><a href="#testing"><span class="ft ft-dir">▸</span>test/</a></li>
         <li class="tree-sub"><a href="#shield"><span class="ft ft-dir">▸</span>shield/</a></li>
         <li><a href="#experience" data-sec="experience"><span class="ft ft-json">{}</span>experience.json</a></li>
@@ -281,6 +283,127 @@
             </div>
           </div>
           <ul class="chips"><li>JavaScript</li><li>React</li><li>Vite</li><li>PWA</li><li>Web Push</li><li>CSS animation</li><li>SVG</li></ul>
+        </article>
+
+        <!-- Pulse -->
+        <article class="pane reveal" id="pulse" data-file="pulse/README.md">
+          <div class="feature">
+          <div class="feature-visuals">
+            <figure class="feature-video">
+              <video src="pulse-showcase.mp4?v=1" poster="pulse-showcase-poster.jpg?v=1" autoplay muted loop playsinline preload="metadata"
+                     aria-label="A tour of Pulse on a phone: Today with the streak, the daily ring, Nell the owl and the next people to reach; the Calls list led by new ad leads; a customer's page with their order on its way; a visit logged with a typed note, then Nell's Streak saved screen; the ring full on Today; a new order for four saypha lips and two saypha volume reviewed and sent for approval; and Rewards with the quarter's commission and the race to Vienna"></video>
+              <figcaption>A tour of Pulse, recorded on a local copy of the database filled with made-up clinics.</figcaption>
+            </figure>
+            <div class="feature-thumbs feature-thumbs-4">
+              <a class="thumb thumb-tall" href="pulse-person.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="pulse-person.webp?v=1" alt="A customer's page in Pulse: Zoe Okafor at Halcyon Medical Aesthetics, $3,785 bought, an order preparing to ship, the next step and Call, Visit and Text buttons" loading="lazy"></span>
+                <span class="thumb-label">a customer</span>
+              </a>
+              <a class="thumb thumb-tall" href="pulse-visit.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="pulse-visit.webp?v=1" alt="The log sheet: Did the visit happen? with Visited chosen and a note box that turns a Next: line into the follow-up" loading="lazy"></span>
+                <span class="thumb-label">logging a visit</span>
+              </a>
+              <a class="thumb thumb-tall" href="pulse-review.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="pulse-review.webp?v=1" alt="The order review: email, shipping and billing, four saypha lips and two saypha volume for $1,350, card on file, and Send for approval" loading="lazy"></span>
+                <span class="thumb-label">order review</span>
+              </a>
+              <a class="thumb thumb-tall" href="pulse-rewards.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="pulse-rewards.webp?v=1" alt="Rewards: $1,807 earned this quarter in a gold card, split into new orders and reorders, the Cha-ching list and the Race to Vienna" loading="lazy"></span>
+                <span class="thumb-label">rewards</span>
+              </a>
+            </div>
+          </div>
+          <div class="feature-body">
+            <span class="tag tag-live">in use</span>
+            <p class="feature-label">Sales · phone app (PWA) · Oct 2026</p>
+            <h3>Pulse</h3>
+            <p><strong>Pulse</strong> is what Renellence's reps open on their phones between clinic visits. It answers one question, "who do I reach next?", and lets them log the visit or place the order on the spot. It reads and writes the company's one database directly, with no HubSpot behind it. I built it screen by screen from a 29-screen dark mockup, in plain JavaScript with no build step.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Today, worked out from the records</h4>
+            <p>Today ranks the people to reach: new ad leads first for their first 24 hours, then the follow-ups the rep promised, then clinics <strong>going cold</strong> (30 days with no order or visit). Calls and visits are separate lists. Above them sit the day's ring (five a day, and an order counts as two), a weekday streak that weekends, holidays and time off never break, and the rep's <strong>My Fifty</strong> count toward 50 clinics. None of it is stored: the list, the streak and "going cold" are worked out from the records on every load.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Logging in seconds</h4>
+            <p>Call and Text open the phone system's app. Afterwards a sheet asks whether it happened and takes a quick note, said or typed. Spoken notes are written up by Gemini using the person's and clinic's details, and a <code>Next:</code> line becomes the follow-up task (tomorrow, unless the note names a day). Meeting the day's goal brings up Nell, the team's owl, with "Streak saved".</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> An order from the parking lot</h4>
+            <p>Products are grouped the way reps think of them, with quantities, free items and price choices; the review shows where it ships and how it's paid (card on file or wire). <strong>Send for approval</strong> saves the order the moment it's tapped and hands it to the approval workflow with an idempotency key, so a resend never makes a second order. Approval, e-signature, the Stripe charge or pay link, the QuickBooks invoice and shipping then run without anyone re-typing it.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Wins, not points</h4>
+            <p>Rewards shows the commission already earned this quarter, split into new orders and reorders, a "Cha-ching" list of every paid order, and a quarter-long race to Vienna. Gold appears only on real wins, and logging alone is never rewarded.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Built for phones</h4>
+            <ul class="bullets">
+              <li>Installable from the browser, with <strong>web push</strong> for new leads, the morning summary and wins.</li>
+              <li>Google sign-in limited to company accounts with an active user row; <strong>row-level security</strong> keeps each rep to their own customers, tested rep against rep.</li>
+              <li>Every screen is checked at 390 px wide, and <strong>82 test files</strong> (unit and database) run against a separate test database, never production.</li>
+            </ul>
+            <ul class="metrics"><li><b>5</b><span>touches a day</span></li><li><b>50</b><span>clinics in My Fifty</span></li><li><b>29</b><span>mockup screens built</span></li><li><b>0</b><span>build steps</span></li><li><b>82</b><span>test files</span></li></ul>
+            <ul class="chips"><li>JavaScript</li><li>PWA</li><li>Service worker</li><li>Web Push</li><li>Supabase Postgres</li><li>Row-level security</li><li>Supabase Auth</li><li>Gemini</li><li>n8n</li><li>Vercel</li></ul>
+            <p class="feature-note">The clinics, people and amounts in the video and screenshots are made up: it's the real app running on a local copy of the database filled with demo data.</p>
+          </div>
+          </div>
+        </article>
+
+        <!-- Edge -->
+        <article class="pane reveal" id="edge" data-file="edge/README.md">
+          <div class="feature">
+          <div class="feature-visuals">
+            <figure class="feature-video">
+              <video src="edge-showcase.mp4?v=1" poster="edge-showcase-poster.jpg?v=1" autoplay muted loop playsinline preload="metadata"
+                     aria-label="A tour of Edge in the browser: the home page with the November forecast, commission earned, My Fifty as fifty dots and the stuck accounts; the Forecast page month by month; Customers sorted by what they need; Dr. Maya Patel's page with her order's progress, badges and activity; the Friday check-in's forecast changes with a reason for each; Events with seats and invites; and Rewards"></video>
+              <figcaption>A tour of Edge, recorded on a local copy of the database filled with made-up clinics.</figcaption>
+            </figure>
+            <div class="feature-thumbs">
+              <a class="thumb" href="edge-forecast.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="edge-forecast.webp?v=1" alt="The Forecast page: November's ordered, forecast and late amounts, and a table of accounts by month with what each earns the rep" loading="lazy"></span>
+                <span class="thumb-label">forecast, month by month</span>
+              </a>
+              <a class="thumb" href="edge-customer.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="edge-customer.webp?v=1" alt="A customer's page: Dr. Maya Patel, bought this year, the next forecast, an order tracker waiting on payment with Resend pay link, product badges and an activity timeline" loading="lazy"></span>
+                <span class="thumb-label">one customer, one page</span>
+              </a>
+              <a class="thumb" href="edge-checkin.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="edge-checkin.webp?v=1" alt="The Friday check-in, step 2 of 4: two late forecasts, each with a month to move it to and a reason such as clinic's timing or still has stock" loading="lazy"></span>
+                <span class="thumb-label">the Friday check-in</span>
+              </a>
+              <a class="thumb" href="edge-events.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="edge-events.webp?v=1" alt="Events: a lips training with 2 of 20 seats, the Vienna trip and a launch night, with invited and confirmed customers and sales from the event" loading="lazy"></span>
+                <span class="thumb-label">events and seats</span>
+              </a>
+            </div>
+          </div>
+          <div class="feature-body">
+            <span class="tag tag-live">in production</span>
+            <p class="feature-label">Sales · desktop platform · live Nov 2026</p>
+            <h3>Edge</h3>
+            <p><strong>Edge</strong> is the desktop side, where reps plan the month and keep every account moving. The new Edge, live since November 2, 2026, is a full redesign in React and Vite on the same database as Pulse. It replaced an older Edge built on HubSpot; the new one keeps its own records in the database.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> A forecast-first home</h4>
+            <p>Home opens on the month's forecast against what's already ordered, split into ordered, still to come and late, with the commission earned and what's still "on the table" if the forecasts land. My Fifty is drawn as fifty dots, and accounts that are <strong>stuck</strong> (waiting for a signature, a payment, shipping or a first order) are grouped so the next move is obvious. The greeting counts the clinics growing "because of you", never the ones slipping.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Every account, month by month</h4>
+            <p>The Forecast page lays each account across this month, the next two and later: what the clinic is expected to order, when, and what it earns the rep. Orders tick forecasts off as they land, and anything past its date turns red until it's moved or dropped.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> One customer, one page</h4>
+            <p>A customer's page holds their stage (lead, candidate, My Fifty), what they've bought, the next forecast, badges for each product line they order, and a live tracker for the open order (placed, approved, payment, preparing, shipped, delivered) with a one-click pay-link resend. Below is one timeline of calls, visits, notes, events and orders, whichever app or feed they came from.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> The Friday check-in</h4>
+            <p>Every week reps go through four steps: update the forecast, move or drop anything late and say why (the clinic's timing, still has stock, budget, can't reach the decision-maker…), sort their accounts, and submit. The answers feed the manager's 1-on-1 in Compass, and the focus agreed there shows up on the rep's Edge home.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Next: the manager side</h4>
+            <p>A manager area is being built now: the team's forecast and paid by rep, a queue of accounts that need someone, customer reassignment and onboarding, on the same screens and data the reps use.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Built so it can't misfire</h4>
+            <ul class="bullets">
+              <li>The whole API is <strong>one serverless function</strong> (reads by <code>?op=</code>, writes by <code>{op}</code>), which keeps it under Vercel's 12-function limit.</li>
+              <li>Until it went live, a <strong>sandbox guard</strong> held every outgoing request that would change something outside Edge (n8n, Stripe, Shopify, Meta, Gmail) in an outbox table, so the redesign was tested on real data without sending anything.</li>
+              <li>Events, expenses and marketing requests live in the same database, so the event that produced an order and the lunch that went with it stay linked to the customer.</li>
+            </ul>
+            <ul class="metrics"><li><b>1</b><span>API function</span></li><li><b>4</b><span>steps every Friday</span></li><li><b>6</b><span>order stages tracked</span></li></ul>
+            <ul class="chips"><li>React</li><li>Vite</li><li>React Router</li><li>Node.js</li><li>Supabase Postgres</li><li>Row-level security</li><li>Vercel</li><li>n8n</li></ul>
+            <p class="feature-note">The clinics, people and amounts in the video and screenshots are made up: it's the real app running on a local copy of the database filled with demo data.</p>
+          </div>
+          </div>
         </article>
 
         <!-- Psychology + tests -->
