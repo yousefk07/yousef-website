@@ -474,10 +474,13 @@
             <h3>Software &amp; Automation Developer Co-op</h3>
             <p class="role-org">Renellence Inc.</p>
             <ul class="bullets">
-              <li>Designed the company's relational database in Supabase Postgres (~30 tables, row-level security, 16 migrations) and migrated the real HubSpot and Shopify history into it.</li>
-              <li>Built three apps on it: <strong>Pulse</strong> (reps' phone app), <strong>Edge</strong> (desktop sales platform) and <strong>Compass</strong> (managers' 1-on-1s), using behavioural design to drive daily use.</li>
-              <li>Wired n8n, Stripe, Meta, Gmail, the phone system and e-signatures into the database with idempotent, replayable intake, while moving off HubSpot.</li>
-              <li>Wrote 240 test files (4,500+ assertions) with a 90% coverage gate, access tests and real-data test runs.</li>
+              <li><strong>Database:</strong> designed the company's single relational database in Supabase Postgres (~30 tables, 71 foreign keys, 37 row-level security policies, 45 triggers, 16 migrations), documented it in a written SOP (477 fields) and a live data dictionary, and migrated the real HubSpot, Shopify and spreadsheet history into it.</li>
+              <li><strong>Apps:</strong> built three apps on it: <strong>Pulse</strong> (reps' installable phone app with push notifications, built from a 29-screen mockup), <strong>Edge</strong> (desktop sales platform with a forecast-first home and KPI scorecard) and <strong>Compass</strong> (managers' weekly and monthly 1-on-1s), plus an admin app, using behavioural design (goal rings, forgiving streaks, a mascot) to drive daily use.</li>
+              <li><strong>Integrations:</strong> wired n8n, Stripe, Meta leads, Gmail, the phone system and e-signatures into the database through signed webhooks and a 5-minute pg_cron tick with idempotent, replayable intake and freshness alarms; mirrored all 74 HubSpot write steps and moved 23 of 93 HubSpot lookups to the database on the way off HubSpot.</li>
+              <li><strong>Order-to-cash:</strong> automated orders from a rep's tap through approval, e-signature, Stripe charge, QuickBooks invoice and shipping, exactly once even on retries; added Claude jobs that summarise calls and leads.</li>
+              <li><strong>Reliability:</strong> built monitors for automation errors (hourly) and stuck orders (daily), and handled production incidents end to end, such as an expired payment key: fixed the connection, reprocessed the affected order from scratch and audited the impact.</li>
+              <li><strong>Security:</strong> led the response to an October 2026 malware incident (company-wide key resets and security reviews of laptops, Google Workspace, GitHub, Vercel, Stripe, n8n, Shopify, Supabase and Meta), then built <strong>Renellence Shield</strong>, an endpoint detection and response system: a laptop agent that contains credential theft in about 8 seconds, live download inspection, cloud account monitoring, signed admin commands and a one-button company lockdown.</li>
+              <li><strong>Testing:</strong> wrote 240 test files (4,500+ assertions) with a 90% coverage gate, rep-against-rep access tests and real-data test runs, plus 118 tests for Shield.</li>
             </ul>
             <a class="link-arrow" href="#renellence">more detail above <span aria-hidden="true">↑</span></a>
           </div>
