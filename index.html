@@ -53,6 +53,7 @@
         <li class="tree-sub"><a href="#dataflow"><span class="ft ft-dir">▸</span>data-flow/</a></li>
         <li class="tree-sub"><a href="#apps"><span class="ft ft-dir">▸</span>apps/</a></li>
         <li class="tree-sub"><a href="#testing"><span class="ft ft-dir">▸</span>test/</a></li>
+        <li class="tree-sub"><a href="#shield"><span class="ft ft-dir">▸</span>shield/</a></li>
         <li><a href="#experience" data-sec="experience"><span class="ft ft-json">{}</span>experience.json</a></li>
         <li><a href="#work" data-sec="work"><span class="ft ft-dir">▾</span>projects/</a></li>
         <li class="tree-sub"><a href="#nightshift"><span class="ft ft-dir">▸</span>nightshift/</a></li>
@@ -371,54 +372,88 @@
         </article>
 
         <!-- Renellence Shield -->
-        <article class="case pane reveal" id="shield" data-file="shield/agent.ps1">
-          <div class="case-head">
+        <article class="pane reveal" id="shield" data-file="shield/README.md">
+          <div class="feature">
+          <div class="feature-visuals">
+            <figure class="feature-visual">
+              <a href="shield-console-laptops.webp?v=1" target="_blank" rel="noopener"><img src="shield-console-laptops.webp?v=1" alt="The Shield console's Laptops tab: four company laptops with owner, status, network and alerts; one is isolated with a critical alert and a Release button, and the red Emergency panel with Lock everything and Run a drill sits on the left" loading="lazy"></a>
+              <figcaption>The admin console: every laptop, its network state and open alerts, with the red button on the left.</figcaption>
+            </figure>
+            <div class="feature-thumbs">
+              <a class="thumb" href="shield-console-alerts.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="shield-console-alerts.webp?v=1" alt="The Alerts tab: a critical alert that a program read the browser's saved passwords and cookies, killed and isolated within seconds, and a warning that a fake PDF download was held" loading="lazy"></span>
+                <span class="thumb-label">alerts: contained in seconds</span>
+              </a>
+              <a class="thumb" href="shield-popup.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="shield-popup.webp?v=1" alt="The on-screen warning: Shield stopped a dangerous file, invoice_2026.pdf.exe in Downloads, a program dressed up as a PDF, with a Delete the file button and an unblock box that needs OPEN ANYWAY typed" loading="lazy"></span>
+                <span class="thumb-label">the on-screen warning</span>
+              </a>
+              <a class="thumb" href="shield-console-features.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="shield-console-features.webp?v=1" alt="The Features tab: 43 safeguards in 9 groups with a search box, showing the Cloud watch card for domain and email records" loading="lazy"></span>
+                <span class="thumb-label">every safeguard, searchable</span>
+              </a>
+              <a class="thumb" href="shield-console-login.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="shield-console-login.webp?v=1" alt="The console sign-in: Renellence Shield logo, Secure admin console, an admin picker, an admin key and an authenticator code" loading="lazy"></span>
+                <span class="thumb-label">sign-in: key + authenticator</span>
+              </a>
+            </div>
+          </div>
+          <div class="feature-body">
             <span class="tag tag-live">in production</span>
-            <p class="feature-label">Security · endpoint detection &amp; response</p>
+            <p class="feature-label">Security · endpoint detection &amp; response · Nov 2026</p>
             <h3>Renellence Shield</h3>
-            <p class="case-lede">
-              After an infostealer hit the company in October 2026, I built Renellence's own security system: an
-              agent on every company laptop that watches for the ways credentials get stolen, a cloud side that
-              watches the company's accounts, and a signed admin console with a red button that locks everything
-              down at once.
-            </p>
+            <p>In October 2026 malware got onto a company laptop and every key the company used had to be reset. Afterwards I built <strong>Shield</strong>, Renellence's own security system, so that the next attempt gets caught in seconds instead of found days later: an agent on every company laptop, a cloud side that watches the company's accounts, and a signed admin console with a red button.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Tripwires, not guesses</h4>
+            <p>Most of what Shield watches are things nobody innocent touches. Windows' own auditing is switched on for the browsers' saved passwords and cookies, for developer secrets (<code>.env</code> files, GitHub, npm and cloud tokens, SSH keys), for planted bait files that look like old password notes, and for fake ledgers that act as <strong>ransomware canaries</strong>. A resident watcher reads the Security log <strong>as each event is written</strong>, so a touch is judged within a second or two instead of at the next scan.</p>
+            <p>It also reads <strong>every program start with its command line</strong>, looking for the moves real attacks make: credential dumping, built-in Windows tools abused to download or run code, ClickFix ("paste this to prove you're human"), a Word file or browser starting a shell, bursts of reconnaissance commands, and new persistence in coding tools (MCP servers, editor tasks, git hooks). Rules only fire when the matching program is the one running, so searching for a tool's name never trips them.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Contained in about 8 seconds</h4>
+            <p>When a program trips a wire, Shield <strong>kills it</strong> (only if that process ID still belongs to that program), <strong>cuts the laptop off the internet</strong> with firewall rules that keep only its own line to the console, and pages both admins on Telegram and email. In testing, a fake stealer reading a <code>.env</code> file was killed and the laptop isolated 8 seconds after the read. An admin checks the laptop and releases it from the console. A person opening a bait file by hand is paged about but never cut off.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Every download checked on arrival</h4>
+            <p>A file-system watcher on every drive inspects each program, script, archive, disk image and Office file about two seconds after it finishes writing. It checks signatures, programs dressed up as documents, DLL side-loading (a signed program next to an unsigned DLL it imports, found by parsing the PE import table), scripts that fetch and run code, macros and OneNote traps. Archives are unpacked into a locked folder and checked inside. Dangerous files are <strong>held</strong> with a deny rule so they can't open, and the person sees a branded warning with one safe choice. Code being edited in a project folder is left alone.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> The console and the red button</h4>
+            <p>A Windows desktop app (Electron, auto-updating) for the two admins, each signing in with their own key and an authenticator code. It lists laptops, alerts, activity and connected services, and a Features tab explains all 43 safeguards in plain words. The <strong>red button</strong> needs one admin and a fresh code: it isolates every laptop, signs everyone out of Google and revokes app tokens, pauses every automation except Shield's own, and pages every admin. Each step is easy to undo, and a drill shows what would happen without changing anything.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Watching the accounts too</h4>
+            <p>Every few hours an n8n workflow checks the company's online side: changes to the domain's mail and DNS records, accounts showing up in breaches, mailbox forwarding rules and new third-party app grants, payment-account changes, new QuickBooks vendors and AI spend. A six-hour all-clear email lists what was checked, so silence never means it stopped working.</p>
+
+            <h4 class="md-h"><span class="tok-com">##</span> Built so it can't be turned against us</h4>
+            <ul class="bullets">
+              <li>Laptops check in with a <strong>per-device HMAC</strong> and strictly increasing timestamps, so a captured message can't be replayed.</li>
+              <li>Admin commands and agent updates are <strong>ECDSA P-256 signed</strong> and verified on the laptop before anything runs, so even someone with the server can't push a fake update or command.</li>
+              <li>The agent runs as SYSTEM every minute, a guardian task repairs it if it's tampered with, and the database side is a private schema reached only through narrow functions.</li>
+              <li>It lives alongside the company's antivirus instead of replacing it, which took real work: detection rules are written so the antivirus doesn't quarantine Shield itself.</li>
+            </ul>
+            <p>It's covered by <strong>101 agent tests</strong> (Pester) and <strong>17 database tests</strong>, and every safeguard was tried on a real laptop, with the false alarms fixed along the way.</p>
+            <ul class="metrics"><li><b>~8 s</b><span>theft attempt to isolation</span></li><li><b>43</b><span>safeguards</span></li><li><b>1</b><span>button to lock down</span></li><li><b>2</b><span>admins, key + TOTP</span></li><li><b>118</b><span>tests</span></li><li><b>0</b><span>unsigned commands run</span></li></ul>
+            <ul class="chips"><li>PowerShell</li><li>Windows security auditing</li><li>Event log streaming</li><li>Windows Firewall</li><li>PE parsing</li><li>WinForms</li><li>Electron</li><li>Supabase Postgres</li><li>pg_cron</li><li>n8n</li><li>ECDSA / HMAC</li><li>TOTP</li><li>Telegram Bot API</li><li>Pester</li></ul>
+            <p class="feature-note">The laptops, people and alerts in these screenshots are made up; the screens are the real console, popup and emails.</p>
           </div>
-          <ul class="metrics metrics-wide">
-            <li><b>~8 s</b><span>from theft attempt to isolated laptop</span></li>
-            <li><b>40+</b><span>safeguards</span></li>
-            <li><b>1</b><span>button to lock the company down</span></li>
-            <li><b>2</b><span>admins, each with a key + TOTP</span></li>
-            <li><b>118</b><span>automated tests</span></li>
-            <li><b>0</b><span>unsigned commands accepted</span></li>
-          </ul>
-          <div class="case-grid">
-            <div class="point">
-              <h4>Tripwires, not guesses</h4>
-              <p>Traps nobody innocent touches: saved browser passwords and cookies, developer secrets, planted bait and ransomware canaries. Windows' own audit log reports every touch to a resident watcher as it happens.</p>
-            </div>
-            <div class="point">
-              <h4>Contain in seconds</h4>
-              <p>When a program trips one, Shield kills it, cuts the laptop off the internet (keeping only its own line to the console) and pages both admins on Telegram and email. An admin releases it from the console.</p>
-            </div>
-            <div class="point">
-              <h4>Downloads checked on arrival</h4>
-              <p>Every program, script, archive, disk image and Office file that lands is inspected within seconds: signatures, side-loading, macros, hidden loaders. Dangerous ones are held, with a branded on-screen notice.</p>
-            </div>
-            <div class="point">
-              <h4>Attack patterns, live</h4>
-              <p>Every program start is read with its command line: credential dumping, abused built-in tools, ClickFix paste attacks, documents or browsers launching shells, persistence in coding tools.</p>
-            </div>
-            <div class="point">
-              <h4>The red button</h4>
-              <p>One admin and a fresh code isolate every laptop, sign everyone out of Google, revoke app tokens and pause every automation except Shield's own, all easily reversible.</p>
-            </div>
-            <div class="point">
-              <h4>Trust nothing unsigned</h4>
-              <p>Laptops check in with per-device HMAC and replay-proof timestamps; admin commands and agent updates are ECDSA-signed and verified before anything runs, so even the server can't push a fake one.</p>
+          </div>
+
+          <!-- Shield's emails -->
+          <div class="feature-sub" id="shield-emails">
+            <p class="feature-label">Shield · email</p>
+            <h3>Alerts that say what to do</h3>
+            <p>Every alert email has the Shield logo on a navy bar, a coloured rule and badge for how serious it is, a small table of where and when, the details in plain sentences and a "What to do now" box. Critical alerts also reach the admins' phones on Telegram within seconds.</p>
+            <div class="feature-thumbs feature-thumbs-3">
+              <a class="thumb thumb-tall thumb-email" href="shield-email-critical.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="shield-email-critical.webp?v=1" alt="A critical alert email: Browser passwords or cookies read by another program, svc.exe, with the laptop, time and response (killed, isolated in 8 s) and a What to do now box" loading="lazy"></span>
+                <span class="thumb-label">critical: contained</span>
+              </a>
+              <a class="thumb thumb-tall thumb-email" href="shield-email-warning.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="shield-email-warning.webp?v=1" alt="A warning email: Risky download held, invoice_2026.pdf.exe, with where it came from and what to do" loading="lazy"></span>
+                <span class="thumb-label">warning: download held</span>
+              </a>
+              <a class="thumb thumb-tall thumb-email" href="shield-email-allclear.webp?v=1" target="_blank" rel="noopener">
+                <span class="thumb-img"><img src="shield-email-allclear.webp?v=1" alt="The all-clear email: Security watch all clear, with a table of Stripe events, Shopify orders, n8n workflow changes, Vercel events, app sign-ins and DNS changes checked" loading="lazy"></span>
+                <span class="thumb-label">every 6 hours: all clear</span>
+              </a>
             </div>
           </div>
-          <p class="small">Also watches the cloud every few hours: DNS changes, breached accounts, mailbox forwarding rules, new app grants, payment-account changes, new QuickBooks vendors and AI spend. A Windows desktop console (Electron, auto-updating) shows laptops, alerts, integrations and every safeguard.</p>
-          <ul class="chips"><li>PowerShell</li><li>Windows security auditing</li><li>Electron</li><li>Supabase Postgres</li><li>n8n</li><li>ECDSA / HMAC</li><li>TOTP</li><li>Pester</li></ul>
         </article>
       </section>
 
