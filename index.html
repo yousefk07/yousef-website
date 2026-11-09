@@ -55,6 +55,9 @@
         <li class="tree-sub tree-sub2"><a href="#pulse"><span class="ft ft-dir">▸</span>pulse/</a></li>
         <li class="tree-sub tree-sub2"><a href="#edge"><span class="ft ft-dir">▸</span>edge/</a></li>
         <li class="tree-sub"><a href="#testing"><span class="ft ft-dir">▸</span>test/</a></li>
+        <li class="tree-sub"><a href="#engine"><span class="ft ft-dir">▸</span>engine/</a></li>
+        <li class="tree-sub"><a href="#rebuild"><span class="ft ft-dir">▸</span>rebuild/</a></li>
+        <li class="tree-sub"><a href="#test-suite"><span class="ft ft-dir">▸</span>test-suite/</a></li>
         <li class="tree-sub"><a href="#shield"><span class="ft ft-dir">▸</span>shield/</a></li>
         <li><a href="#experience" data-sec="experience"><span class="ft ft-json">{}</span>experience.json</a></li>
         <li><a href="#work" data-sec="work"><span class="ft ft-dir">▾</span>projects/</a></li>
@@ -115,7 +118,7 @@
             I joined Renellence as a Software &amp; Automation Developer Co-op in August 2026. I'm rebuilding the
             company's sales systems around one relational database: three apps on top of it (Pulse for reps'
             phones, Edge for the desktop, Compass for managers' 1-on-1s), every outside service feeding into it,
-            and HubSpot on its way out.
+            one engine that replaced the order and onboarding workflows, and HubSpot retired.
           </p>
         </header>
 
@@ -477,21 +480,141 @@
           </article>
         </div>
 
-        <!-- Order automation -->
-        <article class="case pane reveal" data-file="order-automation/workflow.json">
-          <span class="tag tag-live">in use</span>
-          <p class="feature-label">Order-to-cash</p>
-          <h3>Order automation</h3>
-          <p>n8n workflows that take an order from the rep's tap to delivery without anyone re-typing it.</p>
-          <ol class="steps steps-row">
-            <li>Order placed in Pulse or Edge</li>
-            <li>Approval by a person</li>
-            <li>E-signature when needed</li>
-            <li>Stripe charge or pay link</li>
-            <li>QuickBooks invoice</li>
-            <li>Shipping tracked to delivery</li>
-          </ol>
-          <p class="small">Connects Stripe, QuickBooks, SignatureAPI, Gmail, the phone system, Meta, Google Sheets and HubSpot, with customer texts and emails at each step.</p>
+        <!-- The engine -->
+        <article class="case pane reveal" id="engine" data-file="engine/README.md">
+          <div class="case-head">
+            <span class="tag tag-live">in production</span>
+            <p class="feature-label">Back end · replaced n8n</p>
+            <h3>The engine</h3>
+            <p class="case-lede">
+              One Node service that does everything the apps can't do themselves: every call to an outside service,
+              a 5-minute tick, and verified webhooks. It replaced the n8n workflows that ran sales orders and customer
+              onboarding, so the whole order-to-cash path is now plain, tested code reading and writing the one database.
+            </p>
+          </div>
+          <ul class="metrics">
+            <li><b>469 → 0</b><span>n8n nodes behind orders and onboarding</span></li>
+            <li><b>~200k</b><span>characters of workflow code retired</span></li>
+            <li><b>1</b><span>gate for every outside call</span></li>
+          </ul>
+          <div class="case-grid">
+            <div class="point">
+              <h4>What it replaced</h4>
+              <p>The order workflow (291 nodes, 118 steps set to carry on after errors) and the onboarding workflow (178 nodes) became plain step functions, each checked against recorded real runs before cut-over.</p>
+            </div>
+            <div class="point">
+              <h4>Runs kept in the database</h4>
+              <p>Each order and onboarding keeps its place in its own row. A manager approves from signed links in an email, the tick moves waiting runs on, and nothing sits paused inside a workflow tool.</p>
+            </div>
+            <div class="point">
+              <h4>Once and only once</h4>
+              <p>Every action claims a key before it acts, so a retry or a double click never charges, invoices or emails twice; a run cut off midway is flagged instead of guessed at.</p>
+            </div>
+            <div class="point">
+              <h4>Payments end to end</h4>
+              <p>Card on file, pay links with daily reminders, wire transfers and samples; accounting customers created when missing; receipts with a PDF invoice; declined cards texted with a short pay link.</p>
+            </div>
+            <div class="point">
+              <h4>Onboarding that chases itself</h4>
+              <p>Form to e-signature to medical-director reminders to accounting and payment customers to card on file, with email domains checked as they're typed and alerts when a step fails.</p>
+            </div>
+            <div class="point">
+              <h4>One door to the outside</h4>
+              <p>Stripe, QuickBooks, SignatureAPI, Gmail, the phone system and Meta all go through one gate: held and logged in the sandbox, credentials never written to logs, switched live with one setting.</p>
+            </div>
+          </div>
+          <ul class="chips"><li>Node.js</li><li>Vercel Functions</li><li>Postgres</li><li>Stripe API</li><li>QuickBooks API</li><li>SignatureAPI</li><li>Gmail API</li><li>SMS</li><li>pdf-lib</li><li>Web Push</li></ul>
+        </article>
+
+        <!-- Rebuild and code budgets -->
+        <article class="case pane reveal" id="rebuild" data-file="rebuild/CLAUDE.md">
+          <div class="case-head">
+            <span class="tag tag-live">in production</span>
+            <p class="feature-label">Architecture · rebuild and debloat</p>
+            <h3>Rebuilt lean, with code budgets</h3>
+            <p class="case-lede">
+              Pulse, Edge, Compass, the onboarding form and the engine were rebuilt side by side in one repository,
+              against the live database in read-only mode, then cut over app by app. Lean code is a rule the build
+              enforces, not a hope.
+            </p>
+          </div>
+          <ul class="metrics">
+            <li><b>6</b><span>parts, each with a code budget</span></li>
+            <li><b>+30%</b><span>hard cap, failed by CI</span></li>
+            <li><b>1</b><span>shared library, no copied files</span></li>
+          </ul>
+          <div class="case-grid">
+            <div class="point">
+              <h4>Code budgets</h4>
+              <p>Every part has a size budget (non-test, non-whitespace code), from 650 units for the onboarding form to 9,000 for Edge. A part may run up to 30% over only when every line traces to a real screen or rule; past that, the build fails.</p>
+            </div>
+            <div class="point">
+              <h4>The no-bloat rules</h4>
+              <p>Written down for every contributor, AI included: the smallest thing that works, one way to do each thing, shared code once, replace instead of layering, no dead or commented-out code, no new dependency without a reason.</p>
+            </div>
+            <div class="point">
+              <h4>Clear boundaries</h4>
+              <p>Apps only show data and take input. Every outside call lives in the engine; apps hand it a request and read its status, and never call each other.</p>
+            </div>
+            <div class="point">
+              <h4>Parity before cut-over</h4>
+              <p>Each screen was rebuilt from the live one and compared side by side; a feature list marked it rebuilt only once it matched, and the intended differences were written down.</p>
+            </div>
+            <div class="point">
+              <h4>Safe by construction</h4>
+              <p>While rebuilding, a read-only database role and the outbound gate made it impossible to change real data or send anything; going live was a setting, not a rewrite.</p>
+            </div>
+            <div class="point">
+              <h4>Docs as contracts</h4>
+              <p>A feature map, a parity log, the budgets, a data-model guide and a change log for every live fix, so the rebuild never drifted from what the team actually uses.</p>
+            </div>
+          </div>
+          <ul class="chips"><li>Monorepo</li><li>npm workspaces</li><li>React</li><li>Vite</li><li>ESLint</li><li>Type checks</li><li>Prettier</li><li>Claude Code</li></ul>
+        </article>
+
+        <!-- Test suite -->
+        <article class="case pane reveal" id="test-suite" data-file="test-suite/TESTING.md">
+          <div class="case-head">
+            <span class="tag tag-live">in use</span>
+            <p class="feature-label">Quality · CI/CD</p>
+            <h3>A five-layer test suite, with Claude testing the real UI</h3>
+            <p class="case-lede">
+              Four layers are code and run the same way every time; the fifth is Claude using the live apps in Chrome
+              the way a person would. Nothing deploys unless the code layers pass.
+            </p>
+          </div>
+          <ul class="metrics">
+            <li><b>5</b><span>test layers</span></li>
+            <li><b>170+</b><span>automated tests</span></li>
+            <li><b>0</b><span>deploys without a green run</span></li>
+          </ul>
+          <div class="case-grid">
+            <div class="point">
+              <h4>Unit</h4>
+              <p>Rules and money: prices, tax by province, email and phone checks, the wording of every customer email, week and date rules.</p>
+            </div>
+            <div class="point">
+              <h4>Functional</h4>
+              <p>Each app's API, read and write, signed in as a test account whose made-up book lives in memory, so nothing touches real data.</p>
+            </div>
+            <div class="point">
+              <h4>Integration</h4>
+              <p>The engine's flows replayed against recorded real runs: card, pay link, wire, samples and declined orders, onboarding, e-signatures, payments and receipts.</p>
+            </div>
+            <div class="point">
+              <h4>Performance</h4>
+              <p>Each screen's main read is timed; its 90th-percentile time has a budget, so a query that suddenly costs five times more fails before a rep feels it.</p>
+            </div>
+            <div class="point">
+              <h4>End to end, by Claude</h4>
+              <p>Scenario files list each step and what must be true after it. Claude follows them in the live apps in Chrome, takes a screenshot per step, records page timings and reports pass or fail, inside strict lanes (read-only, test account, or the test customer only) and never editing code.</p>
+            </div>
+            <div class="point">
+              <h4>The gate</h4>
+              <p>CI runs each layer on every push and nightly; the apps deploy only through hooks called after every check is green; and the full suite, end to end included, runs before every go-live.</p>
+            </div>
+          </div>
+          <ul class="chips"><li>node:test</li><li>GitHub Actions</li><li>Deploy hooks</li><li>Claude Code skills &amp; agents</li><li>Chrome automation</li></ul>
         </article>
 
         <!-- Renellence Shield -->
