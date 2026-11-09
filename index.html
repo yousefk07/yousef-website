@@ -54,7 +54,6 @@
         <li class="tree-sub"><a href="#apps"><span class="ft ft-dir">▸</span>apps/</a></li>
         <li class="tree-sub tree-sub2"><a href="#pulse"><span class="ft ft-dir">▸</span>pulse/</a></li>
         <li class="tree-sub tree-sub2"><a href="#edge"><span class="ft ft-dir">▸</span>edge/</a></li>
-        <li class="tree-sub"><a href="#testing"><span class="ft ft-dir">▸</span>test/</a></li>
         <li class="tree-sub"><a href="#engine"><span class="ft ft-dir">▸</span>engine/</a></li>
         <li class="tree-sub"><a href="#rebuild"><span class="ft ft-dir">▸</span>rebuild/</a></li>
         <li class="tree-sub"><a href="#test-suite"><span class="ft ft-dir">▸</span>test-suite/</a></li>
@@ -446,38 +445,6 @@
               </div>
             </div>
           </article>
-
-          <article class="case pane reveal" id="testing" data-file="test/README.md">
-            <p class="feature-label">Testing</p>
-            <h3>How it's tested</h3>
-            <ul class="metrics">
-              <li><b>240</b><span>test files</span></li>
-              <li><b>4,500+</b><span>assertions</span></li>
-              <li><b>90%</b><span>line-coverage gate</span></li>
-            </ul>
-            <div class="practices">
-              <div>
-                <b>Production is never a test bed</b>
-                <p>Tests run on a separate copy of the database; a network guard refuses every outside service, and connectors answer from stubs.</p>
-              </div>
-              <div>
-                <b>Access tests</b>
-                <p>Every real rep's login is tried against every other rep's book, read and write. Nothing crosses.</p>
-              </div>
-              <div>
-                <b>Real-data test runs</b>
-                <p>Whole apps driven at phone size over Chrome DevTools: scripted flows, random-tap runs on every screen, a 300-person book (Today loads in 1.5 s), Toronto midnight and the November clock change.</p>
-              </div>
-              <div>
-                <b>Findings, ranked and fixed</b>
-                <p>Each run ends in a report by severity: a missing idempotency key on order retries, one bad lead that blocked every later one, a custom price that could silently become free.</p>
-              </div>
-              <div>
-                <b>Careful releases</b>
-                <p>A dry run and a backup before each change to a live workflow, and end-to-end checks on production that roll themselves back.</p>
-              </div>
-            </div>
-          </article>
         </div>
 
         <!-- The engine -->
@@ -606,12 +573,20 @@
               <p>Each screen's main read is timed; its 90th-percentile time has a budget, so a query that suddenly costs five times more fails before a rep feels it.</p>
             </div>
             <div class="point">
+              <h4>Access tests</h4>
+              <p>Every real rep's login is tried against every other rep's book, read and write. Nothing crosses.</p>
+            </div>
+            <div class="point">
+              <h4>Real-data runs, ranked findings</h4>
+              <p>Whole apps driven at phone size: scripted flows, random taps on every screen, a 300-person book, Toronto midnight and the November clock change. Each run ends in a report ranked by severity, and the fixes land with a test.</p>
+            </div>
+            <div class="point">
               <h4>End to end, by Claude</h4>
               <p>Scenario files list each step and what must be true after it. Claude follows them in the live apps in Chrome, takes a screenshot per step, records page timings and reports pass or fail, inside strict lanes (read-only, test account, or the test customer only) and never editing code.</p>
             </div>
             <div class="point">
               <h4>The gate</h4>
-              <p>CI runs each layer on every push and nightly; the apps deploy only through hooks called after every check is green; and the full suite, end to end included, runs before every go-live.</p>
+              <p>CI runs each layer on every push and nightly; the apps deploy only through hooks called after every check is green; and the full suite, end to end included, runs before every go-live. Production is never a test bed: outside services are stubbed or held, and live checks clean up after themselves.</p>
             </div>
           </div>
           <ul class="chips"><li>node:test</li><li>GitHub Actions</li><li>Deploy hooks</li><li>Claude Code skills &amp; agents</li><li>Chrome automation</li></ul>
